@@ -78,6 +78,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${fontSans.variable} ${fontYatra.variable} ${fontRozha.variable}`}
     >
       <head>
+        {/* Google Search Console Site Verification */}
+        <meta name="google-site-verification" content="googleec52a74fd3fa44b1" />
+        <meta name="google-site-verification" content="google9bda85abb7a0ba4d" />
+
         {/* Zero-flash script: ensures all bars and places are 100% hidden while intro video is showing */}
         <script
           dangerouslySetInnerHTML={{
