@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
 export const revalidate = 900; // Cache for 15 minutes at the edge
 
 const FALLBACK_WEATHER = {
