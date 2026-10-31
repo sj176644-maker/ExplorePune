@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     apple: '/logo-small.png',
   },
   verification: {
-    google: 'googleec52a74fd3fa44b1',
+    google: ['googleec52a74fd3fa44b1', 'google9bda85abb7a0ba4d'],
   },
 };
 
