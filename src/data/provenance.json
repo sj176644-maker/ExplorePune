@@ -1,0 +1,522 @@
+[
+  {
+    "id": "PD",
+    "name": "Pune Darwaza",
+    "type": "gate",
+    "tier_target": "T2",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S02",
+      "S10"
+    ],
+    "photos": [
+      "PH01",
+      "PH10",
+      "PH15",
+      "PH17",
+      "PH18"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "All dimensions (passage width and height, tower height, wall thickness)",
+      "Arch profile and door leaves, ironwork, spikes",
+      "Exact shape and style of the sharabha reliefs",
+      "Parapet and battlement details",
+      "Coordinates of each gate",
+      "Interior of guard rooms and upper chambers"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/PD_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "KD",
+    "name": "Kalyan Darwaza",
+    "type": "gate",
+    "tier_target": "T2",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S02"
+    ],
+    "photos": [
+      "PH02",
+      "PH16",
+      "PH17"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Dimensions",
+      "Exact script and text of the inscription",
+      "Arch profile, door leaves",
+      "Position and size of the boar and mahout reliefs on the bastion faces",
+      "Layout of soldiers' quarters",
+      "Coordinates"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/KD_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "FW",
+    "name": "Fortification walls",
+    "type": "wall",
+    "tier_target": "T2/T3",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S01",
+      "S02"
+    ],
+    "photos": [
+      "PH10",
+      "PH11",
+      "PH13",
+      "PH14",
+      "PH17",
+      "PH20"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Wall height, thickness, parapet and merlon design",
+      "Exact alignment of every segment",
+      "Which segments are original and which are restored",
+      "Where the cliff alone forms the defence"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/FW_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "BS",
+    "name": "Defensive bastions",
+    "type": "bastion",
+    "tier_target": "T3 until each bastion is photographed",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S02",
+      "S10"
+    ],
+    "photos": [
+      "PH10",
+      "PH11",
+      "PH17",
+      "PH20"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Shape (round, angular, tiered) of each bastion",
+      "Height, diameter, parapet and gun ports",
+      "Coordinates and the full list of 37",
+      "Which are restored"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/BS_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "KB",
+    "name": "Kalavantinicha Buruj",
+    "type": "bastion",
+    "tier_target": "T3",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S02",
+      "S10"
+    ],
+    "photos": [
+      "PH17"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Shape, height, plan, parapet",
+      "Coordinates",
+      "Whether it is ruined or restored",
+      "Exact position relative to the pond and the Rajaram samadhi"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/KB_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "DK",
+    "name": "Daru Kothar",
+    "type": "building",
+    "tier_target": "T2",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S02"
+    ],
+    "photos": [
+      "PH17"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Dimensions",
+      "Roof form",
+      "Doors, windows, interior layout",
+      "Whether church-period additions remain",
+      "Exact coordinates"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/DK_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "KT",
+    "name": "Kondhaneshwar / Kaundinyeshwar Temple",
+    "type": "shrine",
+    "tier_target": "T2",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S01",
+      "S02",
+      "S03"
+    ],
+    "photos": [
+      "PH04",
+      "PH17"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Plan, dimensions, roof or shikhara form",
+      "Door jamb carving details",
+      "Courtyard walls and floor",
+      "Exact position relative to the Tanaji memorial steps"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/KT_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "AT",
+    "name": "Amruteshwar Bhairav Temple",
+    "type": "shrine",
+    "tier_target": "T2/T3",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S02"
+    ],
+    "photos": [
+      "PH17"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Dimensions of enclosure and shrine",
+      "Roof form",
+      "Wall height, gate form",
+      "Idol sculpting scale"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/AT_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "TS",
+    "name": "Tanaji Malusare Samadhi",
+    "type": "memorial",
+    "tier_target": "T2",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S02",
+      "S06",
+      "S07",
+      "S08"
+    ],
+    "photos": [
+      "PH07",
+      "PH08",
+      "PH09",
+      "PH18",
+      "PH19"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Dimensions of platform and canopy",
+      "Canopy design details",
+      "Hero stone carving detail",
+      "Present state of the 1941 and 1976 elements after restoration"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/TS_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "RS",
+    "name": "Rajaram Maharaj Samadhi",
+    "type": "memorial",
+    "tier_target": "T2",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S02"
+    ],
+    "photos": [
+      "PH06",
+      "PH17"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Pillar count, dome profile, dimensions",
+      "Cenotaph size and decoration",
+      "Layout of the mansion ruins",
+      "Tank dimensions"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/RS_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "TB",
+    "name": "Lokmanya Tilak Bungalow",
+    "type": "building",
+    "tier_target": "T2/T3",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S01",
+      "S02"
+    ],
+    "photos": [
+      "PH05"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Whole building form: storeys, roof, verandah, windows, colour",
+      "Dimensions",
+      "Statue or bust at the front",
+      "Layout of the ruined neighbouring bungalow"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/TB_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "WS",
+    "name": "Devtake (Dev Taki) and verified water structures",
+    "type": "tank",
+    "tier_target": "T2/T3",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S02"
+    ],
+    "photos": [
+      "PH03",
+      "PH17"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Depth, plan size, water level of each tank",
+      "Exact count and locations",
+      "Details of steps and parapets",
+      "Which tanks are dry and which hold water now"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/WS_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "ST",
+    "name": "Stone staircases and architectural pathways",
+    "type": "stairs",
+    "tier_target": "T2",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S01",
+      "S02"
+    ],
+    "photos": [
+      "PH01",
+      "PH02",
+      "PH17"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Step riser and tread dimensions",
+      "Stair widths, handrails or none",
+      "Which paving is historic",
+      "Coordinates of each flight"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/ST_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  },
+  {
+    "id": "OR",
+    "name": "Other documented historical remains",
+    "type": "other",
+    "tier_target": "T2/T3",
+    "tier_current": "T4",
+    "position": {
+      "crs": "EPSG:32643",
+      "x": null,
+      "y": null,
+      "z": null
+    },
+    "orientation_deg": null,
+    "sources": [
+      "S01",
+      "S02",
+      "S03",
+      "S17"
+    ],
+    "photos": [
+      "PH03",
+      "PH12",
+      "PH17"
+    ],
+    "measurements": [],
+    "uncertainties": [
+      "Dimensions of everything",
+      "Exact positions",
+      "Whether the Kali temple is still present and where",
+      "Brewery location (S01 mentions it)"
+    ],
+    "validation": {
+      "score": null,
+      "date": null,
+      "report": "reports/OR_report.md"
+    },
+    "licences": [],
+    "status": "not_started"
+  }
+]

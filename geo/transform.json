@@ -1,0 +1,17 @@
+{
+  "worldCRS": "EPSG:32643",
+  "verticalReference": "FILL (Copernicus DEM GLO-30 heights are relative to EGM2008 geoid)",
+  "localOrigin": {
+    "x": null,
+    "y": null,
+    "z": null,
+    "note": "choose near the fort centre; subtract from all world coordinates to avoid float32 jitter"
+  },
+  "sceneAxes": {
+    "up": "+Y",
+    "north": "FILL (-Z recommended)",
+    "east": "FILL (+X recommended)"
+  },
+  "scale": 1.0,
+  "notes": "every number must come from processed data, never guessed"
+}
