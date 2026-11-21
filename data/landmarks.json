@@ -1,0 +1,1412 @@
+{
+  "fort": {
+    "name": "Sinhagad",
+    "alt": "Kondhana",
+    "coords_approx_wgs84": [
+      18.3656639,
+      73.7552694
+    ],
+    "note": "approximate, tier T3; refine from survey"
+  },
+  "landmarks": [
+    {
+      "id": "PD",
+      "order": 1,
+      "name": "Pune Darwaza",
+      "alt_names": "Pune Gate; Pune Darwaja; three successive gates (Pune Gate 1, 2, 3)",
+      "type": "gate",
+      "location_description": "North-east side of the fort. First entrance met by visitors coming from the parking area beside the sheer Khadakada cliff (S01, S02, S04).",
+      "materials": "Stone masonry (type not stated; local basalt of the Sahyadri is expected: ESTIMATE, confirm on site). Repaired sections are visibly different in finish.",
+      "dates": "Original date unknown. Gate 3 considered the oldest main entrance by S02. Repairs on gate 2 are extensive (date unknown).",
+      "tier_target": "T2",
+      "components": [
+        {
+          "name": "Gate 1 (outer)",
+          "description": "Built between two bastions on the cliff edge. Weathered, but two carved sharabha (mythical creatures) are still visible on it.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Stair between gate 1 and gate 2",
+          "description": "About 20 to 25 steps.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Rock-cut cistern at cliff",
+          "description": "On the left, just before gate 2. Water stagnant and covered with algae.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Rampart and postern",
+          "description": "From the stair, the fort wall runs down the slope towards gate 1, with a small postern gate set in the rampart. It leads into the detached Khadakada cliff section (see Other remains).",
+          "sources": [
+            "S02",
+            "S10"
+          ]
+        },
+        {
+          "name": "Gate 2 (middle)",
+          "description": "Also built between two bastions. Heavily repaired, so no carvings remain visible. Steps lead up to the bastion and gate structures.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Gate 3 (inner)",
+          "description": "Short distance further, again between two bastions. The doorway has a lotus motif and a festoon carving; the source suggests this was the original main entrance.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Guard rooms",
+          "description": "Visible on either side of the gates.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Siting",
+          "description": "Each gate sits where a cliff is on one side and a steep valley on the other.",
+          "sources": [
+            "S02"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Sequence of three stone gateways climbing a slope, each flanked by two bastions, with a cliff on one side and a drop on the other.",
+        "Gate 1: weathered stone with two sharabha carvings. Gate 2: plain, repaired masonry. Gate 3: lotus and festoon carving at the doorway."
+      ],
+      "modelling_instructions": [
+        "Build as three separate gate assemblies (PD_G1, PD_G2, PD_G3) on one continuous ascending approach.",
+        "Each gate: two flanking bastions + gate passage + guard rooms on both sides. Use photos PH01, PH10, PH15, PH17 to set proportions and arch shape.",
+        "G1: add two weathered low-relief sharabha. G3: add lotus and festoon in the doorway. G2: plain repaired masonry, no carving.",
+        "Add the 20-25 step stair between G1 and G2 and the rock-cut cistern on the cliff side.",
+        "Blend the footings into the terrain mesh; the gates are defined by the cliff on one side and the valley on the other."
+      ],
+      "glb_nodes": [
+        "SIN_PD_G1",
+        "SIN_PD_G2",
+        "SIN_PD_G3",
+        "SIN_PD_STAIR",
+        "SIN_PD_GUARDROOMS",
+        "SIN_PD_CISTERN"
+      ],
+      "collision": "Passage floor, stair treads, bastion and wall solids; keep the passage walkable. Postern as a separate opening.",
+      "unknown_do_not_invent": [
+        "All dimensions (passage width and height, tower height, wall thickness)",
+        "Arch profile and door leaves, ironwork, spikes",
+        "Exact shape and style of the sharabha reliefs",
+        "Parapet and battlement details",
+        "Coordinates of each gate",
+        "Interior of guard rooms and upper chambers"
+      ],
+      "site_capture": [
+        "Photograph each gate from front, rear, both sides and inside the passage",
+        "Measure passage width and height, step riser and tread",
+        "Close-ups of sharabha, lotus and festoon carving",
+        "GPS at each gate threshold"
+      ],
+      "photo_refs": [
+        "PH01",
+        "PH10",
+        "PH15",
+        "PH17",
+        "PH18"
+      ],
+      "status": "milestone1_blockout",
+      "model_path": "/assets/PD/pune_darwaza_M1.glb"
+    },
+    {
+      "id": "KD",
+      "order": 2,
+      "name": "Kalyan Darwaza",
+      "alt_names": "Kalyan Gate; Kalyan Darwaja; Konkan Gate",
+      "type": "gate",
+      "location_description": "South-east side of the fort. Second official entrance, used by people approaching from Kondhanpur (S01, S02).",
+      "materials": "Stone masonry (type not stated; ESTIMATE basalt, confirm).",
+      "dates": "Gate built or repaired Shaka 1672 (about 1750 CE) per inscription; earlier origin possible.",
+      "tier_target": "T2",
+      "components": [
+        {
+          "name": "Two successive gates",
+          "description": "Two gates, each between bastions, with the whole section enclosed by fortified walls arranged like a battle formation.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Stair between gates",
+          "description": "About 20 to 25 steep steps from the first gate to the second.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "First gate arch",
+          "description": "Carved with two lotus flowers; the festoon above them is damaged.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Guardroom",
+          "description": "A small guardroom inside the wall near the gate.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Inscription",
+          "description": "Carved in the arch: the gate was built or repaired in the time of Nanasaheb Peshwa, year Shalivahan Shaka 1672 (about 1750 CE), naming Shrimant Balaji Bajirao Peshwa.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Bastion reliefs",
+          "description": "One bastion has a boar carving; the opposite bastion has a relief of a mahout riding an elephant.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Interior ramparts",
+          "description": "Soldiers' quarters in the interior ramparts near the gate.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Inner approach",
+          "description": "A straight staircase leads into the fort interior; a path along the ramparts leads to the next bastion (Tehalni Buruj).",
+          "sources": [
+            "S02"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Compact fortified gateway complex of two gates in a rising, enclosed approach.",
+        "Lotus-carved arch at the first gate with a damaged festoon above; boar relief on one bastion, mahout and elephant on the other."
+      ],
+      "modelling_instructions": [
+        "Build two gate assemblies KD_G1 and KD_G2 with the steep stair between them (20-25 steps).",
+        "G1 arch: two lotus carvings, damaged festoon above, inscription panel in the arch (leave the text as an unreadable plaque unless photographed clearly).",
+        "Bastion reliefs: boar on one, mahout on an elephant on the opposite one, from PH02, PH16, PH17.",
+        "Add the small guardroom, soldiers' quarters in the interior rampart, and the straight staircase into the fort.",
+        "Connect to the rampart walk and the Tehalni Buruj (see Bastions)."
+      ],
+      "glb_nodes": [
+        "SIN_KD_G1",
+        "SIN_KD_G2",
+        "SIN_KD_STAIR",
+        "SIN_KD_GUARDROOM",
+        "SIN_KD_RELIEF_BOAR",
+        "SIN_KD_RELIEF_MAHOUT",
+        "SIN_KD_QUARTERS"
+      ],
+      "collision": "Passage floors and stair, bastion and wall solids, interior staircase.",
+      "unknown_do_not_invent": [
+        "Dimensions",
+        "Exact script and text of the inscription",
+        "Arch profile, door leaves",
+        "Position and size of the boar and mahout reliefs on the bastion faces",
+        "Layout of soldiers' quarters",
+        "Coordinates"
+      ],
+      "site_capture": [
+        "Photograph both gates and the stair between them",
+        "Close-ups of arch carvings and inscription (raking light)",
+        "Measure passage, steps, bastion height",
+        "GPS at both thresholds"
+      ],
+      "photo_refs": [
+        "PH02",
+        "PH16",
+        "PH17"
+      ],
+      "status": "milestone4_blockout",
+      "model_path": "/assets/KD/kalyan_darwaza_M1.glb"
+    },
+    {
+      "id": "FW",
+      "order": 3,
+      "name": "Fortification walls",
+      "alt_names": "Ramparts; tofa; fortification; Khadakada enclosure walls",
+      "type": "wall",
+      "location_description": "Walls and bastions are built only at key places because the steep slopes give natural protection (S01). Ramparts run beside the Khadakada cliff near the parking area, descend beside the third Pune gate, and form a walkable rampart route around the fort (S02).",
+      "materials": "Stone masonry; some restored sections. Wall type and mortar not documented.",
+      "dates": "Mixed, many repair phases. Unknown per segment.",
+      "tier_target": "T2/T3",
+      "components": [
+        {
+          "name": "Cliff-side rampart near parking",
+          "description": "A rampart runs along the sheer Khadakada cliff next to the approach.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Khadakada enclosure",
+          "description": "A slightly detached cliff section enclosed by its own independent ramparts and bastions, with a small gate and a higher small gate to the upper part.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Rampart descending beside Daru Kothar",
+          "description": "A rampart descends beside the gunpowder storehouse after gate 3.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Water channel through rampart",
+          "description": "A water channel shaped like a miniature doorway carries water through the rampart near the Kalyan route.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Interior rampart near Kalyan gate",
+          "description": "Contains soldiers' quarters.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Cliff-edge rampart near Rajaram samadhi",
+          "description": "Five underground rock-cut cisterns lie near the cliff-edge rampart.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Dongiri cliff / Tanaji Kada",
+          "description": "The rampart edge historically called Dongiri cliff, now popularly Tanaji Kada, is the cliff where Tanaji's force is said to have climbed.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Overall",
+          "description": "Walls were built at key places only; much of the perimeter relies on the cliff.",
+          "sources": [
+            "S01"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Stone ramparts on a cliff top, with long stretches where the natural cliff replaces a wall.",
+        "Water channels cut through the wall; gates and posterns in the ramparts."
+      ],
+      "modelling_instructions": [
+        "Create wall segments as separate reusable modules (FW_SEG_nn), each with a documented start and end point from coordinates.",
+        "Do not wall the entire perimeter. Leave cliff edges as natural terrain unless a photo shows a wall.",
+        "Make rampart tops walkable where sources describe a rampart walk; include the miniature-doorway water channel.",
+        "Use a placeholder wall profile only until measured; flag as T3."
+      ],
+      "glb_nodes": [
+        "SIN_FW_SEG_nn",
+        "SIN_FW_WATERCHANNEL",
+        "SIN_FW_KHADAKADA",
+        "SIN_FW_POSTERN"
+      ],
+      "collision": "Wall solids and walkable rampart tops; no collision on cliff faces beyond the terrain mesh.",
+      "unknown_do_not_invent": [
+        "Wall height, thickness, parapet and merlon design",
+        "Exact alignment of every segment",
+        "Which segments are original and which are restored",
+        "Where the cliff alone forms the defence"
+      ],
+      "site_capture": [
+        "GPS walk along the rampart line",
+        "Measure wall height, thickness and parapet at 5 points",
+        "Photograph each segment from outside and inside",
+        "Mark where walls end and cliff begins"
+      ],
+      "photo_refs": [
+        "PH10",
+        "PH11",
+        "PH13",
+        "PH14",
+        "PH17",
+        "PH20"
+      ],
+      "status": "not_started"
+    },
+    {
+      "id": "BS",
+      "order": 4,
+      "name": "Defensive bastions",
+      "alt_names": "Buruj; burj; bastions (37 in total)",
+      "type": "bastion",
+      "location_description": "Along the rampart: flanking all gates, on spurs, and at corners (S02). Buruj join the walls, strengthen them and act as watch towers or gun bases (S16, general).",
+      "materials": "Stone masonry.",
+      "dates": "Mixed; unknown per bastion.",
+      "tier_target": "T3 until each bastion is photographed",
+      "components": [
+        {
+          "name": "Gate bastions",
+          "description": "Each of the three Pune gates and two Kalyan gates sits between two bastions.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Khadakada spur bastion",
+          "description": "A large bastion on a spur from the main fort overlooks the Khadakada section.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Ruined bastion near TV tower",
+          "description": "Large bastion at the fort edge beyond the Doordarshan tower; ruined and awaiting restoration; wide view of Khadakada and parking.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Tehalni Buruj (Watch Bastion)",
+          "description": "Built to monitor the Kalyan gate route. A rock-cut cistern lies above it on a slope.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Zunjar Buruj",
+          "description": "At the southern edge on a spur cut off from the ridge. The steps up to it are buried; a partly exposed latrine pit is visible; a shallow dry tank is nearby; a hidden escape route descends to Kalki Met.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Large outer bastion beyond Zunjar",
+          "description": "Another large bastion built outside the main rampart.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Bastion opposite Daru Kothar",
+          "description": "Holds a 6-foot cannon on a cart brought from Moradari village; inscribed with Marathi text reading 'Gumabh' and the number 248.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Named bastions (lead only)",
+          "description": "A student study lists Khadkadyacha, Kalavanti, Aale, Yashwant, Dalkathicha and Zunjar burj. Not confirmed.",
+          "sources": [
+            "S10"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Rounded or angular stone bastions projecting from the rampart at gates, spurs and cliff corners, some ruined, some restored."
+      ],
+      "modelling_instructions": [
+        "Make one parametric bastion module, then instance and edit it only after photos give each bastion's shape.",
+        "Model the named bastions individually (Tehalni, Zunjar, Khadakada spur, TV-tower-side, cannon bastion).",
+        "Keep ruined bastions ruined: do not complete missing masonry. The Zunjar steps are buried: leave them buried."
+      ],
+      "glb_nodes": [
+        "SIN_BS_TEHALNI",
+        "SIN_BS_ZUNJAR",
+        "SIN_BS_KHADAKADA",
+        "SIN_BS_TVSIDE",
+        "SIN_BS_CANNON",
+        "SIN_BS_GATE_xx"
+      ],
+      "collision": "Solid mass, walkable tops only where accessible in real life.",
+      "unknown_do_not_invent": [
+        "Shape (round, angular, tiered) of each bastion",
+        "Height, diameter, parapet and gun ports",
+        "Coordinates and the full list of 37",
+        "Which are restored"
+      ],
+      "site_capture": [
+        "Create a list of all 37 bastions with GPS",
+        "Photograph each from two sides",
+        "Measure at least height and plan shape of the named ones"
+      ],
+      "photo_refs": [
+        "PH10",
+        "PH11",
+        "PH17",
+        "PH20"
+      ],
+      "status": "not_started"
+    },
+    {
+      "id": "KB",
+      "order": 5,
+      "name": "Kalavantinicha Buruj",
+      "alt_names": "Kalawantin Bastion; Kalavanti Burj",
+      "type": "bastion",
+      "location_description": "On the rampart walk after Tanaji Kada and before the pond and cliff-edge cisterns near Rajaram's samadhi. Just before it a secret path descends to the Amri Met outpost (S02).",
+      "materials": "UNKNOWN (expect stone).",
+      "dates": "UNKNOWN.",
+      "tier_target": "T3",
+      "components": [
+        {
+          "name": "Bastion",
+          "description": "A named bastion along the rampart edge.",
+          "sources": [
+            "S02",
+            "S10"
+          ]
+        },
+        {
+          "name": "Secret path",
+          "description": "Just before the bastion, a hidden path descends to Amri Met (mostly used by locals).",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Pond",
+          "description": "A small moss-covered pond lies beyond the bastion.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Cisterns",
+          "description": "Near the cliff-edge rampart ahead are five underground rock-cut cisterns.",
+          "sources": [
+            "S02"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "UNKNOWN. No source describes its shape, height or masonry. Do not model detail from imagination."
+      ],
+      "modelling_instructions": [
+        "Place a simple, plain bastion block at the correct spot on the rampart as a T3 placeholder only after the position is confirmed.",
+        "Do not borrow imagery from Kalavantin Durg (Prabalgad): it is a different place and a natural rock pinnacle.",
+        "Mark clearly in provenance.json: tier T3, reason: no photographs found."
+      ],
+      "glb_nodes": [
+        "SIN_KB_BASTION",
+        "SIN_KB_POND",
+        "SIN_KB_SECRETPATH"
+      ],
+      "collision": "Simple solid block and walkable rampart tie-in.",
+      "unknown_do_not_invent": [
+        "Shape, height, plan, parapet",
+        "Coordinates",
+        "Whether it is ruined or restored",
+        "Exact position relative to the pond and the Rajaram samadhi"
+      ],
+      "site_capture": [
+        "Find and photograph the bastion",
+        "Measure plan and height",
+        "Photograph the pond, hidden path start and the five cisterns",
+        "GPS"
+      ],
+      "photo_refs": [
+        "PH17"
+      ],
+      "status": "not_started"
+    },
+    {
+      "id": "DK",
+      "order": 6,
+      "name": "Daru Kothar",
+      "alt_names": "Gunpowder storehouse; Darukhana",
+      "type": "building",
+      "location_description": "Immediately to the right after passing through the third Pune gate, beside the descending rampart (S02).",
+      "materials": "Stone masonry (type not stated).",
+      "dates": "Original unknown; damaged and repaired after 1751; used as a church in British times (dates unknown).",
+      "tier_target": "T2",
+      "components": [
+        {
+          "name": "Building",
+          "description": "Stone-built storehouse, remarkably well preserved today.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Explosion",
+          "description": "Lightning struck it on 11 September 1751; the explosion destroyed the adjacent Fadnis residence and killed its occupants. Repairs to the storehouse and surroundings later cost 8,700 rupees.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "British period use",
+          "description": "Briefly converted into a church.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Drain",
+          "description": "A stone channel carved into the wall drains water. Fragments of old temple carvings are embedded in it.",
+          "sources": [
+            "S02"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Solid stone storehouse, intact, with a carved stone drain channel in the wall that includes reused temple carving fragments."
+      ],
+      "modelling_instructions": [
+        "Model the exterior from photographs only. Interior only if photographed.",
+        "Show repair phases as subtle material change (post-1751). Include the stone drain channel with embedded carved fragments.",
+        "Do not add Christian church features (windows, cross, tower) unless photos show them."
+      ],
+      "glb_nodes": [
+        "SIN_DK_BODY",
+        "SIN_DK_DRAIN",
+        "SIN_DK_FRAGMENTS"
+      ],
+      "collision": "Building solid; doors only if the interior is modelled.",
+      "unknown_do_not_invent": [
+        "Dimensions",
+        "Roof form",
+        "Doors, windows, interior layout",
+        "Whether church-period additions remain",
+        "Exact coordinates"
+      ],
+      "site_capture": [
+        "Photograph all four sides and roof (from a rampart if possible)",
+        "Measure plan, height, door size",
+        "Close-ups of the drain and embedded fragments",
+        "GPS"
+      ],
+      "photo_refs": [
+        "PH17"
+      ],
+      "status": "not_started"
+    },
+    {
+      "id": "KT",
+      "order": 7,
+      "name": "Kondhaneshwar / Kaundinyeshwar Temple",
+      "alt_names": "Kondhaneshwar Mandir; Kaundinyeshwar temple",
+      "type": "shrine",
+      "location_description": "Reached by steps climbing from the Tanaji memorial. Behind it is the highest point of the fort (Gadmatha), 4,314 ft (S02).",
+      "materials": "Stone (type not stated).",
+      "dates": "Ancient, exact date UNKNOWN. Do not label it Hemadpanti or any style unless a source states it.",
+      "tier_target": "T2",
+      "components": [
+        {
+          "name": "Shrine",
+          "description": "Ancient shrine with worn door jambs that indicate its age.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Interior",
+          "description": "Contains a Shiva lingam and a Ganesha idol.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Courtyard",
+          "description": "A Nandi and a stone lamp tower (deepmala).",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Highest point",
+          "description": "Behind the temple is the fort's summit (Gadmatha).",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Antiquity clue",
+          "description": "Temple carvings and caves suggest the fort could be about 2,000 years old; Satavahana-period caves for water storage and temple carvings are mentioned.",
+          "sources": [
+            "S01",
+            "S03"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Small ancient stone shrine with worn carved door frames, a Nandi and a stone deepmala in the courtyard, set near the summit."
+      ],
+      "modelling_instructions": [
+        "Model the shrine, courtyard, Nandi and deepmala as separate objects.",
+        "Door jambs: heavy wear; add carved bands only as seen in PH04 and PH17.",
+        "Keep the roof and tower form exactly as photographed; do not add a tall temple tower unless seen."
+      ],
+      "glb_nodes": [
+        "SIN_KT_SHRINE",
+        "SIN_KT_DOORJAMBS",
+        "SIN_KT_NANDI",
+        "SIN_KT_DEEPMALA",
+        "SIN_KT_COURTYARD"
+      ],
+      "collision": "Shrine solid, courtyard floor, steps; Nandi as a small solid.",
+      "unknown_do_not_invent": [
+        "Plan, dimensions, roof or shikhara form",
+        "Door jamb carving details",
+        "Courtyard walls and floor",
+        "Exact position relative to the Tanaji memorial steps"
+      ],
+      "site_capture": [
+        "Photograph the shrine from all sides, door frame close-ups, interior if allowed",
+        "Measure plan and height",
+        "Photograph Nandi and deepmala",
+        "GPS"
+      ],
+      "photo_refs": [
+        "PH04",
+        "PH17"
+      ],
+      "status": "not_started"
+    },
+    {
+      "id": "AT",
+      "order": 8,
+      "name": "Amruteshwar Bhairav Temple",
+      "alt_names": "Amruteshwar Mandir; Amruteshwar Temple",
+      "type": "shrine",
+      "location_description": "Down a path from Kondhaneshwar. A path from here also leads back to Dev Tank (S02).",
+      "materials": "Stone; restored fabric (details not stated).",
+      "dates": "Restoration date UNKNOWN.",
+      "tier_target": "T2/T3",
+      "components": [
+        {
+          "name": "Enclosure",
+          "description": "Enclosed by a wall whose entrance gate is still intact.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Main temple",
+          "description": "A restored south-facing Bhairav temple at the centre of the enclosure.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Idol",
+          "description": "Bhairav with a severed head in hand, a serpent around the crown and staff, and a dog licking blood at his feet.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Platform",
+          "description": "Opposite the enclosure gate is a platform that may be a samadhi or Nandi mandap.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Hathi Talav",
+          "description": "A large built reservoir, the Elephant Tank, lies in front of the temple; another carved reservoir lies beyond.",
+          "sources": [
+            "S02"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Walled temple compound with an intact gateway, a restored south-facing shrine, a platform opposite the gate and a large built tank in front."
+      ],
+      "modelling_instructions": [
+        "Build enclosure wall, gate, shrine, platform and Hathi Talav as separate objects.",
+        "Shrine faces south. Show restored masonry as cleaner and sharper than the older parts.",
+        "Idol: only if the interior is photographed; otherwise leave closed."
+      ],
+      "glb_nodes": [
+        "SIN_AT_ENCLOSURE",
+        "SIN_AT_GATE",
+        "SIN_AT_SHRINE",
+        "SIN_AT_PLATFORM",
+        "SIN_AT_HATHITALAV"
+      ],
+      "collision": "Walls, shrine solid, tank edge with fall protection.",
+      "unknown_do_not_invent": [
+        "Dimensions of enclosure and shrine",
+        "Roof form",
+        "Wall height, gate form",
+        "Idol sculpting scale"
+      ],
+      "site_capture": [
+        "Photograph all elevations and the gate",
+        "Measure enclosure, shrine height, tank size",
+        "Interior shots if allowed",
+        "GPS"
+      ],
+      "photo_refs": [
+        "PH17"
+      ],
+      "status": "not_started"
+    },
+    {
+      "id": "TS",
+      "order": 9,
+      "name": "Tanaji Malusare Samadhi",
+      "alt_names": "Tanaji memorial; Tanaji Malusare Smarak",
+      "type": "memorial",
+      "location_description": "On the path ahead from the Ganesh temple cluster and the entrance to the commandant's mansion; steps beyond climb to Kondhaneshwar (S02).",
+      "materials": "Original stone (type not stated); modern concrete (1938, 1941), bronze (1976), new canopy materials per restoration (not stated).",
+      "dates": "Original memorial believed about 350 years old (S01, S06). Later phases 1938, 1941, 1976; restoration discovered 2019.",
+      "tier_target": "T2",
+      "components": [
+        {
+          "name": "Memorial today",
+          "description": "A new canopy (Meghdambari, a vault) built over the original samadhi; restored.",
+          "sources": [
+            "S02",
+            "S08"
+          ]
+        },
+        {
+          "name": "Cannon",
+          "description": "On a plinth in front of the memorial.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Bust",
+          "description": "A metal bust of Tanaji on a separate plinth beside it.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Hero stones",
+          "description": "Three hero stones (virgal) around the memorial.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Original stone structure",
+          "description": "In 2019 workers found the original stone platform of the samadhi under later concrete; a superstructure of a roughly 7.5-foot memorial stone was identified, which had been displaced.",
+          "sources": [
+            "S06"
+          ]
+        },
+        {
+          "name": "Carved hero stone",
+          "description": "Carvings of a soldier, Lord Hanuman and flowers; it was covered by over 60 layers of oil paint.",
+          "sources": [
+            "S06"
+          ]
+        },
+        {
+          "name": "Identification",
+          "description": "The structure was matched to a 1917 photograph of the samadhi.",
+          "sources": [
+            "S06",
+            "S07"
+          ]
+        },
+        {
+          "name": "Later phases",
+          "description": "Concrete platform built 1938, concrete statue 1941, bronze statue 1976.",
+          "sources": [
+            "S08"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Stone samadhi platform with a carved hero stone, now under a restored canopy; bronze bust on its own plinth; a cannon on a plinth; hero stones around."
+      ],
+      "modelling_instructions": [
+        "Model the CURRENT restored state first (canopy over samadhi, bust, cannon, three hero stones).",
+        "Make the original stone platform and carved hero stone a separate detailed object using photos.",
+        "Do not model the demolished 1941 concrete canopy unless a source requires it."
+      ],
+      "glb_nodes": [
+        "SIN_TS_SAMADHI",
+        "SIN_TS_CANOPY",
+        "SIN_TS_HEROSTONE",
+        "SIN_TS_BUST",
+        "SIN_TS_CANNON",
+        "SIN_TS_HEROSTONES_3"
+      ],
+      "collision": "Platform and canopy columns, bust and cannon plinths.",
+      "unknown_do_not_invent": [
+        "Dimensions of platform and canopy",
+        "Canopy design details",
+        "Hero stone carving detail",
+        "Present state of the 1941 and 1976 elements after restoration"
+      ],
+      "site_capture": [
+        "Photograph canopy, platform and hero stone from all sides",
+        "Measure platform and canopy",
+        "Photograph the cannon and bust plinths",
+        "GPS"
+      ],
+      "photo_refs": [
+        "PH07",
+        "PH08",
+        "PH09",
+        "PH18",
+        "PH19"
+      ],
+      "status": "not_started"
+    },
+    {
+      "id": "RS",
+      "order": 10,
+      "name": "Rajaram Maharaj Samadhi",
+      "alt_names": "Rajaram cenotaph; Chhatrapati Rajaram memorial",
+      "type": "memorial",
+      "location_description": "Along the cliff-edge rampart past the five underground cisterns (S02).",
+      "materials": "Stone (type not stated).",
+      "dates": "Built 1731 (S02). Rajaram died 3 March 1700 (see conflicts).",
+      "tier_target": "T2",
+      "components": [
+        {
+          "name": "Memorial type",
+          "description": "A Rajasthani-style chhatri (domed pavilion) with a cenotaph inside.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Carving",
+          "description": "A mythical double-headed bird, Gandabherunda, is carved on the back of the cenotaph.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Date built",
+          "description": "1731, built by his son Sambhaji II of Kolhapur.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Behind",
+          "description": "A large cistern, plus the plinth and ruins of a mansion with fine dressed stonework, likely for a noble.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "In front",
+          "description": "Two large tanks.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Above",
+          "description": "A small shrine of Das Maruti along the path above the samadhi. A paved path leads onward to the Tilak bungalow.",
+          "sources": [
+            "S02"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Domed chhatri in Rajasthani style on pillars, with a cenotaph inside, tanks before it and mansion ruins behind."
+      ],
+      "modelling_instructions": [
+        "Model the chhatri, cenotaph with Gandabherunda relief, mansion plinth and ruins, two front tanks and the rear cistern as separate objects.",
+        "Match the chhatri's pillars and dome to PH06; do not reuse any other chhatri.",
+        "Include the Das Maruti shrine and the paved path to the Tilak bungalow."
+      ],
+      "glb_nodes": [
+        "SIN_RS_CHHATRI",
+        "SIN_RS_CENOTAPH",
+        "SIN_RS_MANSIONRUINS",
+        "SIN_RS_TANKS",
+        "SIN_RS_DASMARUTI"
+      ],
+      "collision": "Chhatri platform, pillars, tank edges (fall protection), mansion plinth.",
+      "unknown_do_not_invent": [
+        "Pillar count, dome profile, dimensions",
+        "Cenotaph size and decoration",
+        "Layout of the mansion ruins",
+        "Tank dimensions"
+      ],
+      "site_capture": [
+        "Photograph the chhatri from all sides and inside",
+        "Measure plan, pillars, dome height",
+        "Close-up of the Gandabherunda",
+        "Photograph the mansion plinth and the tanks",
+        "GPS"
+      ],
+      "photo_refs": [
+        "PH06",
+        "PH17"
+      ],
+      "status": "not_started"
+    },
+    {
+      "id": "TB",
+      "order": 11,
+      "name": "Lokmanya Tilak Bungalow",
+      "alt_names": "Tilak bungalow; Tilak Wada (name to verify)",
+      "type": "building",
+      "location_description": "Reached by a paved path from the Rajaram samadhi. Nearby are ruins of another bungalow (S02).",
+      "materials": "UNKNOWN (building form, walls, roof, verandah not described).",
+      "dates": "Owned by Tilak from 1890; building date UNKNOWN.",
+      "tier_target": "T2/T3",
+      "components": [
+        {
+          "name": "History",
+          "description": "Tilak bought it in 1890 from Ramlal Nandaram Naik and stayed there in summers. In 1915 he met Mahatma Gandhi here.",
+          "sources": [
+            "S02",
+            "S01"
+          ]
+        },
+        {
+          "name": "Front",
+          "description": "A statue of Tilak stands in front, flanked by two cannons (S02); another source says a bust at the entrance (S01).",
+          "sources": [
+            "S02",
+            "S01"
+          ]
+        },
+        {
+          "name": "Neighbouring ruin",
+          "description": "Ruins of another bungalow with two more cannons in its premises.",
+          "sources": [
+            "S02"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Historic summer bungalow with a monument to Tilak at the front, two cannons beside it, a paved path leading up to it."
+      ],
+      "modelling_instructions": [
+        "Use PH05 as the only basis for exterior form; build exterior only.",
+        "Statue or bust: model whichever PH05 and the site visit show; flag the conflict.",
+        "Add two cannons at the front and the paved path from the Rajaram samadhi."
+      ],
+      "glb_nodes": [
+        "SIN_TB_BUILDING",
+        "SIN_TB_MONUMENT",
+        "SIN_TB_CANNONS",
+        "SIN_TB_PATH",
+        "SIN_TB_RUIN"
+      ],
+      "collision": "Building solid, plinths, path.",
+      "unknown_do_not_invent": [
+        "Whole building form: storeys, roof, verandah, windows, colour",
+        "Dimensions",
+        "Statue or bust at the front",
+        "Layout of the ruined neighbouring bungalow"
+      ],
+      "site_capture": [
+        "Photograph all elevations",
+        "Measure facade width, height, door and window sizes",
+        "Photograph the monument and cannons",
+        "Photograph the ruined bungalow",
+        "GPS"
+      ],
+      "photo_refs": [
+        "PH05"
+      ],
+      "status": "not_started"
+    },
+    {
+      "id": "WS",
+      "order": 12,
+      "name": "Devtake (Dev Taki) and verified water structures",
+      "alt_names": "Dev Tank; Devtake; Hathi Talav; Ram Talav; cisterns",
+      "type": "tank",
+      "location_description": "Throughout the fort. Dev Tank is reached from the rampart path after the square-pillared cistern and Ram Talav (S02).",
+      "materials": "Rock-cut basalt (expected, confirm) and built stone; Dev Tank edges and the Maruti dome not described in detail.",
+      "dates": "Several are considered ancient (pillared cisterns, cave cisterns) (S02).",
+      "tier_target": "T2/T3",
+      "components": [
+        {
+          "name": "Dev Tank",
+          "description": "The fort's primary drinking-water source, fresh and available all year. In front stands a small domed structure with an idol of Maruti (Hanuman). The source adds a descriptive term, 'Panvati', that could not be interpreted: check on site.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Ram Talav",
+          "description": "The largest of three rock-cut cisterns on the rampart path.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Square-pillared cistern",
+          "description": "Reached down a flight of steps from the rampart.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Hathi Talav",
+          "description": "Large built Elephant Tank in front of the Amruteshwar temple.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Tank cluster",
+          "description": "20 to 22 tanks near the cannon bastion: keyhole-shaped wells, pillared tanks, built reservoirs, underground cisterns, carved step-tanks. None gives drinking water now.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Cliff-edge cisterns",
+          "description": "Five underground rock-cut cisterns near the cliff-edge rampart before Rajaram's samadhi; a large cistern behind the samadhi and two large tanks in front.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Ganesh Tank cluster",
+          "description": "Two tanks behind the Ganesh temple, one pillared.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Gate and bastion cisterns",
+          "description": "Rock-cut cistern before Pune gate 2; two rock-cut quarry cisterns inside the Khadakada section; rock-cut cistern above Tehalni Buruj; a shallow dry tank near Zunjar.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Cave water",
+          "description": "A partly buried cave near the parking area holds water, known as Surunga Pani (mine water).",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Stone troughs and channels",
+          "description": "Carved stone trough near the Kalyan route; two underground cisterns along that path.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Overall count",
+          "description": "More than 50 small and large tanks.",
+          "sources": [
+            "S02"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Rock-cut and built tanks of many types: pillared, keyhole wells, step-tanks, underground cisterns, each with its own edge and access steps."
+      ],
+      "modelling_instructions": [
+        "Create a tank library: pillared cistern, keyhole well, step-tank, underground cistern, built reservoir.",
+        "Instance only where a source or photo shows a specific tank, then edit each one.",
+        "Water: add a simple low-cost water surface for tanks that hold water (Dev Tank). Keep dry tanks dry.",
+        "Add fall protection at tank edges for the walking mode."
+      ],
+      "glb_nodes": [
+        "SIN_WS_DEVTANK",
+        "SIN_WS_RAMTALAV",
+        "SIN_WS_HATHITALAV",
+        "SIN_WS_CLUSTER_nn",
+        "SIN_WS_SQPILLARED"
+      ],
+      "collision": "Tank rims and steps; invisible edge barriers; no collision on water surface.",
+      "unknown_do_not_invent": [
+        "Depth, plan size, water level of each tank",
+        "Exact count and locations",
+        "Details of steps and parapets",
+        "Which tanks are dry and which hold water now"
+      ],
+      "site_capture": [
+        "List and GPS every tank",
+        "Photograph and measure each tank (edges, depth marker, steps)",
+        "Photograph Dev Tank and the Maruti dome",
+        "Mark which tanks have water"
+      ],
+      "photo_refs": [
+        "PH03",
+        "PH17"
+      ],
+      "status": "not_started"
+    },
+    {
+      "id": "ST",
+      "order": 13,
+      "name": "Stone staircases and architectural pathways",
+      "alt_names": "Steps; paved paths; rampart walk",
+      "type": "stairs",
+      "location_description": "Between gates, up to bastions, down to tanks and up to the Kondhaneshwar temple (S02).",
+      "materials": "Stone steps; paved path material not stated.",
+      "dates": "Mixed; unknown.",
+      "tier_target": "T2",
+      "components": [
+        {
+          "name": "Pune gate 1 to 2 stair",
+          "description": "About 20 to 25 steps.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Gate 2 steps",
+          "description": "Steps lead up to the bastion and gate structures.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Kalyan gate 1 to 2 stair",
+          "description": "About 20 to 25 steep steps.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Kalyan gate inner staircase",
+          "description": "A straight staircase leads into the fort interior.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Rampart walk",
+          "description": "A path along the ramparts links bastions and tanks; steps descend from it to the square-pillared cistern.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Steps from cannon bastion",
+          "description": "Steps descend from the bastion opposite Daru Kothar towards the tank cluster.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Steps to Kondhaneshwar",
+          "description": "Steps climb from the Tanaji memorial to the temple.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Zunjar steps",
+          "description": "The steps up to Zunjar Buruj are buried under debris.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Paved paths",
+          "description": "A paved path leads from the Rajaram samadhi to the Tilak bungalow; another paved path runs near the Horse Stables and the Ganesh temple.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Modern road",
+          "description": "Vehicles reach the Pune gate area; modern tarmac and parking exist. Mark as modern.",
+          "sources": [
+            "S01",
+            "S02"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Stone steps with weathered treads, paved paths, steep gate stairs between bastions; modern paving mixed with historic."
+      ],
+      "modelling_instructions": [
+        "Build stairs as separate objects with measured riser and tread values; until measured, use the counts above and place-holders flagged T3.",
+        "Keep the Zunjar steps buried (do not complete them).",
+        "Ensure the stair and slope handling in the walking controller matches the real step height."
+      ],
+      "glb_nodes": [
+        "SIN_ST_PD_G1G2",
+        "SIN_ST_KD_G1G2",
+        "SIN_ST_KD_INNER",
+        "SIN_ST_TO_KT",
+        "SIN_ST_RAMPART_xx",
+        "SIN_ST_PATH_RS_TB"
+      ],
+      "collision": "Per-step or ramp collision proxy for walking; paths as walkable surfaces.",
+      "unknown_do_not_invent": [
+        "Step riser and tread dimensions",
+        "Stair widths, handrails or none",
+        "Which paving is historic",
+        "Coordinates of each flight"
+      ],
+      "site_capture": [
+        "Measure riser, tread and width on 3 steps in each flight",
+        "Count steps in each flight",
+        "Photograph paving and joints",
+        "GPS at top and bottom of each flight"
+      ],
+      "photo_refs": [
+        "PH01",
+        "PH02",
+        "PH17"
+      ],
+      "status": "not_started"
+    },
+    {
+      "id": "OR",
+      "order": 14,
+      "name": "Other documented historical remains",
+      "alt_names": "Horse stables, commandant's mansion, shrines, memorials, Khadakada, etc.",
+      "type": "other",
+      "location_description": "Spread across the fort (S01, S02).",
+      "materials": "Rock-cut basalt (expected), stone masonry, modern concrete for the tower.",
+      "dates": "Mixed; stables possibly ancient (S02).",
+      "tier_target": "T2/T3",
+      "components": [
+        {
+          "name": "Horse Stables (rock-cut caves)",
+          "description": "Not a stable but a partly excavated ancient cave complex with pillars and a veranda. Eight cisterns have formed in it; holes in the outer rock show where wooden roof pillars may have stood. A cistern is in front; three smaller unfinished caves further on, also water-filled.",
+          "sources": [
+            "S02",
+            "S17"
+          ]
+        },
+        {
+          "name": "Commandant's mansion remains",
+          "description": "Portions of surrounding walls and two arches survive. Its main entrance is near the Tanaji memorial path.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Hanuman shrines",
+          "description": "Two small domed shrines, each with a Hanuman idol, beside the commandant's mansion. A Kali temple with a Hanuman statue is also mentioned (S01).",
+          "sources": [
+            "S02",
+            "S01"
+          ]
+        },
+        {
+          "name": "Das Maruti shrine",
+          "description": "Small shrine above Rajaram's samadhi.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Narasimha temple",
+          "description": "Ruined temple near the tank cluster.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Ganesh temple",
+          "description": "Small temple with idols of Ganesha and Hanuman; Ganesh Tank behind it.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Lakshmi temple site",
+          "description": "Red-ochre-smeared stones mark a former Lakshmi temple.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Sati-stone dome",
+          "description": "A small dome on a platform holds a sati stone with a hand bearing bangles; next to it is a warrior-on-horse sculpture. Tourists wrongly call it 'Tanaji's Hand'.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Udebhan Rathod memorial",
+          "description": "A modest platform on a small hillock above the Tehalni Buruj, with scattered ruins.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Kalki Met",
+          "description": "Ruins of large structures and dwellings on the spur below Zunjar Buruj.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Khadakada section",
+          "description": "Detached cliff section with two large dry rock-cut cisterns, enclosed by ramparts.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "Cannons",
+          "description": "Six cannons on the fort, including a 6-foot cannon on a cart on the bastion opposite Daru Kothar, and cannons at the Tilak bungalow.",
+          "sources": [
+            "S02"
+          ]
+        },
+        {
+          "name": "TV relay tower",
+          "description": "Modern tower set up in 1973. Optional modern landmark.",
+          "sources": [
+            "S01"
+          ]
+        },
+        {
+          "name": "Lost buildings",
+          "description": "Jawahir Khana, Ratna Shala and Rajwada were listed in an 1876 advertisement; no remains described. Do not model.",
+          "sources": [
+            "S03"
+          ]
+        }
+      ],
+      "appearance_notes": [
+        "Caves with pillars and verandah (horse stables), ruined mansion arches, small domed shrines, memorial platforms, a sati-stone dome."
+      ],
+      "modelling_instructions": [
+        "Make each item a separate asset with its own record. Start with the Horse Stables (best documented), then the commandant's mansion remains, shrines and memorials.",
+        "Do not rebuild lost buildings. Leave ruins as ruins.",
+        "TV tower is optional and modern: add it last if visible from walking routes."
+      ],
+      "glb_nodes": [
+        "SIN_OR_HORSESTABLES",
+        "SIN_OR_COMMANDANT",
+        "SIN_OR_SHRINES",
+        "SIN_OR_SATISTONE",
+        "SIN_OR_UDEBHAN",
+        "SIN_OR_KALKIMET",
+        "SIN_OR_KHADAKADA",
+        "SIN_OR_CANNONS"
+      ],
+      "collision": "Per asset; cave floors walkable; ruins as solid mass with gaps only where visible.",
+      "unknown_do_not_invent": [
+        "Dimensions of everything",
+        "Exact positions",
+        "Whether the Kali temple is still present and where",
+        "Brewery location (S01 mentions it)"
+      ],
+      "site_capture": [
+        "List other remains found, with GPS",
+        "Photograph and measure each",
+        "Confirm whether Kali temple and brewery still exist"
+      ],
+      "photo_refs": [
+        "PH03",
+        "PH12",
+        "PH17"
+      ],
+      "status": "not_started"
+    }
+  ]
+}

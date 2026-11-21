@@ -27,7 +27,7 @@ function isOriginAllowed(origin: string, host: string): boolean {
 
 const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://*.firebaseapp.com https://*.googleapis.com https://apis.google.com https://www.googletagmanager.com",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.firebaseapp.com https://*.googleapis.com https://apis.google.com https://www.googletagmanager.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com data:",
   "img-src 'self' data: blob: https: https://*.tile.openstreetmap.org https://tile.openstreetmap.org https://*.openstreetmap.org https://commons.wikimedia.org https://upload.wikimedia.org https://maps.gstatic.com https://*.googleapis.com https://*.google.com https://*.arcgisonline.com https://server.arcgisonline.com https://services.arcgisonline.com https://s3.amazonaws.com https://tiles.openfreemap.org https://*.openfreemap.org",

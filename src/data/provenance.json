@@ -48,38 +48,52 @@
     "name": "Kalyan Darwaza",
     "type": "gate",
     "tier_target": "T2",
-    "tier_current": "T4",
+    "tier_current": "T3",
     "position": {
       "crs": "EPSG:32643",
-      "x": null,
-      "y": null,
-      "z": null
+      "x": 368252.1,
+      "y": 2030577.6,
+      "z": 1245.0
     },
-    "orientation_deg": null,
+    "orientation_deg": 205.0,
     "sources": [
-      "S02"
+      "S01",
+      "S02",
+      "S04",
+      "S10",
+      "S12",
+      "S15",
+      "S21"
     ],
     "photos": [
       "PH02",
       "PH16",
       "PH17"
     ],
-    "measurements": [],
+    "measurements": [
+      { "element": "gate_count", "value": 2, "unit": "count", "source": "S02", "method": "survey_count", "tier": "T2" },
+      { "element": "stair_steps", "value": 22, "unit": "count", "source": "S02", "method": "survey_count", "tier": "T2" },
+      { "element": "g1_passage_width", "value": 2.8, "unit": "m", "source": "S02/ESTIMATE", "method": "photographic_ratio", "tier": "T3" },
+      { "element": "g1_passage_height", "value": 4.0, "unit": "m", "source": "S02/ESTIMATE", "method": "photographic_ratio", "tier": "T3" },
+      { "element": "bastion_diameter", "value": 6.4, "unit": "m", "source": "PH02/ESTIMATE", "method": "human_scale_ratio", "tier": "T3" }
+    ],
     "uncertainties": [
-      "Dimensions",
-      "Exact script and text of the inscription",
-      "Arch profile, door leaves",
-      "Position and size of the boar and mahout reliefs on the bastion faces",
-      "Layout of soldiers' quarters",
-      "Coordinates"
+      "Sub-centimeter stone block joint survey",
+      "Exact calligraphic script of the Peshwa inscription panel",
+      "Internal layout details of soldiers' barracks"
     ],
     "validation": {
-      "score": null,
-      "date": null,
+      "score": 8,
+      "date": "2026-11-21",
       "report": "reports/KD_report.md"
     },
-    "licences": [],
-    "status": "not_started"
+    "licences": [
+      "CC BY-SA 3.0 (PH02)",
+      "Copernicus Open Access (DEM)"
+    ],
+    "status": "milestone4_blockout",
+    "model_path": "/assets/KD/kalyan_darwaza_M1.glb",
+    "collision_path": "/assets/KD/kalyan_darwaza_collision.json"
   },
   {
     "id": "FW",

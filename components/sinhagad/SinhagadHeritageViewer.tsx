@@ -54,7 +54,7 @@ export default function SinhagadHeritageViewer() {
     heading: 45,
   });
   const [showInfoCard, setShowInfoCard] = useState(false);
-  const [activeStructure, setActiveStructure] = useState<'PD' | 'TERRAIN' | null>('PD');
+  const [activeStructure, setActiveStructure] = useState<'PD' | 'KD' | 'TERRAIN'>('PD');
   const [soundEnabled, setSoundEnabled] = useState(false);
 
   // Audio Context Ref
@@ -102,6 +102,40 @@ export default function SinhagadHeritageViewer() {
     stateRef.current.vel.set(0, 0, 0);
   }, []);
 
+  // Viewpoint Jump between Gates
+  const jumpToStructure = useCallback((target: 'PD' | 'KD') => {
+    const X0 = 368495.5;
+    const Y0 = 2031092.1;
+    const Z0 = 1307.3;
+    if (target === 'PD') {
+      stateRef.current.pos.set(180.0, -80.0, -205.0);
+      stateRef.current.safePos.set(180.0, -80.0, -205.0);
+      stateRef.current.yaw = Math.PI * 0.75;
+      stateRef.current.pitch = 0.15;
+      setActiveStructure('PD');
+      setTelemetry({
+        easting: Math.round((X0 + 180.0) * 10) / 10,
+        northing: Math.round((Y0 - (-205.0)) * 10) / 10,
+        elevation: Math.round((Z0 - 80.0) * 10) / 10,
+        speed: 0.0,
+        heading: (Math.round((-(Math.PI * 0.75 * 180) / Math.PI) % 360) + 360) % 360,
+      });
+    } else if (target === 'KD') {
+      stateRef.current.pos.set(-248.0, -66.0, 526.0);
+      stateRef.current.safePos.set(-248.0, -66.0, 526.0);
+      stateRef.current.yaw = 0.35;
+      stateRef.current.pitch = 0.15;
+      setActiveStructure('KD');
+      setTelemetry({
+        easting: Math.round((X0 - 248.0) * 10) / 10,
+        northing: Math.round((Y0 - 526.0) * 10) / 10,
+        elevation: Math.round((Z0 - 66.0) * 10) / 10,
+        speed: 0.0,
+        heading: (Math.round((-(0.35 * 180) / Math.PI) % 360) + 360) % 360,
+      });
+    }
+  }, []);
+
   useEffect(() => {
     const container = mountRef.current;
     if (!container) return;
@@ -137,7 +171,7 @@ export default function SinhagadHeritageViewer() {
 
     // 3. Collision Hulls for Architecture (Bastions and walls)
     // Pune Darwaza Bastions:
-    const bastions = [
+    const pdBastions = [
       // Gate 1 bastions
       { cx: 150 - 4.5 * Math.cos(0.7), cz: -170 - 4.5 * Math.sin(0.7), radius: 3.5 },
       { cx: 150 + 4.5 * Math.cos(0.7), cz: -170 + 4.5 * Math.sin(0.7), radius: 3.5 },
@@ -148,12 +182,21 @@ export default function SinhagadHeritageViewer() {
       { cx: 110 - 4.8 * Math.cos(0.7), cz: -120 - 4.8 * Math.sin(0.7), radius: 3.8 },
       { cx: 110 + 4.8 * Math.cos(0.7), cz: -120 + 4.8 * Math.sin(0.7), radius: 3.8 },
     ];
-    stateRef.current.colliders.circles = bastions;
+
+    // Kalyan Darwaza Bastions:
+    const kdBastions = [
+      { cx: -243.4 - 4.4 * Math.cos(0.436), cz: 514.5 - 4.4 * Math.sin(0.436), radius: 3.4 },
+      { cx: -243.4 + 4.4 * Math.cos(0.436), cz: 514.5 + 4.4 * Math.sin(0.436), radius: 3.4 },
+      { cx: -235.0 - 4.2 * Math.cos(0.436), cz: 494.5 - 4.2 * Math.sin(0.436), radius: 3.2 },
+      { cx: -235.0 + 4.2 * Math.cos(0.436), cz: 494.5 + 4.2 * Math.sin(0.436), radius: 3.2 },
+    ];
+
+    stateRef.current.colliders.circles = [...pdBastions, ...kdBastions];
 
     // 4. Load Data Assets
     const loader = new GLTFLoader();
     let loadedCount = 0;
-    const totalAssets = 3;
+    const totalAssets = 4;
 
     const checkLoading = () => {
       loadedCount++;
@@ -223,6 +266,32 @@ export default function SinhagadHeritageViewer() {
       undefined,
       (err) => {
         console.error('Error loading Pune Darwaza GLB:', err);
+        checkLoading();
+      }
+    );
+
+    // Load Kalyan Darwaza GLB
+    loader.load(
+      '/assets/KD/kalyan_darwaza_M1.glb',
+      (gltf) => {
+        gltf.scene.traverse((child) => {
+          if ((child as THREE.Mesh).isMesh) {
+            const mesh = child as THREE.Mesh;
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+            if (mesh.material) {
+              const mat = mesh.material as THREE.MeshStandardMaterial;
+              mat.roughness = 0.82;
+              mat.metalness = 0.08;
+            }
+          }
+        });
+        scene.add(gltf.scene);
+        checkLoading();
+      },
+      undefined,
+      (err) => {
+        console.error('Error loading Kalyan Darwaza GLB:', err);
         checkLoading();
       }
     );
@@ -377,7 +446,7 @@ export default function SinhagadHeritageViewer() {
       }
 
       // Safe position tracking & fall protection
-      if (stateRef.current.pos.y > -150) {
+      if (stateRef.current.pos.y > -450) {
         stateRef.current.safePos.copy(stateRef.current.pos);
       } else {
         // Auto respawn if fell off mountain
@@ -413,9 +482,12 @@ export default function SinhagadHeritageViewer() {
         heading: headingDeg,
       });
 
-      // Proximity check to Pune Darwaza Gate 1 (150, -57.3, -170)
+      // Proximity check to Pune Darwaza Gate 1 (150, -57.3, -170) and Kalyan Darwaza (-243.4, -64.6, 514.5)
       const distToPD = Math.hypot(stateRef.current.pos.x - 150.0, stateRef.current.pos.z - (-170.0));
-      if (distToPD < 28.0) {
+      const distToKD = Math.hypot(stateRef.current.pos.x - (-243.4), stateRef.current.pos.z - 514.5);
+      if (distToKD < 36.0) {
+        setActiveStructure('KD');
+      } else if (distToPD < 36.0) {
         setActiveStructure('PD');
       }
 
@@ -484,7 +556,7 @@ export default function SinhagadHeritageViewer() {
       )}
 
       {/* Top Telemetry & Compass Bar */}
-      <div className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-3 pointer-events-none z-20">
+      <div className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-3 pointer-events-none z-40">
         <div className="bg-slate-900/85 backdrop-blur-md border border-slate-700/80 rounded-xl px-4 py-2.5 shadow-xl flex items-center gap-4 text-white">
           <div className="flex items-center gap-2">
             <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -501,6 +573,28 @@ export default function SinhagadHeritageViewer() {
 
         {/* Right HUD Controls & Actions */}
         <div className="flex items-center gap-2 pointer-events-auto">
+          {/* Quick Viewpoint Switcher */}
+          <div className="flex items-center bg-slate-900/85 border border-slate-700/80 rounded-xl p-0.5 shadow-lg text-xs">
+            <button
+              onClick={() => jumpToStructure('PD')}
+              className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
+                activeStructure === 'PD' ? 'bg-amber-500 text-slate-950 font-bold shadow' : 'text-slate-300 hover:text-white'
+              }`}
+              title="Jump to Pune Darwaza Approach"
+            >
+              Pune Gate
+            </button>
+            <button
+              onClick={() => jumpToStructure('KD')}
+              className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
+                activeStructure === 'KD' ? 'bg-amber-500 text-slate-950 font-bold shadow' : 'text-slate-300 hover:text-white'
+              }`}
+              title="Jump to Kalyan Darwaza Approach"
+            >
+              Kalyan Gate
+            </button>
+          </div>
+
           <button
             onClick={() => setShowInfoCard((prev) => !prev)}
             className="flex items-center gap-2 px-3 py-2 bg-slate-900/85 hover:bg-slate-800 text-amber-300 border border-amber-500/40 rounded-xl text-xs font-medium shadow-lg transition-all"
@@ -549,11 +643,13 @@ export default function SinhagadHeritageViewer() {
         </div>
       )}
 
-      {/* Proximity Prompt to Pune Darwaza */}
-      {isLocked && activeStructure === 'PD' && !showInfoCard && (
+      {/* Proximity Prompt to Gate */}
+      {isLocked && (activeStructure === 'PD' || activeStructure === 'KD') && !showInfoCard && (
         <div className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-slate-900/90 border border-amber-500/60 rounded-xl px-4 py-2 text-white shadow-xl flex items-center gap-3 z-20 animate-fade-in">
           <MapPin className="w-4 h-4 text-amber-400" />
-          <span className="text-xs font-medium">Approaching <strong className="text-amber-300">Pune Darwaza</strong></span>
+          <span className="text-xs font-medium">
+            Approaching <strong className="text-amber-300">{activeStructure === 'KD' ? 'Kalyan Darwaza' : 'Pune Darwaza'}</strong>
+          </span>
           <button
             onClick={() => setShowInfoCard(true)}
             className="text-[11px] bg-amber-500 text-slate-950 font-bold px-2 py-0.5 rounded hover:bg-amber-400"
@@ -565,7 +661,7 @@ export default function SinhagadHeritageViewer() {
 
       {/* Landmark Information Slide-in Dossier */}
       {showInfoCard && (
-        <aside className="absolute top-16 right-4 bottom-4 w-96 max-w-[calc(100vw-2rem)] bg-slate-900/95 backdrop-blur-xl border border-amber-500/30 rounded-2xl shadow-2xl flex flex-col z-40 overflow-hidden text-white transition-all">
+        <aside className="absolute top-16 right-4 bottom-4 w-96 max-w-[calc(100vw-2rem)] bg-slate-900/95 backdrop-blur-xl border border-amber-500/30 rounded-2xl shadow-2xl flex flex-col z-50 overflow-hidden text-white transition-all">
           {/* Header */}
           <div className="p-4 border-b border-slate-800 flex items-start justify-between bg-gradient-to-r from-amber-950/40 to-slate-900">
             <div>
@@ -576,8 +672,12 @@ export default function SinhagadHeritageViewer() {
                 </span>
                 <span className="text-[10px] text-slate-400 font-mono">CRS: EPSG:32643</span>
               </div>
-              <h3 className="text-lg font-bold text-white leading-tight">Pune Darwaza</h3>
-              <p className="text-xs text-slate-400">Three Sequential Fortified Gateways</p>
+              <h3 className="text-lg font-bold text-white leading-tight">
+                {activeStructure === 'KD' ? 'Kalyan Darwaza' : 'Pune Darwaza'}
+              </h3>
+              <p className="text-xs text-slate-400">
+                {activeStructure === 'KD' ? 'Two Sequential Gates • Konkan Valley Route' : 'Three Sequential Fortified Gateways'}
+              </p>
             </div>
             <button
               onClick={() => setShowInfoCard(false)}
@@ -587,64 +687,166 @@ export default function SinhagadHeritageViewer() {
             </button>
           </div>
 
+          {/* Dossier Structure Switcher Tabs */}
+          <div className="flex border-b border-slate-800 bg-slate-950/60 p-1.5 gap-1.5 text-xs">
+            <button
+              onClick={() => setActiveStructure('PD')}
+              className={`flex-1 py-1.5 rounded-lg font-medium text-center transition-all ${
+                activeStructure === 'PD'
+                  ? 'bg-amber-500 text-slate-950 font-bold shadow'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              Pune Darwaza
+            </button>
+            <button
+              onClick={() => setActiveStructure('KD')}
+              className={`flex-1 py-1.5 rounded-lg font-medium text-center transition-all ${
+                activeStructure === 'KD'
+                  ? 'bg-amber-500 text-slate-950 font-bold shadow'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              Kalyan Darwaza
+            </button>
+          </div>
+
           {/* Scrollable Content */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4 text-xs text-slate-300 leading-relaxed">
-            {/* Defensive Architecture Overview */}
-            <section className="bg-slate-800/50 p-3 rounded-xl border border-slate-700/60">
-              <h4 className="font-semibold text-amber-300 mb-1.5 flex items-center gap-1.5">
-                <Compass className="w-3.5 h-3.5 text-amber-400" />
-                Defensive Layout & Siting
-              </h4>
-              <p>
-                Pune Darwaza guards the northeastern escarpment of Sinhagad above the sheer Khadakada cliffs.
-                Unlike fantasy gateways, it comprises a strategic chain of <strong>three ascending gates</strong> built
-                between rounded basalt bastions to prevent head-on artillery assaults.
-              </p>
-            </section>
+            {activeStructure === 'KD' ? (
+              <>
+                {/* Kalyan Darwaza Overview */}
+                <section className="bg-slate-800/50 p-3 rounded-xl border border-slate-700/60">
+                  <h4 className="font-semibold text-amber-300 mb-1.5 flex items-center gap-1.5">
+                    <Compass className="w-3.5 h-3.5 text-amber-400" />
+                    Defensive Siting & Strategic Role
+                  </h4>
+                  <p>
+                    Kalyan Darwaza (also known as Konkan Darwaza) guards the south-southwest spur of Sinhagad Fort,
+                    facing the Konkan descent and the village of Kalyan / Kondhanpur. It features two sequential arched gateways
+                    enclosed by stone curtain walls in a rising tactical battle formation.
+                  </p>
+                </section>
 
-            {/* Structure Components Breakdown */}
-            <section className="space-y-2">
-              <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400/90">
-                Components & Surviving Evidence
-              </h4>
-              <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                <strong className="text-amber-200">1. Gate 1 (Outer Gate):</strong> Flanked by two 6m bastions. Features two weathered <em>Sharabha</em> (mythical predator) relief carvings on the spandrels.
-              </div>
-              <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                <strong className="text-amber-200">2. Stone Staircase (22 Steps):</strong> Climbs 16m horizontally and 4m vertically from Gate 1 to Gate 2, flanked by the Khadakada rampart wall.
-              </div>
-              <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                <strong className="text-amber-200">3. Rock-Cut Cistern:</strong> Perennial water reservoir carved directly into the living basalt cliff face on the left flank before Gate 2.
-              </div>
-              <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                <strong className="text-amber-200">4. Gate 2 (Middle Gate):</strong> Solid repaired ashlar masonry gateway between bastions with upper battery access.
-              </div>
-              <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                <strong className="text-amber-200">5. Gate 3 (Inner Gate):</strong> The primary historic citadel threshold featuring a sacred lotus motif and festoon carving on the doorway lintel, flanked by two guard rooms.
-              </div>
-            </section>
+                {/* Inscription & Historic Dating */}
+                <section className="bg-amber-950/20 p-3 rounded-xl border border-amber-500/30">
+                  <h4 className="font-semibold text-amber-300 mb-1">
+                    Nanasaheb Peshwa Inscription (1750 CE)
+                  </h4>
+                  <p className="text-slate-300">
+                    A documented stone inscription panel above the Gate 1 arch records that the gateway was built or repaired
+                    during the tenure of <strong>Shrimant Balaji Bajirao (Nanasaheb) Peshwa</strong> in the year
+                    <strong>Shalivahan Shaka 1672 (~1750 CE)</strong>.
+                  </p>
+                </section>
 
-            {/* Sourced Provenance Register */}
-            <section className="bg-slate-800/40 p-3 rounded-xl border border-slate-700/60 space-y-1.5">
-              <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400">
-                Documented Evidence & Sources
-              </h4>
-              <ul className="list-disc list-inside space-y-1 text-slate-300">
-                <li><strong>S02:</strong> Durgbharari Survey (Suresh Nimbalkar, 2022)</li>
-                <li><strong>S04:</strong> Maharashtra Tourism Official Monograph</li>
-                <li><strong>S21:</strong> Valentine Blacker 1818 British Siege Survey Plan</li>
-                <li><strong>PH01, PH10, PH15:</strong> Wikimedia Commons & Archival photographic series</li>
-              </ul>
-            </section>
+                {/* Structure Components Breakdown */}
+                <section className="space-y-2">
+                  <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400/90">
+                    Components & Surviving Evidence
+                  </h4>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">1. Gate 1 (Outer Kalyan Gate):</strong> Arched entrance flanked by two solid round bastions. Spandrels feature two carved lotus medallions and a weathered festoon lintel.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">2. Bastion Reliefs (Boar & Mahout):</strong> One flanking bastion face displays a prominent carved boar (*Varaha*), while the opposite bastion displays a mahout mounted atop an elephant.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">3. Stone Staircase (22 Steps):</strong> A steep flight of 20–25 stone steps ascending between parallel fortified rampart walls to Gate 2.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">4. Flanking Guardroom:</strong> A stone guardroom built inside the rampart wall near Gate 1 for sentries.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">5. Gate 2 (Inner Kalyan Gate):</strong> Upper fortified gateway between bastions giving direct access to the interior plateau.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">6. Soldiers' Quarters & Inner Stair:</strong> Barracks along the interior ramparts and a straight stone flight entering the fort plateau towards Tehalni Buruj.
+                  </div>
+                </section>
 
-            {/* Uncertainty Notice */}
-            <section className="p-3 rounded-xl bg-amber-950/20 border border-amber-500/30 text-[11px] text-amber-200/90">
-              <p className="font-semibold text-amber-400 mb-1 flex items-center gap-1">
-                <Info className="w-3.5 h-3.5" />
-                Scientific Honesty Notice:
-              </p>
-              This structure is certified as <strong>Tier T3</strong>. While gate sequences, step counts, and bastion positions are verified from multi-angle photographs and literature, millimeter-accurate passage widths and stone block joints await an official on-site laser distance measurement campaign.
-            </section>
+                {/* Sourced Provenance Register */}
+                <section className="bg-slate-800/40 p-3 rounded-xl border border-slate-700/60 space-y-1.5">
+                  <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400">
+                    Documented Evidence & Sources
+                  </h4>
+                  <ul className="list-disc list-inside space-y-1 text-slate-300">
+                    <li><strong>S01:</strong> Survey of India 1:50,000 Sheet 47F/15</li>
+                    <li><strong>S02:</strong> Durgbharari Survey (Suresh Nimbalkar, 2022)</li>
+                    <li><strong>S04:</strong> Maharashtra Tourism Official Monograph</li>
+                    <li><strong>S10:</strong> Gazetteer of Bombay Presidency: Poona (1885)</li>
+                    <li><strong>S12:</strong> Columbia University Routes (Fran Pritchett, 2007)</li>
+                    <li><strong>S21:</strong> Valentine Blacker 1818 British Siege Plan</li>
+                    <li><strong>PH02:</strong> Wikimedia Commons (Ashok Bagal, 2012, CC BY-SA 3.0)</li>
+                    <li><strong>PH16:</strong> Flickr Archive (Himanshu Sarpotdar, 2007)</li>
+                  </ul>
+                </section>
+
+                {/* Uncertainty Notice */}
+                <section className="p-3 rounded-xl bg-amber-950/20 border border-amber-500/30 text-[11px] text-amber-200/90">
+                  <p className="font-semibold text-amber-400 mb-1 flex items-center gap-1">
+                    <Info className="w-3.5 h-3.5" />
+                    Scientific Honesty Notice:
+                  </p>
+                  Certified at <strong>Tier T3</strong>. Gate counts, step numbers, Peshwa inscription record, and animal relief carvings are rigorously evidenced from historical sources and photography; internal soldiers quarters layout and sub-centimeter stone joint geometry await on-site laser distance surveying.
+                </section>
+              </>
+            ) : (
+              <>
+                {/* Pune Darwaza Content */}
+                <section className="bg-slate-800/50 p-3 rounded-xl border border-slate-700/60">
+                  <h4 className="font-semibold text-amber-300 mb-1.5 flex items-center gap-1.5">
+                    <Compass className="w-3.5 h-3.5 text-amber-400" />
+                    Defensive Layout & Siting
+                  </h4>
+                  <p>
+                    Pune Darwaza guards the northeastern escarpment of Sinhagad above the sheer Khadakada cliffs.
+                    It comprises a strategic chain of <strong>three ascending gates</strong> built between rounded basalt bastions to prevent head-on artillery assaults.
+                  </p>
+                </section>
+
+                <section className="space-y-2">
+                  <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400/90">
+                    Components & Surviving Evidence
+                  </h4>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">1. Gate 1 (Outer Gate):</strong> Flanked by two 6m bastions. Features two weathered <em>Sharabha</em> (mythical predator) relief carvings on the spandrels.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">2. Stone Staircase (22 Steps):</strong> Climbs 16m horizontally and 4m vertically from Gate 1 to Gate 2, flanked by the Khadakada rampart wall.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">3. Rock-Cut Cistern:</strong> Perennial water reservoir carved directly into the living basalt cliff face on the left flank before Gate 2.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">4. Gate 2 (Middle Gate):</strong> Solid repaired ashlar masonry gateway between bastions with upper battery access.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">5. Gate 3 (Inner Gate):</strong> The primary historic citadel threshold featuring a sacred lotus motif and festoon carving on the doorway lintel, flanked by two guard rooms.
+                  </div>
+                </section>
+
+                <section className="bg-slate-800/40 p-3 rounded-xl border border-slate-700/60 space-y-1.5">
+                  <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400">
+                    Documented Evidence & Sources
+                  </h4>
+                  <ul className="list-disc list-inside space-y-1 text-slate-300">
+                    <li><strong>S02:</strong> Durgbharari Survey (Suresh Nimbalkar, 2022)</li>
+                    <li><strong>S04:</strong> Maharashtra Tourism Official Monograph</li>
+                    <li><strong>S21:</strong> Valentine Blacker 1818 British Siege Survey Plan</li>
+                    <li><strong>PH01, PH10, PH15:</strong> Wikimedia Commons & Archival photographic series</li>
+                  </ul>
+                </section>
+
+                <section className="p-3 rounded-xl bg-amber-950/20 border border-amber-500/30 text-[11px] text-amber-200/90">
+                  <p className="font-semibold text-amber-400 mb-1 flex items-center gap-1">
+                    <Info className="w-3.5 h-3.5" />
+                    Scientific Honesty Notice:
+                  </p>
+                  Certified at <strong>Tier T3</strong>. Gate sequences, step counts, and bastion positions are verified from multi-angle photographs and literature; millimeter-accurate passage widths await an official on-site laser distance measurement campaign.
+                </section>
+              </>
+            )}
           </div>
         </aside>
       )}
