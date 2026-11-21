@@ -54,7 +54,7 @@ export default function SinhagadHeritageViewer() {
     heading: 45,
   });
   const [showInfoCard, setShowInfoCard] = useState(false);
-  const [activeStructure, setActiveStructure] = useState<'PD' | 'KD' | 'TERRAIN'>('PD');
+  const [activeStructure, setActiveStructure] = useState<'PD' | 'KD' | 'FW' | 'TERRAIN'>('PD');
   const [soundEnabled, setSoundEnabled] = useState(false);
 
   // Audio Context Ref
@@ -102,8 +102,8 @@ export default function SinhagadHeritageViewer() {
     stateRef.current.vel.set(0, 0, 0);
   }, []);
 
-  // Viewpoint Jump between Gates
-  const jumpToStructure = useCallback((target: 'PD' | 'KD') => {
+  // Viewpoint Jump between Gates and Key Structures
+  const jumpToStructure = useCallback((target: 'PD' | 'KD' | 'FW') => {
     const X0 = 368495.5;
     const Y0 = 2031092.1;
     const Z0 = 1307.3;
@@ -132,6 +132,20 @@ export default function SinhagadHeritageViewer() {
         elevation: Math.round((Z0 - 66.0) * 10) / 10,
         speed: 0.0,
         heading: (Math.round((-(0.35 * 180) / Math.PI) % 360) + 360) % 360,
+      });
+    } else if (target === 'FW') {
+      // Jump to Khadakada Rampart overlook near Pune gate approach
+      stateRef.current.pos.set(168.0, -56.0, -145.0);
+      stateRef.current.safePos.set(168.0, -56.0, -145.0);
+      stateRef.current.yaw = Math.PI * 0.45;
+      stateRef.current.pitch = 0.1;
+      setActiveStructure('FW');
+      setTelemetry({
+        easting: Math.round((X0 + 168.0) * 10) / 10,
+        northing: Math.round((Y0 - (-145.0)) * 10) / 10,
+        elevation: Math.round((Z0 - 56.0) * 10) / 10,
+        speed: 0.0,
+        heading: (Math.round((-(Math.PI * 0.45 * 180) / Math.PI) % 360) + 360) % 360,
       });
     }
   }, []);
@@ -196,7 +210,7 @@ export default function SinhagadHeritageViewer() {
     // 4. Load Data Assets
     const loader = new GLTFLoader();
     let loadedCount = 0;
-    const totalAssets = 4;
+    const totalAssets = 5;
 
     const checkLoading = () => {
       loadedCount++;
@@ -292,6 +306,32 @@ export default function SinhagadHeritageViewer() {
       undefined,
       (err) => {
         console.error('Error loading Kalyan Darwaza GLB:', err);
+        checkLoading();
+      }
+    );
+
+    // Load Fortification Walls GLB
+    loader.load(
+      '/assets/FW/fortification_walls_M1.glb',
+      (gltf) => {
+        gltf.scene.traverse((child) => {
+          if ((child as THREE.Mesh).isMesh) {
+            const mesh = child as THREE.Mesh;
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+            if (mesh.material) {
+              const mat = mesh.material as THREE.MeshStandardMaterial;
+              mat.roughness = 0.85;
+              mat.metalness = 0.05;
+            }
+          }
+        });
+        scene.add(gltf.scene);
+        checkLoading();
+      },
+      undefined,
+      (err) => {
+        console.error('Error loading Fortification Walls GLB:', err);
         checkLoading();
       }
     );
@@ -482,10 +522,13 @@ export default function SinhagadHeritageViewer() {
         heading: headingDeg,
       });
 
-      // Proximity check to Pune Darwaza Gate 1 (150, -57.3, -170) and Kalyan Darwaza (-243.4, -64.6, 514.5)
+      // Proximity check to Pune Darwaza Gate 1 (150, -57.3, -170), Kalyan Darwaza (-243.4, -64.6, 514.5), and Khadakada Rampart (168, -55.5, -145)
       const distToPD = Math.hypot(stateRef.current.pos.x - 150.0, stateRef.current.pos.z - (-170.0));
       const distToKD = Math.hypot(stateRef.current.pos.x - (-243.4), stateRef.current.pos.z - 514.5);
-      if (distToKD < 36.0) {
+      const distToFW = Math.hypot(stateRef.current.pos.x - 168.0, stateRef.current.pos.z - (-145.0));
+      if (distToFW < 30.0) {
+        setActiveStructure('FW');
+      } else if (distToKD < 36.0) {
         setActiveStructure('KD');
       } else if (distToPD < 36.0) {
         setActiveStructure('PD');
@@ -593,6 +636,15 @@ export default function SinhagadHeritageViewer() {
             >
               Kalyan Gate
             </button>
+            <button
+              onClick={() => jumpToStructure('FW')}
+              className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
+                activeStructure === 'FW' ? 'bg-amber-500 text-slate-950 font-bold shadow' : 'text-slate-300 hover:text-white'
+              }`}
+              title="Jump to Fortification Ramparts Overlook"
+            >
+              Ramparts
+            </button>
           </div>
 
           <button
@@ -644,11 +696,13 @@ export default function SinhagadHeritageViewer() {
       )}
 
       {/* Proximity Prompt to Gate */}
-      {isLocked && (activeStructure === 'PD' || activeStructure === 'KD') && !showInfoCard && (
+      {isLocked && (activeStructure === 'PD' || activeStructure === 'KD' || activeStructure === 'FW') && !showInfoCard && (
         <div className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-slate-900/90 border border-amber-500/60 rounded-xl px-4 py-2 text-white shadow-xl flex items-center gap-3 z-20 animate-fade-in">
           <MapPin className="w-4 h-4 text-amber-400" />
           <span className="text-xs font-medium">
-            Approaching <strong className="text-amber-300">{activeStructure === 'KD' ? 'Kalyan Darwaza' : 'Pune Darwaza'}</strong>
+            Approaching <strong className="text-amber-300">
+              {activeStructure === 'KD' ? 'Kalyan Darwaza' : activeStructure === 'FW' ? 'Fortification Ramparts' : 'Pune Darwaza'}
+            </strong>
           </span>
           <button
             onClick={() => setShowInfoCard(true)}
@@ -673,10 +727,14 @@ export default function SinhagadHeritageViewer() {
                 <span className="text-[10px] text-slate-400 font-mono">CRS: EPSG:32643</span>
               </div>
               <h3 className="text-lg font-bold text-white leading-tight">
-                {activeStructure === 'KD' ? 'Kalyan Darwaza' : 'Pune Darwaza'}
+                {activeStructure === 'KD' ? 'Kalyan Darwaza' : activeStructure === 'FW' ? 'Fortification Walls & Ramparts' : 'Pune Darwaza'}
               </h3>
               <p className="text-xs text-slate-400">
-                {activeStructure === 'KD' ? 'Two Sequential Gates • Konkan Valley Route' : 'Three Sequential Fortified Gateways'}
+                {activeStructure === 'KD'
+                  ? 'Two Sequential Gates • Konkan Valley Route'
+                  : activeStructure === 'FW'
+                  ? 'Khadakada Enclosure • Daru Kothar Wall • Tanaji Kada'
+                  : 'Three Sequential Fortified Gateways'}
               </p>
             </div>
             <button
@@ -697,7 +755,7 @@ export default function SinhagadHeritageViewer() {
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Pune Darwaza
+              Pune Gate
             </button>
             <button
               onClick={() => setActiveStructure('KD')}
@@ -707,7 +765,17 @@ export default function SinhagadHeritageViewer() {
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              Kalyan Darwaza
+              Kalyan Gate
+            </button>
+            <button
+              onClick={() => setActiveStructure('FW')}
+              className={`flex-1 py-1.5 rounded-lg font-medium text-center transition-all ${
+                activeStructure === 'FW'
+                  ? 'bg-amber-500 text-slate-950 font-bold shadow'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              Ramparts
             </button>
           </div>
 
@@ -789,6 +857,76 @@ export default function SinhagadHeritageViewer() {
                     Scientific Honesty Notice:
                   </p>
                   Certified at <strong>Tier T3</strong>. Gate counts, step numbers, Peshwa inscription record, and animal relief carvings are rigorously evidenced from historical sources and photography; internal soldiers quarters layout and sub-centimeter stone joint geometry await on-site laser distance surveying.
+                </section>
+              </>
+            ) : activeStructure === 'FW' ? (
+              <>
+                {/* Fortification Walls Overview */}
+                <section className="bg-slate-800/50 p-3 rounded-xl border border-slate-700/60">
+                  <h4 className="font-semibold text-amber-300 mb-1.5 flex items-center gap-1.5">
+                    <Compass className="w-3.5 h-3.5 text-amber-400" />
+                    Strategic Escarpment Fortification
+                  </h4>
+                  <p>
+                    Historical Maratha military architecture at Sinhagad capitalized on natural basalt cliffs that provided impregnable natural defenses (S01).
+                    Stone masonry ramparts and curtain walls were constructed exclusively across vulnerable gaps, gateway approaches, and climbable spurs, leaving sheer precipices un-walled.
+                  </p>
+                </section>
+
+                {/* Structure Components Breakdown */}
+                <section className="space-y-2">
+                  <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400/90">
+                    Documented Wall Segments & Evidence
+                  </h4>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">1. Khadakada Cliff Rampart (SIN_FW_SEG_01):</strong> Sheer cliff-edge rampart running along the northeastern approach overlooking the parking ridge.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">2. Khadakada Enclosure (SIN_FW_KHADAKADA):</strong> A detached promontory enclosed by independent curtain walls, two corner bastions, and dual gateway portals (S02).
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">3. Stone Postern Sally Port (SIN_FW_POSTERN):</strong> Defensible narrow doorway (1.2m x 2.1m) through the rampart connecting the Pune Darwaza stairway to Khadakada (S02).
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">4. Miniature Water Conduit (SIN_FW_WATERCHANNEL):</strong> Corbelled stone drainage aperture (0.6m x 0.9m) channeling interior plateau runoff through the rampart near the Kalyan route (S02).
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">5. Daru Kothar Rampart (SIN_FW_SEG_02):</strong> Rampart descending from Gate 3 towards the ammunition vault and northern cliff.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">6. Interior Kalyan Rampart (SIN_FW_SEG_03):</strong> Fortified curtain wall connecting Gate 2 to soldiers' quarters with a walkable rampart top.
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">7. Dongiri / Tanaji Kada Rampart (SIN_FW_SEG_04):</strong> Western escarpment breastwork crowning the sheer basalt cliff where Tanaji Malusare climbed (S02).
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
+                    <strong className="text-amber-200">8. Rajaram Samadhi Parapet (SIN_FW_SEG_05):</strong> Northern plateau rampart protecting the rock-cut five-cistern complex.
+                  </div>
+                </section>
+
+                {/* Sourced Provenance Register */}
+                <section className="bg-slate-800/40 p-3 rounded-xl border border-slate-700/60 space-y-1.5">
+                  <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400">
+                    Documented Evidence & Sources
+                  </h4>
+                  <ul className="list-disc list-inside space-y-1 text-slate-300">
+                    <li><strong>S01:</strong> Gazetteer of Bombay Presidency: Poona (1885)</li>
+                    <li><strong>S02:</strong> Durgbharari Survey (Suresh Nimbalkar, 2022)</li>
+                    <li><strong>S04:</strong> Maharashtra Tourism Official Monograph</li>
+                    <li><strong>S21:</strong> Valentine Blacker 1818 British Siege Survey Plan</li>
+                    <li><strong>PH10:</strong> Wikimedia Commons (Rait, 2018, CC BY-SA 3.0)</li>
+                    <li><strong>PH11:</strong> Wikimedia Commons (Intelligent2, 2012, CC BY-SA 3.0)</li>
+                    <li><strong>PH20:</strong> Archival 1818 British Siege Plan with Contours</li>
+                  </ul>
+                </section>
+
+                {/* Uncertainty Notice */}
+                <section className="p-3 rounded-xl bg-amber-950/20 border border-amber-500/30 text-[11px] text-amber-200/90">
+                  <p className="font-semibold text-amber-400 mb-1 flex items-center gap-1">
+                    <Info className="w-3.5 h-3.5" />
+                    Scientific Honesty Notice:
+                  </p>
+                  Certified at <strong>Tier T3</strong>. Documented segments, postern sally port, Khadakada enclosure, and miniature water channel are verified from historical records and photography; millimeter-accurate perimeter tracking across the complete 4.5km cliff line awaits an official RTK-GPS cliff walk survey.
                 </section>
               </>
             ) : (

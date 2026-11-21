@@ -338,7 +338,8 @@
         "PH17",
         "PH20"
       ],
-      "status": "not_started"
+      "status": "milestone5_blockout",
+      "model_path": "/assets/FW/fortification_walls_M1.glb"
     },
     {
       "id": "BS",

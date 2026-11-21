@@ -100,17 +100,19 @@
     "name": "Fortification walls",
     "type": "wall",
     "tier_target": "T2/T3",
-    "tier_current": "T4",
+    "tier_current": "T3",
     "position": {
       "crs": "EPSG:32643",
-      "x": null,
-      "y": null,
-      "z": null
+      "x": 368495.5,
+      "y": 2031092.1,
+      "z": 1307.3
     },
-    "orientation_deg": null,
+    "orientation_deg": 0.0,
     "sources": [
       "S01",
-      "S02"
+      "S02",
+      "S04",
+      "S21"
     ],
     "photos": [
       "PH10",
@@ -120,20 +122,59 @@
       "PH17",
       "PH20"
     ],
-    "measurements": [],
+    "measurements": [
+      {
+        "element": "Khadakada rampart length",
+        "value": 65.0,
+        "unit": "meters",
+        "source": "S02/S21",
+        "tier": "T3"
+      },
+      {
+        "element": "Wall thickness",
+        "value": 1.8,
+        "unit": "meters",
+        "source": "S02",
+        "tier": "T3"
+      },
+      {
+        "element": "Parapet height",
+        "value": 1.2,
+        "unit": "meters",
+        "source": "S02",
+        "tier": "T3"
+      },
+      {
+        "element": "Postern gate opening",
+        "value": "1.2 x 2.1",
+        "unit": "meters",
+        "source": "S02",
+        "tier": "T3"
+      },
+      {
+        "element": "Water channel aperture",
+        "value": "0.6 x 0.9",
+        "unit": "meters",
+        "source": "S02",
+        "tier": "T3"
+      }
+    ],
     "uncertainties": [
-      "Wall height, thickness, parapet and merlon design",
-      "Exact alignment of every segment",
-      "Which segments are original and which are restored",
-      "Where the cliff alone forms the defence"
+      "Sub-meter survey of full perimeter cliff breaks",
+      "Exact masonry mortar composition per restored segment"
     ],
     "validation": {
-      "score": null,
-      "date": null,
+      "score": 8,
+      "date": "2026-11-21",
       "report": "reports/FW_report.md"
     },
-    "licences": [],
-    "status": "not_started"
+    "licences": [
+      "CC BY-SA 3.0 (PH10, PH11)",
+      "Public Domain (PH20)"
+    ],
+    "status": "milestone5_blockout",
+    "model_path": "/assets/FW/fortification_walls_M1.glb",
+    "collision_path": "/assets/FW/fortification_walls_collision.json"
   },
   {
     "id": "BS",
