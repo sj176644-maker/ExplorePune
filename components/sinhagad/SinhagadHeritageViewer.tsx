@@ -572,75 +572,179 @@ export default function SinhagadHeritageViewer() {
 
   return (
     <div
-      className="relative w-full bg-slate-950 select-none overflow-hidden font-sans"
-      style={{ height: 'calc(100vh - 72px)', minHeight: '600px' }}
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: 'calc(100vh - 72px)',
+        minHeight: '600px',
+        backgroundColor: '#020617',
+        userSelect: 'none',
+        overflow: 'hidden',
+        fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      }}
     >
       {/* 3D Canvas Mount */}
-      <div ref={mountRef} className="absolute inset-0 w-full h-full cursor-crosshair z-0" />
+      <div
+        ref={mountRef}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          cursor: 'crosshair',
+          zIndex: 1,
+        }}
+      />
 
       {/* Loading Overlay */}
       {isLoading && (
-        <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-md flex flex-col items-center justify-center z-50 text-white">
-          <div className="relative flex items-center justify-center w-20 h-20 mb-6">
-            <div className="absolute inset-0 border-4 border-amber-500/20 rounded-full animate-ping" />
-            <div className="w-16 h-16 border-4 border-amber-500 border-t-transparent rounded-full animate-spin" />
-            <Compass className="w-7 h-7 text-amber-400 absolute" />
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(2, 6, 23, 0.94)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 60,
+            color: '#ffffff',
+          }}
+        >
+          <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', width: 80, height: 80, marginBottom: 24 }}>
+            <div style={{ width: 64, height: 64, border: '4px solid #f59e0b', borderTopColor: 'transparent', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
+            <Compass style={{ width: 28, height: 28, color: '#f59e0b', position: 'absolute' }} />
           </div>
-          <h2 className="text-2xl font-bold tracking-wider text-amber-300 mb-2">SINHAGAD FORT</h2>
-          <p className="text-sm text-slate-400 mb-4 tracking-wide">3D Heritage Digital Reconstruction — Milestone 1</p>
-          <div className="w-64 bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700">
+          <h2 style={{ fontSize: 24, fontWeight: 700, letterSpacing: '0.05em', color: '#fcd34d', marginBottom: 8 }}>SINHAGAD FORT</h2>
+          <p style={{ fontSize: 13, color: '#94a3b8', marginBottom: 16, letterSpacing: '0.025em' }}>3D Heritage Digital Reconstruction — Live Heritage Explorer</p>
+          <div style={{ width: 256, backgroundColor: '#1e293b', borderRadius: 9999, height: 8, overflow: 'hidden', border: '1px solid #334155' }}>
             <div
-              className="bg-gradient-to-r from-amber-500 to-amber-300 h-full transition-all duration-300 rounded-full"
-              style={{ width: `${loadingProgress}%` }}
+              style={{
+                background: 'linear-gradient(to right, #f59e0b, #fcd34d)',
+                height: '100%',
+                transition: 'width 0.3s ease',
+                borderRadius: 9999,
+                width: `${loadingProgress}%`,
+              }}
             />
           </div>
-          <p className="text-xs text-amber-400/80 mt-2 font-mono">{loadingProgress}% Loaded</p>
+          <p style={{ fontSize: 12, color: 'rgba(252, 211, 77, 0.8)', marginTop: 8, fontFamily: 'monospace' }}>{loadingProgress}% Loaded</p>
         </div>
       )}
 
       {/* Top Telemetry & Compass Bar */}
-      <div className="absolute top-4 left-4 right-4 flex flex-wrap items-center justify-between gap-3 pointer-events-none z-40">
-        <div className="bg-slate-900/85 backdrop-blur-md border border-slate-700/80 rounded-xl px-4 py-2.5 shadow-xl flex items-center gap-4 text-white">
-          <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="font-semibold text-xs tracking-wider uppercase text-amber-300">Sinhagad Fort 3D</span>
+      <div
+        style={{
+          position: 'absolute',
+          top: 16,
+          left: 16,
+          right: 16,
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 12,
+          pointerEvents: 'none',
+          zIndex: 50,
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(51, 65, 85, 0.85)',
+            borderRadius: 14,
+            padding: '10px 18px',
+            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.5)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 16,
+            color: '#ffffff',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <div style={{ width: 10, height: 10, borderRadius: '50%', backgroundColor: '#34d399', boxShadow: '0 0 10px #34d399' }} />
+            <span style={{ fontWeight: 700, fontSize: 12, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#fcd34d' }}>Sinhagad Fort 3D</span>
           </div>
-          <div className="h-4 w-px bg-slate-700" />
-          <div className="flex items-center gap-3 text-xs font-mono text-slate-300">
-            <span>E: <strong className="text-white">{telemetry.easting.toFixed(1)}m</strong></span>
-            <span>N: <strong className="text-white">{telemetry.northing.toFixed(1)}m</strong></span>
-            <span>MSL: <strong className="text-amber-300">{telemetry.elevation.toFixed(1)}m</strong></span>
-            <span>HDG: <strong className="text-white">{telemetry.heading}°</strong></span>
+          <div style={{ height: 16, width: 1, backgroundColor: '#334155' }} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14, fontSize: 12, fontFamily: 'monospace', color: '#cbd5e1' }}>
+            <span>E: <strong style={{ color: '#ffffff' }}>{telemetry.easting.toFixed(1)}m</strong></span>
+            <span>N: <strong style={{ color: '#ffffff' }}>{telemetry.northing.toFixed(1)}m</strong></span>
+            <span>MSL: <strong style={{ color: '#fcd34d' }}>{telemetry.elevation.toFixed(1)}m</strong></span>
+            <span>HDG: <strong style={{ color: '#ffffff' }}>{telemetry.heading}°</strong></span>
           </div>
         </div>
 
         {/* Right HUD Controls & Actions */}
-        <div className="flex items-center gap-2 pointer-events-auto">
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, pointerEvents: 'auto' }}>
           {/* Quick Viewpoint Switcher */}
-          <div className="flex items-center bg-slate-900/85 border border-slate-700/80 rounded-xl p-0.5 shadow-lg text-xs">
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              backgroundColor: 'rgba(15, 23, 42, 0.9)',
+              border: '1px solid rgba(51, 65, 85, 0.85)',
+              borderRadius: 14,
+              padding: 3,
+              boxShadow: '0 10px 25px rgba(0, 0, 0, 0.5)',
+              gap: 4,
+            }}
+          >
             <button
               onClick={() => jumpToStructure('PD')}
-              className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
-                activeStructure === 'PD' ? 'bg-amber-500 text-slate-950 font-bold shadow' : 'text-slate-300 hover:text-white'
-              }`}
+              style={{
+                padding: '6px 14px',
+                borderRadius: 10,
+                fontSize: 12,
+                fontWeight: activeStructure === 'PD' ? 700 : 500,
+                backgroundColor: activeStructure === 'PD' ? '#f59e0b' : 'transparent',
+                color: activeStructure === 'PD' ? '#020617' : '#cbd5e1',
+                border: 'none',
+                cursor: 'pointer',
+                boxShadow: activeStructure === 'PD' ? '0 2px 6px rgba(0,0,0,0.3)' : 'none',
+                transition: 'all 0.15s ease',
+              }}
               title="Jump to Pune Darwaza Approach"
             >
               Pune Gate
             </button>
             <button
               onClick={() => jumpToStructure('KD')}
-              className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
-                activeStructure === 'KD' ? 'bg-amber-500 text-slate-950 font-bold shadow' : 'text-slate-300 hover:text-white'
-              }`}
+              style={{
+                padding: '6px 14px',
+                borderRadius: 10,
+                fontSize: 12,
+                fontWeight: activeStructure === 'KD' ? 700 : 500,
+                backgroundColor: activeStructure === 'KD' ? '#f59e0b' : 'transparent',
+                color: activeStructure === 'KD' ? '#020617' : '#cbd5e1',
+                border: 'none',
+                cursor: 'pointer',
+                boxShadow: activeStructure === 'KD' ? '0 2px 6px rgba(0,0,0,0.3)' : 'none',
+                transition: 'all 0.15s ease',
+              }}
               title="Jump to Kalyan Darwaza Approach"
             >
               Kalyan Gate
             </button>
             <button
               onClick={() => jumpToStructure('FW')}
-              className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
-                activeStructure === 'FW' ? 'bg-amber-500 text-slate-950 font-bold shadow' : 'text-slate-300 hover:text-white'
-              }`}
+              style={{
+                padding: '6px 14px',
+                borderRadius: 10,
+                fontSize: 12,
+                fontWeight: activeStructure === 'FW' ? 700 : 500,
+                backgroundColor: activeStructure === 'FW' ? '#f59e0b' : 'transparent',
+                color: activeStructure === 'FW' ? '#020617' : '#cbd5e1',
+                border: 'none',
+                cursor: 'pointer',
+                boxShadow: activeStructure === 'FW' ? '0 2px 6px rgba(0,0,0,0.3)' : 'none',
+                transition: 'all 0.15s ease',
+              }}
               title="Jump to Fortification Ramparts Overlook"
             >
               Ramparts
@@ -649,27 +753,73 @@ export default function SinhagadHeritageViewer() {
 
           <button
             onClick={() => setShowInfoCard((prev) => !prev)}
-            className="flex items-center gap-2 px-3 py-2 bg-slate-900/85 hover:bg-slate-800 text-amber-300 border border-amber-500/40 rounded-xl text-xs font-medium shadow-lg transition-all"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+              padding: '8px 16px',
+              backgroundColor: showInfoCard ? '#f59e0b' : 'rgba(15, 23, 42, 0.9)',
+              color: showInfoCard ? '#020617' : '#fcd34d',
+              border: '1px solid rgba(245, 158, 11, 0.5)',
+              borderRadius: 14,
+              fontSize: 12,
+              fontWeight: 600,
+              cursor: 'pointer',
+              boxShadow: '0 10px 25px rgba(0, 0, 0, 0.5)',
+              transition: 'all 0.15s ease',
+            }}
             title="Landmark Info"
           >
-            <Info className="w-4 h-4" />
+            <Info style={{ width: 16, height: 16 }} />
             <span>Landmark Dossier</span>
           </button>
           <button
             onClick={toggleSound}
-            className="p-2 bg-slate-900/85 hover:bg-slate-800 text-slate-300 border border-slate-700 rounded-xl text-xs shadow-lg transition-all"
+            style={{
+              padding: '8px 12px',
+              backgroundColor: 'rgba(15, 23, 42, 0.9)',
+              color: soundEnabled ? '#f59e0b' : '#cbd5e1',
+              border: '1px solid #334155',
+              borderRadius: 14,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 10px 25px rgba(0, 0, 0, 0.5)',
+            }}
             title={soundEnabled ? 'Mute Ambiance' : 'Enable Ambiance'}
           >
-            {soundEnabled ? <Volume2 className="w-4 h-4 text-amber-400" /> : <VolumeX className="w-4 h-4" />}
+            {soundEnabled ? <Volume2 style={{ width: 16, height: 16 }} /> : <VolumeX style={{ width: 16, height: 16 }} />}
           </button>
           <button
             onClick={handleRespawn}
-            className="p-2 bg-slate-900/85 hover:bg-slate-800 text-slate-300 border border-slate-700 rounded-xl text-xs shadow-lg transition-all"
+            style={{
+              padding: '8px 12px',
+              backgroundColor: 'rgba(15, 23, 42, 0.9)',
+              color: '#cbd5e1',
+              border: '1px solid #334155',
+              borderRadius: 14,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 10px 25px rgba(0, 0, 0, 0.5)',
+            }}
             title="Respawn at Trek Approach"
           >
-            <RotateCcw className="w-4 h-4" />
+            <RotateCcw style={{ width: 16, height: 16 }} />
           </button>
-          <div className="px-2.5 py-1.5 bg-slate-900/85 border border-slate-700 text-slate-400 rounded-xl text-[11px] font-mono">
+          <div
+            style={{
+              padding: '8px 12px',
+              backgroundColor: 'rgba(15, 23, 42, 0.9)',
+              border: '1px solid #334155',
+              color: '#94a3b8',
+              borderRadius: 14,
+              fontSize: 11,
+              fontFamily: 'monospace',
+            }}
+          >
             {fps} FPS
           </div>
         </div>
@@ -677,14 +827,55 @@ export default function SinhagadHeritageViewer() {
 
       {/* Click to Lock Pointer Prompt */}
       {!isLocked && !isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[2px] z-30 pointer-events-auto cursor-pointer" onClick={() => mountRef.current?.querySelector('canvas')?.requestPointerLock()}>
-          <div className="bg-slate-900/95 border border-amber-500/40 rounded-2xl p-6 text-center max-w-sm shadow-2xl mx-4 transform transition-all hover:scale-105">
-            <Footprints className="w-10 h-10 text-amber-400 mx-auto mb-3 animate-bounce" />
-            <h3 className="text-lg font-bold text-white mb-1">Click to Walk the Fort</h3>
-            <p className="text-xs text-slate-300 mb-4">
-              Explore the historical approach through Pune Darwaza with mouse look and keyboard navigation.
+        <div
+          onClick={() => mountRef.current?.querySelector('canvas')?.requestPointerLock()}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'rgba(0, 0, 0, 0.45)',
+            backdropFilter: 'blur(3px)',
+            zIndex: 40,
+            pointerEvents: 'auto',
+            cursor: 'pointer',
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: 'rgba(15, 23, 42, 0.96)',
+              border: '1px solid rgba(245, 158, 11, 0.5)',
+              borderRadius: 18,
+              padding: 24,
+              textAlign: 'center',
+              maxWidth: 380,
+              boxShadow: '0 25px 50px rgba(0, 0, 0, 0.7)',
+              margin: '0 16px',
+            }}
+          >
+            <Footprints style={{ width: 38, height: 38, color: '#f59e0b', margin: '0 auto 12px auto' }} />
+            <h3 style={{ fontSize: 18, fontWeight: 700, color: '#ffffff', marginBottom: 6 }}>Click to Walk the Fort</h3>
+            <p style={{ fontSize: 12, color: '#cbd5e1', marginBottom: 16, lineHeight: 1.5 }}>
+              Explore the historical approach through Pune Darwaza and Kalyan Darwaza with mouse look and keyboard navigation.
             </p>
-            <div className="flex justify-center gap-2 text-[11px] text-amber-300 font-mono bg-slate-800/80 rounded-lg p-2.5 border border-slate-700">
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                gap: 12,
+                fontSize: 11,
+                color: '#fcd34d',
+                fontFamily: 'monospace',
+                backgroundColor: 'rgba(30, 41, 59, 0.8)',
+                borderRadius: 10,
+                padding: '8px 12px',
+                border: '1px solid #334155',
+              }}
+            >
               <span>[W,A,S,D] Move</span>
               <span>•</span>
               <span>[Shift] Sprint</span>
@@ -697,16 +888,43 @@ export default function SinhagadHeritageViewer() {
 
       {/* Proximity Prompt to Gate */}
       {isLocked && (activeStructure === 'PD' || activeStructure === 'KD' || activeStructure === 'FW') && !showInfoCard && (
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-slate-900/90 border border-amber-500/60 rounded-xl px-4 py-2 text-white shadow-xl flex items-center gap-3 z-20 animate-fade-in">
-          <MapPin className="w-4 h-4 text-amber-400" />
-          <span className="text-xs font-medium">
-            Approaching <strong className="text-amber-300">
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 32,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            backgroundColor: 'rgba(15, 23, 42, 0.94)',
+            border: '1px solid rgba(245, 158, 11, 0.6)',
+            borderRadius: 14,
+            padding: '10px 18px',
+            color: '#ffffff',
+            boxShadow: '0 15px 35px rgba(0, 0, 0, 0.6)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 14,
+            zIndex: 45,
+            pointerEvents: 'auto',
+          }}
+        >
+          <MapPin style={{ width: 16, height: 16, color: '#f59e0b' }} />
+          <span style={{ fontSize: 12, fontWeight: 500 }}>
+            Approaching <strong style={{ color: '#fcd34d' }}>
               {activeStructure === 'KD' ? 'Kalyan Darwaza' : activeStructure === 'FW' ? 'Fortification Ramparts' : 'Pune Darwaza'}
             </strong>
           </span>
           <button
             onClick={() => setShowInfoCard(true)}
-            className="text-[11px] bg-amber-500 text-slate-950 font-bold px-2 py-0.5 rounded hover:bg-amber-400"
+            style={{
+              fontSize: 11,
+              backgroundColor: '#f59e0b',
+              color: '#020617',
+              fontWeight: 700,
+              padding: '4px 10px',
+              borderRadius: 6,
+              border: 'none',
+              cursor: 'pointer',
+            }}
           >
             Press [I] for Dossier
           </button>
@@ -715,21 +933,64 @@ export default function SinhagadHeritageViewer() {
 
       {/* Landmark Information Slide-in Dossier */}
       {showInfoCard && (
-        <aside className="absolute top-16 right-4 bottom-4 w-96 max-w-[calc(100vw-2rem)] bg-slate-900/95 backdrop-blur-xl border border-amber-500/30 rounded-2xl shadow-2xl flex flex-col z-50 overflow-hidden text-white transition-all">
+        <aside
+          style={{
+            position: 'absolute',
+            top: 68,
+            right: 16,
+            bottom: 24,
+            width: 420,
+            maxWidth: 'calc(100vw - 32px)',
+            backgroundColor: 'rgba(15, 23, 42, 0.96)',
+            backdropFilter: 'blur(16px)',
+            border: '1px solid rgba(245, 158, 11, 0.4)',
+            borderRadius: 18,
+            boxShadow: '0 25px 50px rgba(0, 0, 0, 0.7)',
+            display: 'flex',
+            flexDirection: 'column',
+            zIndex: 60,
+            overflow: 'hidden',
+            color: '#ffffff',
+            pointerEvents: 'auto',
+          }}
+        >
           {/* Header */}
-          <div className="p-4 border-b border-slate-800 flex items-start justify-between bg-gradient-to-r from-amber-950/40 to-slate-900">
+          <div
+            style={{
+              padding: 16,
+              borderBottom: '1px solid #1e293b',
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'space-between',
+              background: 'linear-gradient(to right, rgba(120, 53, 15, 0.35), rgba(15, 23, 42, 0.95))',
+            }}
+          >
             <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center gap-1">
-                  <ShieldCheck className="w-3 h-3 text-amber-400" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+                <span
+                  style={{
+                    padding: '2px 8px',
+                    borderRadius: 6,
+                    fontSize: 10,
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                    color: '#fcd34d',
+                    border: '1px solid rgba(245, 158, 11, 0.4)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 4,
+                  }}
+                >
+                  <ShieldCheck style={{ width: 12, height: 12, color: '#f59e0b' }} />
                   Tier T3 Blockout
                 </span>
-                <span className="text-[10px] text-slate-400 font-mono">CRS: EPSG:32643</span>
+                <span style={{ fontSize: 10, color: '#94a3b8', fontFamily: 'monospace' }}>CRS: EPSG:32643</span>
               </div>
-              <h3 className="text-lg font-bold text-white leading-tight">
+              <h3 style={{ fontSize: 18, fontWeight: 700, color: '#ffffff', lineHeight: 1.2, margin: 0 }}>
                 {activeStructure === 'KD' ? 'Kalyan Darwaza' : activeStructure === 'FW' ? 'Fortification Walls & Ramparts' : 'Pune Darwaza'}
               </h3>
-              <p className="text-xs text-slate-400">
+              <p style={{ fontSize: 12, color: '#94a3b8', margin: '4px 0 0 0' }}>
                 {activeStructure === 'KD'
                   ? 'Two Sequential Gates • Konkan Valley Route'
                   : activeStructure === 'FW'
@@ -739,57 +1000,108 @@ export default function SinhagadHeritageViewer() {
             </div>
             <button
               onClick={() => setShowInfoCard(false)}
-              className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+              style={{
+                padding: 6,
+                color: '#94a3b8',
+                borderRadius: 8,
+                backgroundColor: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
             >
-              <X className="w-5 h-5" />
+              <X style={{ width: 20, height: 20 }} />
             </button>
           </div>
 
           {/* Dossier Structure Switcher Tabs */}
-          <div className="flex border-b border-slate-800 bg-slate-950/60 p-1.5 gap-1.5 text-xs">
+          <div
+            style={{
+              display: 'flex',
+              borderBottom: '1px solid #1e293b',
+              backgroundColor: 'rgba(2, 6, 23, 0.6)',
+              padding: 6,
+              gap: 6,
+            }}
+          >
             <button
               onClick={() => setActiveStructure('PD')}
-              className={`flex-1 py-1.5 rounded-lg font-medium text-center transition-all ${
-                activeStructure === 'PD'
-                  ? 'bg-amber-500 text-slate-950 font-bold shadow'
-                  : 'text-slate-400 hover:text-white'
-              }`}
+              style={{
+                flex: 1,
+                padding: '8px 4px',
+                borderRadius: 8,
+                fontSize: 12,
+                fontWeight: activeStructure === 'PD' ? 700 : 500,
+                backgroundColor: activeStructure === 'PD' ? '#f59e0b' : 'transparent',
+                color: activeStructure === 'PD' ? '#020617' : '#94a3b8',
+                border: 'none',
+                cursor: 'pointer',
+                textAlign: 'center',
+              }}
             >
               Pune Gate
             </button>
             <button
               onClick={() => setActiveStructure('KD')}
-              className={`flex-1 py-1.5 rounded-lg font-medium text-center transition-all ${
-                activeStructure === 'KD'
-                  ? 'bg-amber-500 text-slate-950 font-bold shadow'
-                  : 'text-slate-400 hover:text-white'
-              }`}
+              style={{
+                flex: 1,
+                padding: '8px 4px',
+                borderRadius: 8,
+                fontSize: 12,
+                fontWeight: activeStructure === 'KD' ? 700 : 500,
+                backgroundColor: activeStructure === 'KD' ? '#f59e0b' : 'transparent',
+                color: activeStructure === 'KD' ? '#020617' : '#94a3b8',
+                border: 'none',
+                cursor: 'pointer',
+                textAlign: 'center',
+              }}
             >
               Kalyan Gate
             </button>
             <button
               onClick={() => setActiveStructure('FW')}
-              className={`flex-1 py-1.5 rounded-lg font-medium text-center transition-all ${
-                activeStructure === 'FW'
-                  ? 'bg-amber-500 text-slate-950 font-bold shadow'
-                  : 'text-slate-400 hover:text-white'
-              }`}
+              style={{
+                flex: 1,
+                padding: '8px 4px',
+                borderRadius: 8,
+                fontSize: 12,
+                fontWeight: activeStructure === 'FW' ? 700 : 500,
+                backgroundColor: activeStructure === 'FW' ? '#f59e0b' : 'transparent',
+                color: activeStructure === 'FW' ? '#020617' : '#94a3b8',
+                border: 'none',
+                cursor: 'pointer',
+                textAlign: 'center',
+              }}
             >
               Ramparts
             </button>
           </div>
 
           {/* Scrollable Content */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 text-xs text-slate-300 leading-relaxed">
+          <div
+            style={{
+              flex: 1,
+              overflowY: 'auto',
+              padding: 16,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 16,
+              fontSize: 12,
+              color: '#cbd5e1',
+              lineHeight: 1.6,
+            }}
+          >
             {activeStructure === 'KD' ? (
               <>
                 {/* Kalyan Darwaza Overview */}
-                <section className="bg-slate-800/50 p-3 rounded-xl border border-slate-700/60">
-                  <h4 className="font-semibold text-amber-300 mb-1.5 flex items-center gap-1.5">
-                    <Compass className="w-3.5 h-3.5 text-amber-400" />
+                <section style={{ backgroundColor: 'rgba(30, 41, 59, 0.5)', padding: 12, borderRadius: 12, border: '1px solid rgba(51, 65, 85, 0.6)' }}>
+                  <h4 style={{ fontWeight: 600, color: '#fcd34d', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6, fontSize: 13 }}>
+                    <Compass style={{ width: 14, height: 14, color: '#f59e0b' }} />
                     Defensive Siting & Strategic Role
                   </h4>
-                  <p>
+                  <p style={{ margin: 0 }}>
                     Kalyan Darwaza (also known as Konkan Darwaza) guards the south-southwest spur of Sinhagad Fort,
                     facing the Konkan descent and the village of Kalyan / Kondhanpur. It features two sequential arched gateways
                     enclosed by stone curtain walls in a rising tactical battle formation.
@@ -797,11 +1109,11 @@ export default function SinhagadHeritageViewer() {
                 </section>
 
                 {/* Inscription & Historic Dating */}
-                <section className="bg-amber-950/20 p-3 rounded-xl border border-amber-500/30">
-                  <h4 className="font-semibold text-amber-300 mb-1">
+                <section style={{ backgroundColor: 'rgba(120, 53, 15, 0.25)', padding: 12, borderRadius: 12, border: '1px solid rgba(245, 158, 11, 0.35)' }}>
+                  <h4 style={{ fontWeight: 600, color: '#fcd34d', marginBottom: 4, fontSize: 13 }}>
                     Nanasaheb Peshwa Inscription (1750 CE)
                   </h4>
-                  <p className="text-slate-300">
+                  <p style={{ color: '#cbd5e1', margin: 0 }}>
                     A documented stone inscription panel above the Gate 1 arch records that the gateway was built or repaired
                     during the tenure of <strong>Shrimant Balaji Bajirao (Nanasaheb) Peshwa</strong> in the year
                     <strong>Shalivahan Shaka 1672 (~1750 CE)</strong>.
@@ -809,36 +1121,36 @@ export default function SinhagadHeritageViewer() {
                 </section>
 
                 {/* Structure Components Breakdown */}
-                <section className="space-y-2">
-                  <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400/90">
+                <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  <h4 style={{ fontWeight: 600, color: '#fcd34d', textTransform: 'uppercase', fontSize: 11, letterSpacing: '0.05em', margin: 0 }}>
                     Components & Surviving Evidence
                   </h4>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">1. Gate 1 (Outer Kalyan Gate):</strong> Arched entrance flanked by two solid round bastions. Spandrels feature two carved lotus medallions and a weathered festoon lintel.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>1. Gate 1 (Outer Kalyan Gate):</strong> Arched entrance flanked by two solid round bastions. Spandrels feature two carved lotus medallions and a weathered festoon lintel.
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">2. Bastion Reliefs (Boar & Mahout):</strong> One flanking bastion face displays a prominent carved boar (*Varaha*), while the opposite bastion displays a mahout mounted atop an elephant.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>2. Bastion Reliefs (Boar & Mahout):</strong> One flanking bastion face displays a prominent carved boar (*Varaha*), while the opposite bastion displays a mahout mounted atop an elephant.
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">3. Stone Staircase (22 Steps):</strong> A steep flight of 20–25 stone steps ascending between parallel fortified rampart walls to Gate 2.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>3. Stone Staircase (22 Steps):</strong> A steep flight of 20–25 stone steps ascending between parallel fortified rampart walls to Gate 2.
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">4. Flanking Guardroom:</strong> A stone guardroom built inside the rampart wall near Gate 1 for sentries.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>4. Flanking Guardroom:</strong> A stone guardroom built inside the rampart wall near Gate 1 for sentries.
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">5. Gate 2 (Inner Kalyan Gate):</strong> Upper fortified gateway between bastions giving direct access to the interior plateau.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>5. Gate 2 (Inner Kalyan Gate):</strong> Upper fortified gateway between bastions giving direct access to the interior plateau.
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">6. Soldiers' Quarters & Inner Stair:</strong> Barracks along the interior ramparts and a straight stone flight entering the fort plateau towards Tehalni Buruj.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>6. Soldiers' Quarters & Inner Stair:</strong> Barracks along the interior ramparts and a straight stone flight entering the fort plateau towards Tehalni Buruj.
                   </div>
                 </section>
 
                 {/* Sourced Provenance Register */}
-                <section className="bg-slate-800/40 p-3 rounded-xl border border-slate-700/60 space-y-1.5">
-                  <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400">
+                <section style={{ backgroundColor: 'rgba(30, 41, 59, 0.4)', padding: 12, borderRadius: 12, border: '1px solid rgba(51, 65, 85, 0.6)' }}>
+                  <h4 style={{ fontWeight: 600, color: '#fcd34d', textTransform: 'uppercase', fontSize: 11, letterSpacing: '0.05em', marginBottom: 6 }}>
                     Documented Evidence & Sources
                   </h4>
-                  <ul className="list-disc list-inside space-y-1 text-slate-300">
+                  <ul style={{ paddingLeft: 18, margin: 0, display: 'flex', flexDirection: 'column', gap: 4, color: '#cbd5e1' }}>
                     <li><strong>S01:</strong> Survey of India 1:50,000 Sheet 47F/15</li>
                     <li><strong>S02:</strong> Durgbharari Survey (Suresh Nimbalkar, 2022)</li>
                     <li><strong>S04:</strong> Maharashtra Tourism Official Monograph</li>
@@ -851,9 +1163,9 @@ export default function SinhagadHeritageViewer() {
                 </section>
 
                 {/* Uncertainty Notice */}
-                <section className="p-3 rounded-xl bg-amber-950/20 border border-amber-500/30 text-[11px] text-amber-200/90">
-                  <p className="font-semibold text-amber-400 mb-1 flex items-center gap-1">
-                    <Info className="w-3.5 h-3.5" />
+                <section style={{ padding: 12, borderRadius: 12, backgroundColor: 'rgba(120, 53, 15, 0.25)', border: '1px solid rgba(245, 158, 11, 0.35)', fontSize: 11, color: '#fde68a' }}>
+                  <p style={{ fontWeight: 600, color: '#f59e0b', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 4 }}>
+                    <Info style={{ width: 14, height: 14 }} />
                     Scientific Honesty Notice:
                   </p>
                   Certified at <strong>Tier T3</strong>. Gate counts, step numbers, Peshwa inscription record, and animal relief carvings are rigorously evidenced from historical sources and photography; internal soldiers quarters layout and sub-centimeter stone joint geometry await on-site laser distance surveying.
@@ -862,54 +1174,54 @@ export default function SinhagadHeritageViewer() {
             ) : activeStructure === 'FW' ? (
               <>
                 {/* Fortification Walls Overview */}
-                <section className="bg-slate-800/50 p-3 rounded-xl border border-slate-700/60">
-                  <h4 className="font-semibold text-amber-300 mb-1.5 flex items-center gap-1.5">
-                    <Compass className="w-3.5 h-3.5 text-amber-400" />
+                <section style={{ backgroundColor: 'rgba(30, 41, 59, 0.5)', padding: 12, borderRadius: 12, border: '1px solid rgba(51, 65, 85, 0.6)' }}>
+                  <h4 style={{ fontWeight: 600, color: '#fcd34d', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6, fontSize: 13 }}>
+                    <Compass style={{ width: 14, height: 14, color: '#f59e0b' }} />
                     Strategic Escarpment Fortification
                   </h4>
-                  <p>
+                  <p style={{ margin: 0 }}>
                     Historical Maratha military architecture at Sinhagad capitalized on natural basalt cliffs that provided impregnable natural defenses (S01).
                     Stone masonry ramparts and curtain walls were constructed exclusively across vulnerable gaps, gateway approaches, and climbable spurs, leaving sheer precipices un-walled.
                   </p>
                 </section>
 
                 {/* Structure Components Breakdown */}
-                <section className="space-y-2">
-                  <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400/90">
+                <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  <h4 style={{ fontWeight: 600, color: '#fcd34d', textTransform: 'uppercase', fontSize: 11, letterSpacing: '0.05em', margin: 0 }}>
                     Documented Wall Segments & Evidence
                   </h4>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">1. Khadakada Cliff Rampart (SIN_FW_SEG_01):</strong> Sheer cliff-edge rampart running along the northeastern approach overlooking the parking ridge.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>1. Khadakada Cliff Rampart (SIN_FW_SEG_01):</strong> Sheer cliff-edge rampart running along the northeastern approach overlooking the parking ridge.
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">2. Khadakada Enclosure (SIN_FW_KHADAKADA):</strong> A detached promontory enclosed by independent curtain walls, two corner bastions, and dual gateway portals (S02).
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>2. Khadakada Enclosure (SIN_FW_KHADAKADA):</strong> A detached promontory enclosed by independent curtain walls, two corner bastions, and dual gateway portals (S02).
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">3. Stone Postern Sally Port (SIN_FW_POSTERN):</strong> Defensible narrow doorway (1.2m x 2.1m) through the rampart connecting the Pune Darwaza stairway to Khadakada (S02).
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>3. Stone Postern Sally Port (SIN_FW_POSTERN):</strong> Defensible narrow doorway (1.2m x 2.1m) through the rampart connecting the Pune Darwaza stairway to Khadakada (S02).
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">4. Miniature Water Conduit (SIN_FW_WATERCHANNEL):</strong> Corbelled stone drainage aperture (0.6m x 0.9m) channeling interior plateau runoff through the rampart near the Kalyan route (S02).
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>4. Miniature Water Conduit (SIN_FW_WATERCHANNEL):</strong> Corbelled stone drainage aperture (0.6m x 0.9m) channeling interior plateau runoff through the rampart near the Kalyan route (S02).
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">5. Daru Kothar Rampart (SIN_FW_SEG_02):</strong> Rampart descending from Gate 3 towards the ammunition vault and northern cliff.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>5. Daru Kothar Rampart (SIN_FW_SEG_02):</strong> Rampart descending from Gate 3 towards the ammunition vault and northern cliff.
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">6. Interior Kalyan Rampart (SIN_FW_SEG_03):</strong> Fortified curtain wall connecting Gate 2 to soldiers' quarters with a walkable rampart top.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>6. Interior Kalyan Rampart (SIN_FW_SEG_03):</strong> Fortified curtain wall connecting Gate 2 to soldiers' quarters with a walkable rampart top.
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">7. Dongiri / Tanaji Kada Rampart (SIN_FW_SEG_04):</strong> Western escarpment breastwork crowning the sheer basalt cliff where Tanaji Malusare climbed (S02).
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>7. Dongiri / Tanaji Kada Rampart (SIN_FW_SEG_04):</strong> Western escarpment breastwork crowning the sheer basalt cliff where Tanaji Malusare climbed (S02).
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">8. Rajaram Samadhi Parapet (SIN_FW_SEG_05):</strong> Northern plateau rampart protecting the rock-cut five-cistern complex.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>8. Rajaram Samadhi Parapet (SIN_FW_SEG_05):</strong> Northern plateau rampart protecting the rock-cut five-cistern complex.
                   </div>
                 </section>
 
                 {/* Sourced Provenance Register */}
-                <section className="bg-slate-800/40 p-3 rounded-xl border border-slate-700/60 space-y-1.5">
-                  <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400">
+                <section style={{ backgroundColor: 'rgba(30, 41, 59, 0.4)', padding: 12, borderRadius: 12, border: '1px solid rgba(51, 65, 85, 0.6)' }}>
+                  <h4 style={{ fontWeight: 600, color: '#fcd34d', textTransform: 'uppercase', fontSize: 11, letterSpacing: '0.05em', marginBottom: 6 }}>
                     Documented Evidence & Sources
                   </h4>
-                  <ul className="list-disc list-inside space-y-1 text-slate-300">
+                  <ul style={{ paddingLeft: 18, margin: 0, display: 'flex', flexDirection: 'column', gap: 4, color: '#cbd5e1' }}>
                     <li><strong>S01:</strong> Gazetteer of Bombay Presidency: Poona (1885)</li>
                     <li><strong>S02:</strong> Durgbharari Survey (Suresh Nimbalkar, 2022)</li>
                     <li><strong>S04:</strong> Maharashtra Tourism Official Monograph</li>
@@ -921,9 +1233,9 @@ export default function SinhagadHeritageViewer() {
                 </section>
 
                 {/* Uncertainty Notice */}
-                <section className="p-3 rounded-xl bg-amber-950/20 border border-amber-500/30 text-[11px] text-amber-200/90">
-                  <p className="font-semibold text-amber-400 mb-1 flex items-center gap-1">
-                    <Info className="w-3.5 h-3.5" />
+                <section style={{ padding: 12, borderRadius: 12, backgroundColor: 'rgba(120, 53, 15, 0.25)', border: '1px solid rgba(245, 158, 11, 0.35)', fontSize: 11, color: '#fde68a' }}>
+                  <p style={{ fontWeight: 600, color: '#f59e0b', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 4 }}>
+                    <Info style={{ width: 14, height: 14 }} />
                     Scientific Honesty Notice:
                   </p>
                   Certified at <strong>Tier T3</strong>. Documented segments, postern sally port, Khadakada enclosure, and miniature water channel are verified from historical records and photography; millimeter-accurate perimeter tracking across the complete 4.5km cliff line awaits an official RTK-GPS cliff walk survey.
@@ -932,43 +1244,43 @@ export default function SinhagadHeritageViewer() {
             ) : (
               <>
                 {/* Pune Darwaza Content */}
-                <section className="bg-slate-800/50 p-3 rounded-xl border border-slate-700/60">
-                  <h4 className="font-semibold text-amber-300 mb-1.5 flex items-center gap-1.5">
-                    <Compass className="w-3.5 h-3.5 text-amber-400" />
+                <section style={{ backgroundColor: 'rgba(30, 41, 59, 0.5)', padding: 12, borderRadius: 12, border: '1px solid rgba(51, 65, 85, 0.6)' }}>
+                  <h4 style={{ fontWeight: 600, color: '#fcd34d', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6, fontSize: 13 }}>
+                    <Compass style={{ width: 14, height: 14, color: '#f59e0b' }} />
                     Defensive Layout & Siting
                   </h4>
-                  <p>
+                  <p style={{ margin: 0 }}>
                     Pune Darwaza guards the northeastern escarpment of Sinhagad above the sheer Khadakada cliffs.
                     It comprises a strategic chain of <strong>three ascending gates</strong> built between rounded basalt bastions to prevent head-on artillery assaults.
                   </p>
                 </section>
 
-                <section className="space-y-2">
-                  <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400/90">
+                <section style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  <h4 style={{ fontWeight: 600, color: '#fcd34d', textTransform: 'uppercase', fontSize: 11, letterSpacing: '0.05em', margin: 0 }}>
                     Components & Surviving Evidence
                   </h4>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">1. Gate 1 (Outer Gate):</strong> Flanked by two 6m bastions. Features two weathered <em>Sharabha</em> (mythical predator) relief carvings on the spandrels.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>1. Gate 1 (Outer Gate):</strong> Flanked by two 6m bastions. Features two weathered <em>Sharabha</em> (mythical predator) relief carvings on the spandrels.
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">2. Stone Staircase (22 Steps):</strong> Climbs 16m horizontally and 4m vertically from Gate 1 to Gate 2, flanked by the Khadakada rampart wall.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>2. Stone Staircase (22 Steps):</strong> Climbs 16m horizontally and 4m vertically from Gate 1 to Gate 2, flanked by the Khadakada rampart wall.
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">3. Rock-Cut Cistern:</strong> Perennial water reservoir carved directly into the living basalt cliff face on the left flank before Gate 2.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>3. Rock-Cut Cistern:</strong> Perennial water reservoir carved directly into the living basalt cliff face on the left flank before Gate 2.
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">4. Gate 2 (Middle Gate):</strong> Solid repaired ashlar masonry gateway between bastions with upper battery access.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>4. Gate 2 (Middle Gate):</strong> Solid repaired ashlar masonry gateway between bastions with upper battery access.
                   </div>
-                  <div className="p-2.5 rounded-lg bg-slate-800/30 border border-slate-700/40">
-                    <strong className="text-amber-200">5. Gate 3 (Inner Gate):</strong> The primary historic citadel threshold featuring a sacred lotus motif and festoon carving on the doorway lintel, flanked by two guard rooms.
+                  <div style={{ padding: 10, borderRadius: 8, backgroundColor: 'rgba(30, 41, 59, 0.35)', border: '1px solid rgba(51, 65, 85, 0.45)' }}>
+                    <strong style={{ color: '#fde68a' }}>5. Gate 3 (Inner Gate):</strong> The primary historic citadel threshold featuring a sacred lotus motif and festoon carving on the doorway lintel, flanked by two guard rooms.
                   </div>
                 </section>
 
-                <section className="bg-slate-800/40 p-3 rounded-xl border border-slate-700/60 space-y-1.5">
-                  <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider text-amber-400">
+                <section style={{ backgroundColor: 'rgba(30, 41, 59, 0.4)', padding: 12, borderRadius: 12, border: '1px solid rgba(51, 65, 85, 0.6)' }}>
+                  <h4 style={{ fontWeight: 600, color: '#fcd34d', textTransform: 'uppercase', fontSize: 11, letterSpacing: '0.05em', marginBottom: 6 }}>
                     Documented Evidence & Sources
                   </h4>
-                  <ul className="list-disc list-inside space-y-1 text-slate-300">
+                  <ul style={{ paddingLeft: 18, margin: 0, display: 'flex', flexDirection: 'column', gap: 4, color: '#cbd5e1' }}>
                     <li><strong>S02:</strong> Durgbharari Survey (Suresh Nimbalkar, 2022)</li>
                     <li><strong>S04:</strong> Maharashtra Tourism Official Monograph</li>
                     <li><strong>S21:</strong> Valentine Blacker 1818 British Siege Survey Plan</li>
@@ -976,9 +1288,9 @@ export default function SinhagadHeritageViewer() {
                   </ul>
                 </section>
 
-                <section className="p-3 rounded-xl bg-amber-950/20 border border-amber-500/30 text-[11px] text-amber-200/90">
-                  <p className="font-semibold text-amber-400 mb-1 flex items-center gap-1">
-                    <Info className="w-3.5 h-3.5" />
+                <section style={{ padding: 12, borderRadius: 12, backgroundColor: 'rgba(120, 53, 15, 0.25)', border: '1px solid rgba(245, 158, 11, 0.35)', fontSize: 11, color: '#fde68a' }}>
+                  <p style={{ fontWeight: 600, color: '#f59e0b', marginBottom: 4, display: 'flex', alignItems: 'center', gap: 4 }}>
+                    <Info style={{ width: 14, height: 14 }} />
                     Scientific Honesty Notice:
                   </p>
                   Certified at <strong>Tier T3</strong>. Gate sequences, step counts, and bastion positions are verified from multi-angle photographs and literature; millimeter-accurate passage widths await an official on-site laser distance measurement campaign.
@@ -990,11 +1302,26 @@ export default function SinhagadHeritageViewer() {
       )}
 
       {/* Bottom Navigation Helper Pill */}
-      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[11px] text-slate-400 font-mono pointer-events-none z-10">
-        <div className="bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800">
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 16,
+          left: 16,
+          right: 16,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          fontSize: 11,
+          color: '#94a3b8',
+          fontFamily: 'monospace',
+          pointerEvents: 'none',
+          zIndex: 20,
+        }}
+      >
+        <div style={{ backgroundColor: 'rgba(15, 23, 42, 0.85)', backdropFilter: 'blur(8px)', padding: '6px 14px', borderRadius: 8, border: '1px solid #1e293b' }}>
           Terrain: Copernicus GLO-30 DEM (EGM2008 Datum)
         </div>
-        <div className="bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-800">
+        <div style={{ backgroundColor: 'rgba(15, 23, 42, 0.85)', backdropFilter: 'blur(8px)', padding: '6px 14px', borderRadius: 8, border: '1px solid #1e293b' }}>
           Sinhagad Fort Milestone 1 Vertical Slice
         </div>
       </div>
