@@ -4,17 +4,19 @@
     "name": "Pune Darwaza",
     "type": "gate",
     "tier_target": "T2",
-    "tier_current": "T4",
+    "tier_current": "T3",
     "position": {
       "crs": "EPSG:32643",
-      "x": null,
-      "y": null,
-      "z": null
+      "x": 368745.5,
+      "y": 2031392.1,
+      "z": 1288.0
     },
-    "orientation_deg": null,
+    "orientation_deg": 40.0,
     "sources": [
       "S02",
-      "S10"
+      "S04",
+      "S10",
+      "S21"
     ],
     "photos": [
       "PH01",
@@ -33,12 +35,13 @@
       "Interior of guard rooms and upper chambers"
     ],
     "validation": {
-      "score": null,
-      "date": null,
-      "report": "reports/PD_report.md"
+      "score": 8,
+      "date": "2026-11-21",
+      "report": "reports/M1_RESULTS.md"
     },
     "licences": [],
-    "status": "not_started"
+    "status": "milestone1_blockout",
+    "model_path": "/assets/PD/pune_darwaza_M1.glb"
   },
   {
     "id": "KD",
