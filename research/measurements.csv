@@ -1,0 +1,37 @@
+landmark,element,value,unit,source_id,method,tier
+Pune Darwaza,Number of successive gates,3,count,S02,documented count,T2
+Pune Darwaza,Steps between Gate 1 and Gate 2,20-25,count,S02,documented count,T2
+Pune Darwaza,Flanking bastions per gate,2,count,S02,documented count,T2
+Pune Darwaza,Gate 1 passage clear width,UNKNOWN,m,S02,pending field measurement,T4
+Pune Darwaza,Gate 1 passage clear height at crown,UNKNOWN,m,S02,pending field measurement,T4
+Pune Darwaza,Gate 1 wall depth through passage,UNKNOWN,m,S02,pending field measurement,T4
+Pune Darwaza,Left bastion height outside,UNKNOWN,m,S02,pending field measurement,T4
+Pune Darwaza,Right bastion height outside,UNKNOWN,m,S02,pending field measurement,T4
+Pune Darwaza,Bastion base diameter,UNKNOWN,m,S02,pending field measurement,T4
+Pune Darwaza,Rock-cut cistern location,left of approach before Gate 2,text,S02,documented observation,T2
+Pune Darwaza,Gate 1 carvings,2 weathered sharabha mythical beasts,text,S02,documented observation,T2
+Pune Darwaza,Gate 3 carvings,lotus motif and festoon carving in doorway,text,S02,documented observation,T2
+Kalyan Darwaza,Number of gateways,1 main arched entry with outer triangular bastion,count,S02,documented count,T2
+Kalyan Darwaza,Passage clear width,UNKNOWN,m,S02,pending field measurement,T4
+Kalyan Darwaza,Passage clear height at crown,UNKNOWN,m,S02,pending field measurement,T4
+Kalyan Darwaza,Bastion height outside,UNKNOWN,m,S02,pending field measurement,T4
+Kalyan Darwaza,Inscription text,Persian / Devanagari historical inscription,text,S02,documented observation,T2
+Fortification walls,Total perimeter length,UNKNOWN,m,S01/S20,pending GIS trace,T4
+Fortification walls,Wall height outer face,UNKNOWN,m,S01,pending field measurement,T4
+Fortification walls,Wall thickness at parapet,UNKNOWN,m,S01,pending field measurement,T4
+Defensive bastions,Total count recorded historically,37,count,S01/S02,documented literature count,T2
+Daru Kothar,Structure type,barrel-vaulted bomb-proof masonry storehouse,text,S01/S02,documented observation,T2
+Daru Kothar,Length,UNKNOWN,m,S02,pending field measurement,T4
+Daru Kothar,Width,UNKNOWN,m,S02,pending field measurement,T4
+Daru Kothar,Height,UNKNOWN,m,S02,pending field measurement,T4
+Tanaji Samadhi,Original stone plinth discovery year,2019,year,S06/S07,documented archaeological excavation,T1
+Tanaji Samadhi,First concrete platform construction year,1938,year,S08,historical record,T2
+Tanaji Samadhi,First concrete statue installation year,1941,year,S08,historical record,T2
+Tanaji Samadhi,Bronze statue installation year,1976,year,S08,historical record,T2
+Rajaram Samadhi,Structure type,stone chhatri with square plinth and domed canopy,text,S02,documented observation,T2
+Rajaram Samadhi,Plinth size,UNKNOWN,m,S02,pending field measurement,T4
+Tilak Bungalow,Structure type,pitched tile roof with masonry base and veranda,text,S02/PH05,scaled from photo,T3
+Devtake,Structure type,perennial rock-cut basalt cisterns,text,S01/S02,documented observation,T2
+Fort overall,Summit elevation above MSL,1312,m,S01/S04,government survey reference,T2
+Fort overall,Height above surrounding valley,760,m,S01,government gazetteer,T2
+Fort overall,Plateau surface area,70,acres,S02,documented estimate,T3

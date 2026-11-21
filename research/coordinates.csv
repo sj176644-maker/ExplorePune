@@ -1,0 +1,20 @@
+landmark,lat,lon,elevation,CRS,source_id,method,tier
+Fort Centroid,18.3656639,73.7552694,1312,EPSG:4326,S01,Approximate fort centroid,T3
+Pune Darwaza,18.3695,73.7588,1260,EPSG:4326,S01/S24,Estimated from OSM / S01 relative position,T3
+Kalyan Darwaza,18.3592,73.7512,1245,EPSG:4326,S01/S24,Estimated from OSM / S01 relative position,T3
+Fortification walls,UNKNOWN,UNKNOWN,UNKNOWN,EPSG:4326,S01/S20,UNKNOWN (needs perimeter survey),T4
+Defensive bastions,UNKNOWN,UNKNOWN,UNKNOWN,EPSG:4326,S02/S21,UNKNOWN (needs bastion GPS log),T4
+Kalavantinicha Buruj,UNKNOWN,UNKNOWN,UNKNOWN,EPSG:4326,S02,UNKNOWN (needs field GPS),T4
+Zunjar Buruj,18.3556,73.7518,1230,EPSG:4326,S24,Estimated from OSM promontory,T3
+Kandrai Buruj,18.3640,73.7485,1280,EPSG:4326,S24,Estimated from OSM,T3
+Khadkadyacha Buruj,18.3712,73.7601,1250,EPSG:4326,S02/S24,Estimated from OSM,T3
+Daru Kothar,18.3672,73.7565,1300,EPSG:4326,S02/S24,Estimated from OSM,T3
+Kondhaneshwar Temple,18.3661,73.7562,1308,EPSG:4326,S24,Estimated from OSM,T3
+Amruteshwar Bhairav Temple,18.3668,73.7555,1305,EPSG:4326,S02/S24,Estimated from OSM,T3
+Tanaji Malusare Samadhi,18.3670,73.7559,1306,EPSG:4326,S24,Estimated from OSM,T3
+Rajaram Maharaj Samadhi,18.3648,73.7538,1298,EPSG:4326,S24,Estimated from OSM,T3
+Lokmanya Tilak Bungalow,18.3653,73.7545,1302,EPSG:4326,S24,Estimated from OSM,T3
+Devtake (Dev Taki),18.3665,73.7549,1290,EPSG:4326,S02/S24,Estimated from OSM,T3
+Khankonda Tank,18.3658,73.7540,1285,EPSG:4326,S02/S24,Estimated from OSM,T3
+Horse Stables,18.3685,73.7578,1270,EPSG:4326,S17/S24,Estimated from OSM,T3
+Doordarshan TV Tower,18.3638,73.7560,1317,EPSG:4326,S01/S24,Estimated from OSM / Survey of India summit,T3
