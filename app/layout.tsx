@@ -12,22 +12,32 @@ import SiteJsonLd from '@/components/SiteJsonLd';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://explorepune-guide.vercel.app'),
-  title: { default: 'Explore Pune | Historic Forts, Wadas & Trip Planner', template: '%s | Explore Pune' },
-  description: 'Explore 106+ historic Pune destinations with verified visiting hours, ticket entry fees, Sahyadri trekking trails, local cuisine guides, and custom AI trip planning.',
+  title: { default: 'Explore Pune — Top Places to Visit, Historic Forts & Travel Guide', template: '%s | Explore Pune' },
+  description: 'Explore 106+ historic Pune destinations with verified visiting hours, ticket entry fees, Sahyadri trekking trails, Pune Metro & PMPML bus routes, local cuisine guides, and custom AI trip planning.',
   keywords: [
-    'Pune travel guide',
-    'Pune tourism',
-    'places to visit in Pune',
+    'explore pune',
+    'places to visit in pune',
+    'things to do in pune',
+    'pune tourist places',
+    'top attractions in pune',
+    'pune tourism',
+    'pune travel guide',
+    'pune sightseeing',
+    'pune heritage trails',
     'historical places in Pune',
     'Sinhagad Fort trek',
+    'Sinhagad Fort 3D',
     'Shaniwar Wada timings and ticket fee',
     'Peshwa wadas Pune',
+    'Aga Khan Palace',
+    'Pataleshwar Cave Temple',
     'Sahyadri forts Maharashtra',
     'Pune itinerary planner',
     'Dagdusheth Ganpati Pune',
     'Pune Metro transit routes',
     'PMPML bus routes tourist places',
-    'पुणे पर्यटन माहिती',
+    'पुणे पर्यटन',
+    'पुण्यातील प्रेक्षणीय स्थळे',
     'पुण्यातील ऐतिहासिक किल्ले',
     'शनिवार वाडा',
     'सिंहगड किल्ला',
@@ -45,6 +55,9 @@ export const metadata: Metadata = {
     'geo.placename': 'Pune, Maharashtra, India',
     'geo.position': '18.5204;73.8567',
     'ICBM': '18.5204, 73.8567',
+    'DC.title': 'Explore Pune — Top Places to Visit & Historic Heritage Guide',
+    'DC.coverage': 'Pune, Maharashtra, India',
+    'DC.language': 'en-IN, mr-IN',
     'apple-mobile-web-app-title': 'Explore Pune',
   },
   alternates: {
@@ -60,14 +73,14 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://explorepune-guide.vercel.app',
     siteName: 'Explore Pune',
-    title: 'Explore Pune | Historic Forts, Wadas & Trip Planner',
-    description: 'Explore 106+ historic Pune destinations with verified visiting hours, ticket entry fees, Sahyadri trekking trails, local cuisine guides, and custom AI trip planning.',
+    title: 'Explore Pune — Top Places to Visit, Historic Forts & Travel Guide',
+    description: 'Explore 106+ historic Pune destinations with verified visiting hours, ticket entry fees, Sahyadri trekking trails, Pune Metro & PMPML bus routes, local cuisine guides, and custom AI trip planning.',
     images: [
       {
         url: '/images/pune-map-hero.jpg',
         width: 1200,
         height: 630,
-        alt: 'Explore Pune - Heritage, Forts & Travel Guide',
+        alt: 'Explore Pune - Top Places to Visit, Forts & Travel Guide',
       },
       {
         url: '/assets/explore-pune-logo.png',
@@ -79,8 +92,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Explore Pune | Historic Forts, Wadas & Trip Planner',
-    description: 'Explore 106+ historic Pune destinations with verified visiting hours, ticket entry fees, Sahyadri trekking trails, local cuisine guides, and custom AI trip planning.',
+    title: 'Explore Pune — Top Places to Visit, Historic Forts & Travel Guide',
+    description: 'Explore 106+ historic Pune destinations with verified visiting hours, ticket entry fees, Sahyadri trekking trails, Pune Metro & PMPML bus routes, local cuisine guides, and custom AI trip planning.',
     images: ['/images/pune-map-hero.jpg', '/assets/explore-pune-logo.png'],
   },
   icons: {
@@ -129,6 +142,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
         <link rel="icon" type="image/png" sizes="512x512" href="/assets/explore-pune-logo.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+        {/* GeoJSON Spatial Data Discovery for GIS Bots, Map Engines & AI */}
+        <link
+          rel="alternate"
+          type="application/geo+json"
+          href="/geo/pune-destinations.geojson"
+          title="Explore Pune — Verified Heritage Destinations GeoJSON Dataset"
+        />
 
         {/* Preconnect & Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />

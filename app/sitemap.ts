@@ -40,10 +40,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       images: [`${baseUrl}/images/places/sinhagad-fort.jpg`],
     },
     {
+      url: `${baseUrl}/sinhagad`,
+      lastModified: auditReleaseDate,
+      changeFrequency: 'daily',
+      priority: 0.95,
+      images: [`${baseUrl}/images/places/sinhagad-fort.jpg`],
+    },
+    {
       url: `${baseUrl}/destinations`,
       lastModified: auditReleaseDate,
       changeFrequency: 'daily',
       priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/geo/pune-destinations.geojson`,
+      lastModified: auditReleaseDate,
+      changeFrequency: 'weekly',
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/planner`,

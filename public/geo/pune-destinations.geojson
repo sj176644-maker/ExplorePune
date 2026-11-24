@@ -1,0 +1,3093 @@
+{
+  "type": "FeatureCollection",
+  "name": "Explore Pune — Verified Heritage & Tourism Destinations",
+  "description": "Geospatially grounded catalog of 106+ Maratha forts, Peshwa wadas, ancient temples, museums, and natural sanctuaries across Pune District, Maharashtra, India.",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "bbox": [
+    73.2844,
+    18.1039,
+    74.6736,
+    19.2986
+  ],
+  "features": [
+    {
+      "type": "Feature",
+      "id": "sinhagad-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7558,
+          18.3664
+        ]
+      },
+      "properties": {
+        "name": "Sinhagad Fort (Lion's Fort)",
+        "name_mr": "सिंहगड किल्ला (कोंढाणा)",
+        "slug": "sinhagad-fort",
+        "category": "forts",
+        "address": "Sinhagad Ghat Road, Thoptewadi, Pune, Maharashtra 411025",
+        "address_mr": "सिंहगड घाट रस्ता, थोपटेवाडी, पुणे, महाराष्ट्र ४११०२५",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:00 PM (Night entry prohibited by Forest Dept)",
+        "popularity_score": 99,
+        "url": "https://explorepune-guide.vercel.app/places/sinhagad-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/sinhagad-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rajgad-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.6822,
+          18.2581
+        ]
+      },
+      "properties": {
+        "name": "Rajgad Fort (King of Forts)",
+        "name_mr": "राजगड किल्ला (राजांचा राजा)",
+        "slug": "rajgad-fort",
+        "category": "forts",
+        "address": "Gunjavane Village, Velhe Taluka, Pune District, Maharashtra 412213",
+        "address_mr": "गुंजवणे गाव, वेल्हे तालुका, पुणे जिल्हा, महाराष्ट्र ४१२२१३",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:00 PM",
+        "popularity_score": 96,
+        "url": "https://explorepune-guide.vercel.app/places/rajgad-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/rajgad-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "torna-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.6214,
+          18.2761
+        ]
+      },
+      "properties": {
+        "name": "Torna Fort (Prachandagad)",
+        "name_mr": "तोरणा किल्ला (प्रचंडगड)",
+        "slug": "torna-fort",
+        "category": "forts",
+        "address": "Velhe, Pune District, Maharashtra 412212",
+        "address_mr": "वेल्हे, पुणे जिल्हा, महाराष्ट्र ४१२२१२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:00 PM",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/torna-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/torna-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "shivneri-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8617,
+          19.1983
+        ]
+      },
+      "properties": {
+        "name": "Shivneri Fort (Birthplace of Shivaji Maharaj)",
+        "name_mr": "शिवनेरी किल्ला (शिवजन्माचे पवित्र स्थान)",
+        "slug": "shivneri-fort",
+        "category": "forts",
+        "address": "Junnar, Pune District, Maharashtra 410502",
+        "address_mr": "जुन्नर, पुणे जिल्हा, महाराष्ट्र ४१०५०२",
+        "fee_status": "paid",
+        "entry_fee_inr": 25,
+        "opening_hours": "06:00 AM - 06:00 PM",
+        "popularity_score": 98,
+        "url": "https://explorepune-guide.vercel.app/places/shivneri-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/shivneri-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lohagad-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.4792,
+          18.7083
+        ]
+      },
+      "properties": {
+        "name": "Lohagad Fort (Iron Fort)",
+        "name_mr": "लोहगड किल्ला (लोहदुर्ग)",
+        "slug": "lohagad-fort",
+        "category": "forts",
+        "address": "Lohagad Ghat, Malavali, Pune District, Maharashtra 410405",
+        "address_mr": "लोहगड घाट, मळवली, पुणे जिल्हा, महाराष्ट्र ४१०४०५",
+        "fee_status": "paid",
+        "entry_fee_inr": 25,
+        "opening_hours": "06:00 AM - 06:00 PM",
+        "popularity_score": 97,
+        "url": "https://explorepune-guide.vercel.app/places/lohagad-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/lohagad-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "malhargad-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.0417,
+          18.4114
+        ]
+      },
+      "properties": {
+        "name": "Malhargad Fort (Sonori Fort)",
+        "name_mr": "मल्हारगड (सोनोरी किल्ला)",
+        "slug": "malhargad-fort",
+        "category": "forts",
+        "address": "Sonori Village, Saswad, Pune District, Maharashtra 412301",
+        "address_mr": "सोनोरी गाव, सासवडजवळ, पुणे जिल्हा, महाराष्ट्र ४१२३०१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM",
+        "popularity_score": 88,
+        "url": "https://explorepune-guide.vercel.app/places/malhargad-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/malhargad-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tikona-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.5186,
+          18.6312
+        ]
+      },
+      "properties": {
+        "name": "Tikona Fort (Vitandgad)",
+        "name_mr": "तिकोना किल्ला (वितंडगड)",
+        "slug": "tikona-fort",
+        "category": "forts",
+        "address": "Tikona Peth, Near Kamshet, Pune District, Maharashtra 410406",
+        "address_mr": "तिकोना पेठ, कामशेतजवळ, पुणे जिल्हा, महाराष्ट्र ४१०४०६",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:00 PM",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/tikona-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/tikona-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "visapur-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.4914,
+          18.7214
+        ]
+      },
+      "properties": {
+        "name": "Visapur Fort (Twin Fort of Lohagad)",
+        "name_mr": "विसापूर किल्ला (लोहगडाचा जुळा किल्ला)",
+        "slug": "visapur-fort",
+        "category": "forts",
+        "address": "Malavali, Lonavala-Kamshet, Pune District, Maharashtra 410405",
+        "address_mr": "मळवली, लोणावळा-कामशेत परिसर, पुणे जिल्हा, महाराष्ट्र ४१०४०५",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:00 PM",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/visapur-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/visapur-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "purandar-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9789,
+          18.2778
+        ]
+      },
+      "properties": {
+        "name": "Purandar Fort (Birthplace of Sambhaji Maharaj)",
+        "name_mr": "पुरंदर किल्ला (छत्रपती संभाजी महाराजांचे जन्मस्थान)",
+        "slug": "purandar-fort",
+        "category": "forts",
+        "address": "Purandar Taluka, Saswad, Pune District, Maharashtra 412301",
+        "address_mr": "पुरंदर तालुका, सासवडजवळ, पुणे जिल्हा, महाराष्ट्र ४१२३०१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 05:00 PM (Military post curfew)",
+        "popularity_score": 96,
+        "url": "https://explorepune-guide.vercel.app/places/purandar-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/purandar-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rajmachi-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.3986,
+          18.8284
+        ]
+      },
+      "properties": {
+        "name": "Rajmachi Fort (Shrivardhan & Manaranjan)",
+        "name_mr": "राजमाची किल्ला (श्रीवर्धन व मनरंजन बालेकिल्ले)",
+        "slug": "rajmachi-fort",
+        "category": "forts",
+        "address": "Udhewadi, Near Khandala-Lonavala, Pune District, Maharashtra 410401",
+        "address_mr": "उधेवाडी, खंडाळा-लोणावळ्याजवळ, पुणे जिल्हा, महाराष्ट्र ४१०४०१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:00 PM",
+        "popularity_score": 94,
+        "url": "https://explorepune-guide.vercel.app/places/rajmachi-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/rajmachi-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "korigad-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.3853,
+          18.6225
+        ]
+      },
+      "properties": {
+        "name": "Korigad Fort",
+        "name_mr": "कोरीगड किल्ला",
+        "slug": "korigad-fort",
+        "category": "forts",
+        "address": "Aamby Valley Road, Peth Shahpur, Pune District, Maharashtra 410401",
+        "address_mr": "अॅम्बी व्हॅली रस्ता, पेठ शहापूर, पुणे जिल्हा, महाराष्ट्र ४१०४०१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:00 PM",
+        "popularity_score": 92,
+        "url": "https://explorepune-guide.vercel.app/places/korigad-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/korigad-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rohida-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8217,
+          18.1039
+        ]
+      },
+      "properties": {
+        "name": "Rohida Fort (Vichitragad)",
+        "name_mr": "रोहिडा किल्ला (विचित्रगड)",
+        "slug": "rohida-fort",
+        "category": "forts",
+        "address": "Bajarwadi, Bhor Taluka, Pune District, Maharashtra 412206",
+        "address_mr": "बाजारवाडी, भोर तालुका, पुणे जिल्हा, महाराष्ट्र ४१२२०६",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:00 PM",
+        "popularity_score": 89,
+        "url": "https://explorepune-guide.vercel.app/places/rohida-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/rohida-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "shaniwar-wada",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8553,
+          18.5196
+        ]
+      },
+      "properties": {
+        "name": "Shaniwar Wada",
+        "name_mr": "शनिवार वाडा",
+        "slug": "shaniwar-wada",
+        "category": "heritage",
+        "address": "Shaniwar Peth, Pune, Maharashtra 411030",
+        "address_mr": "शनिवार पेठ, पुणे, महाराष्ट्र ४११०३०",
+        "fee_status": "paid",
+        "entry_fee_inr": 25,
+        "opening_hours": "09:30 AM - 05:30 PM (Daily)",
+        "popularity_score": 99,
+        "url": "https://explorepune-guide.vercel.app/places/shaniwar-wada",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/shaniwar-wada.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "aga-khan-palace",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9015,
+          18.5524
+        ]
+      },
+      "properties": {
+        "name": "Aga Khan Palace",
+        "name_mr": "आगा खान पॅलेस",
+        "slug": "aga-khan-palace",
+        "category": "heritage",
+        "address": "Pune-Nagar Road, Kalyani Nagar, Pune, Maharashtra 411006",
+        "address_mr": "पुणे-नगर रस्ता, कल्याणी नगर, पुणे, महाराष्ट्र ४११००६",
+        "fee_status": "paid",
+        "entry_fee_inr": 25,
+        "opening_hours": "09:00 AM - 05:30 PM (Daily)",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/aga-khan-palace",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/aga-khan-palace.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lal-mahal",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8569,
+          18.5186
+        ]
+      },
+      "properties": {
+        "name": "Lal Mahal (Red Palace)",
+        "name_mr": "लाल महाल",
+        "slug": "lal-mahal",
+        "category": "heritage",
+        "address": "Kasba Peth, Durvankur Society, Pune, Maharashtra 411011",
+        "address_mr": "कसबा पेठ, शनिवार वाड्याशेजारी, पुणे, महाराष्ट्र ४११०११",
+        "fee_status": "paid",
+        "entry_fee_inr": 5,
+        "opening_hours": "09:00 AM - 01:00 PM & 04:00 PM - 08:00 PM",
+        "popularity_score": 92,
+        "url": "https://explorepune-guide.vercel.app/places/lal-mahal",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/lal-mahal.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "vishrambaug-wada",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8525,
+          18.5133
+        ]
+      },
+      "properties": {
+        "name": "Vishrambaug Wada",
+        "name_mr": "विश्रामबाग वाडा",
+        "slug": "vishrambaug-wada",
+        "category": "heritage",
+        "address": "RB Kumthekar Rd, Sadashiv Peth, Pune, Maharashtra 411030",
+        "address_mr": "कुमठेकर रस्ता, सदाशिव पेठ, पुणे, महाराष्ट्र ४११०३०",
+        "fee_status": "paid",
+        "entry_fee_inr": 5,
+        "opening_hours": "10:00 AM - 05:00 PM",
+        "popularity_score": 91,
+        "url": "https://explorepune-guide.vercel.app/places/vishrambaug-wada",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/vishrambaug-wada.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kesari-wada",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8492,
+          18.5181
+        ]
+      },
+      "properties": {
+        "name": "Kesari Wada (Tilak Smarak)",
+        "name_mr": "केसरी वाडा (टिळक स्मारक)",
+        "slug": "kesari-wada",
+        "category": "heritage",
+        "address": "568, Narayan Peth, Pune, Maharashtra 411030",
+        "address_mr": "५६८, नारायण पेठ, पुणे, महाराष्ट्र ४११०३०",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "10:00 AM - 06:00 PM",
+        "popularity_score": 90,
+        "url": "https://explorepune-guide.vercel.app/places/kesari-wada",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/kesari-wada.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "national-war-memorial",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8858,
+          18.5208
+        ]
+      },
+      "properties": {
+        "name": "National War Memorial Southern Command",
+        "name_mr": "राष्ट्रीय युद्ध स्मारक (सदर्न कमांड)",
+        "slug": "national-war-memorial",
+        "category": "heritage",
+        "address": "Morwada, Camp, Pune, Maharashtra 411001",
+        "address_mr": "मोरवाडा, पुणे कॅम्प, महाराष्ट्र ४११००१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 91,
+        "url": "https://explorepune-guide.vercel.app/places/national-war-memorial",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/national-war-memorial.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "shinde-chhatri",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8967,
+          18.4988
+        ]
+      },
+      "properties": {
+        "name": "Shinde Chhatri (Mahadji Shinde Memorial)",
+        "name_mr": "शिंदे छत्री (महादजी शिंदे स्मारक)",
+        "slug": "shinde-chhatri",
+        "category": "heritage",
+        "address": "Wanowrie, Pune, Maharashtra 411040",
+        "address_mr": "वानवडी, पुणे, महाराष्ट्र ४११०४०",
+        "fee_status": "paid",
+        "entry_fee_inr": 20,
+        "opening_hours": "06:00 AM - 08:30 PM (Daily; Aarti at 07:00 AM & 07:00 PM)",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/shinde-chhatri",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/shinde-chhatri.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fergusson-college-heritage",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8406,
+          18.5236
+        ]
+      },
+      "properties": {
+        "name": "Fergusson College Heritage Campus",
+        "name_mr": "फर्ग्युसन महाविद्यालय मुख्य हेरिटेज वास्तू",
+        "slug": "fergusson-college-heritage",
+        "category": "heritage",
+        "address": "FC Road, Shivajinagar, Pune, Maharashtra 411004",
+        "address_mr": "एफसी रोड, शिवाजीनगर, पुणे, महाराष्ट्र ४११००४",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 94,
+        "url": "https://explorepune-guide.vercel.app/places/fergusson-college-heritage",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/fergusson-college-heritage.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pune-university-heritage-building",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8266,
+          18.5529
+        ]
+      },
+      "properties": {
+        "name": "Savitribai Phule Pune University Heritage Main Building",
+        "name_mr": "सावित्रीबाई फुले पुणे विद्यापीठ मुख्य हेरिटेज इमारत",
+        "slug": "pune-university-heritage-building",
+        "category": "heritage",
+        "address": "Ganeshkhind Road, Pune, Maharashtra 411007",
+        "address_mr": "गणेशखिंड रस्ता, पुणे, महाराष्ट्र ४११००७",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/pune-university-heritage-building",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/pune-university-heritage-building.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bund-garden",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8822,
+          18.5367
+        ]
+      },
+      "properties": {
+        "name": "Bund Garden & Fitzgerald Bridge",
+        "name_mr": "बंड गार्डन व फिट्झगेराल्ड पूल",
+        "slug": "bund-garden",
+        "category": "heritage",
+        "address": "Sangamvadi, Near Yerawada Bridge, Pune, Maharashtra 411001",
+        "address_mr": "संगमवाडी, येरवडा पुलाजवळ, पुणे, महाराष्ट्र ४११००१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 88,
+        "url": "https://explorepune-guide.vercel.app/places/bund-garden",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/bund-garden.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osho-teerth-park",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8931,
+          18.5383
+        ]
+      },
+      "properties": {
+        "name": "Osho Teerth Park & Ashram (Koregaon Park)",
+        "name_mr": "ओशो तीर्थ पार्क व ध्यान आश्रम (कोरेगाव पार्क)",
+        "slug": "osho-teerth-park",
+        "category": "heritage",
+        "address": "Lane 2, Koregaon Park, Pune, Maharashtra 411001",
+        "address_mr": "गल्ली क्र. २, कोरेगाव पार्क, पुणे, महाराष्ट्र ४११००१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 91,
+        "url": "https://explorepune-guide.vercel.app/places/osho-teerth-park",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/osho-teerth-park.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "karla-caves",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.4708,
+          18.7825
+        ]
+      },
+      "properties": {
+        "name": "Karla Caves (Ancient Rock-Cut Chaitya Hall)",
+        "name_mr": "कार्ला लेणी (भारतातील सर्वात मोठे बौद्ध चैत्यगृह)",
+        "slug": "karla-caves",
+        "category": "heritage",
+        "address": "Karla, Near Lonavala, Pune District, Maharashtra 410405",
+        "address_mr": "कार्ला, लोणावळ्याजवळ, पुणे जिल्हा, महाराष्ट्र ४१०४०५",
+        "fee_status": "paid",
+        "entry_fee_inr": 25,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 96,
+        "url": "https://explorepune-guide.vercel.app/places/karla-caves",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/karla-caves.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bhaja-caves",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.4839,
+          18.7297
+        ]
+      },
+      "properties": {
+        "name": "Bhaja Caves (Buddhist Monastic Complex)",
+        "name_mr": "भाजा लेणी (प्राचीन बौद्ध लेणी व स्तूप समूह)",
+        "slug": "bhaja-caves",
+        "category": "heritage",
+        "address": "Bhaja Village, Near Malavali, Pune District, Maharashtra 410405",
+        "address_mr": "भाजे गाव, मळवली जवळ, पुणे जिल्हा, महाराष्ट्र ४१०४०५",
+        "fee_status": "paid",
+        "entry_fee_inr": 25,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/bhaja-caves",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/bhaja-caves.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bedse-caves",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.5342,
+          18.7061
+        ]
+      },
+      "properties": {
+        "name": "Bedse Caves (Ancient Chaitya & Vihara)",
+        "name_mr": "बेडसे लेणी (शांत व प्राचीन बौद्ध लेणी)",
+        "slug": "bedse-caves",
+        "category": "heritage",
+        "address": "Bedse Village, Maval Taluka, Pune District, Maharashtra 410405",
+        "address_mr": "बेडसे गाव, मावळ तालुका, पुणे जिल्हा, महाराष्ट्र ४१०४०५",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 90,
+        "url": "https://explorepune-guide.vercel.app/places/bedse-caves",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/bedse-caves.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "shreemant-dagdusheth-halwai-ganpati",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8561,
+          18.5164
+        ]
+      },
+      "properties": {
+        "name": "Shreemant Dagdusheth Halwai Ganpati Mandir",
+        "name_mr": "श्रीमंत दगडूशेठ हलवाई गणपती मंदिर",
+        "slug": "shreemant-dagdusheth-halwai-ganpati",
+        "category": "temples",
+        "address": "Ganpati Bhavan, 250, Budhwar Peth, Pune, Maharashtra 411002",
+        "address_mr": "गणपती भवन, २५०, बुधवार पेठ, पुणे, महाराष्ट्र ४११००२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 10:30 PM (Daily)",
+        "popularity_score": 100,
+        "url": "https://explorepune-guide.vercel.app/places/shreemant-dagdusheth-halwai-ganpati",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/shreemant-dagdusheth-halwai-ganpati.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kasba-ganpati",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8586,
+          18.5203
+        ]
+      },
+      "properties": {
+        "name": "Kasba Ganpati Mandir (Gramdaivat of Pune)",
+        "name_mr": "कसबा गणपती मंदिर (पुण्याचे ग्रामदैवत)",
+        "slug": "kasba-ganpati",
+        "category": "temples",
+        "address": "158, Kasba Peth, Pune, Maharashtra 411011",
+        "address_mr": "१५८, कसबा पेठ, पुणे, महाराष्ट्र ४११०११",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 10:00 PM",
+        "popularity_score": 97,
+        "url": "https://explorepune-guide.vercel.app/places/kasba-ganpati",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/kasba-ganpati.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pataleshwar-cave-temple",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8508,
+          18.5275
+        ]
+      },
+      "properties": {
+        "name": "Pataleshwar Cave Temple",
+        "name_mr": "पाताळेश्वर लेणी मंदिर",
+        "slug": "pataleshwar-cave-temple",
+        "category": "temples",
+        "address": "Jangali Maharaj Road, Shivajinagar, Pune, Maharashtra 411005",
+        "address_mr": "जंगली महाराज रस्ता, शिवाजीनगर, पुणे, महाराष्ट्र ४११००५",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "08:00 AM - 05:30 PM",
+        "popularity_score": 94,
+        "url": "https://explorepune-guide.vercel.app/places/pataleshwar-cave-temple",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/pataleshwar-cave-temple.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "chaturshringi-temple",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8286,
+          18.5375
+        ]
+      },
+      "properties": {
+        "name": "Chaturshringi Temple",
+        "name_mr": "चतुःशृंगी देवी मंदिर",
+        "slug": "chaturshringi-temple",
+        "category": "temples",
+        "address": "Senapati Bapat Road, Shivajinagar, Pune, Maharashtra 411016",
+        "address_mr": "सेनापती बापट रस्ता, शिवाजीनगर, पुणे, महाराष्ट्र ४११०१६",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/chaturshringi-temple",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/chaturshringi-temple.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "baps-swaminarayan-mandir",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8361,
+          18.4528
+        ]
+      },
+      "properties": {
+        "name": "BAPS Shri Swaminarayan Mandir",
+        "name_mr": "श्री स्वामिनारायण मंदिर (आंबेगाव)",
+        "slug": "baps-swaminarayan-mandir",
+        "category": "temples",
+        "address": "Mumbai-Bangalore Highway, Ambegaon BK, Pune, Maharashtra 411046",
+        "address_mr": "मुंबई-बंगळुरू महामार्ग, आंबेगाव बुद्रुक, पुणे, महाराष्ट्र ४११०४६",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/baps-swaminarayan-mandir",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/baps-swaminarayan-mandir.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "parvati-hill",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8475,
+          18.4967
+        ]
+      },
+      "properties": {
+        "name": "Parvati Hill & Devdeveshwar Temple",
+        "name_mr": "पार्वती टेकडी व देवदेवेश्वर मंदिर",
+        "slug": "parvati-hill",
+        "category": "temples",
+        "address": "Parvati Paytha, Pune, Maharashtra 411009",
+        "address_mr": "पार्वती पायथा, पुणे, महाराष्ट्र ४११००९",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "05:00 AM - 08:00 PM",
+        "popularity_score": 96,
+        "url": "https://explorepune-guide.vercel.app/places/parvati-hill",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/parvati-hill.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tulshibaug-temple",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8558,
+          18.5158
+        ]
+      },
+      "properties": {
+        "name": "Tulshibaug Ram Mandir",
+        "name_mr": "तुळशीबाग राम मंदिर",
+        "slug": "tulshibaug-temple",
+        "category": "temples",
+        "address": "Tulshibaug, Budhwar Peth, Pune, Maharashtra 411002",
+        "address_mr": "तुळशीबाग, बुधवार पेठ, पुणे, महाराष्ट्र ४११००२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 91,
+        "url": "https://explorepune-guide.vercel.app/places/tulshibaug-temple",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/tulshibaug-temple.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "alandi-dnyaneshwar-mandir",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8967,
+          18.6775
+        ]
+      },
+      "properties": {
+        "name": "Alandi (Sant Dnyaneshwar Sanjeevan Samadhi)",
+        "name_mr": "आळंदी (संत ज्ञानेश्वर महाराज संजीवन समाधी)",
+        "slug": "alandi-dnyaneshwar-mandir",
+        "category": "temples",
+        "address": "Alandi Devachi, Khed Taluka, Pune District, Maharashtra 412105",
+        "address_mr": "आळंदी देवाची, खेड तालुका, पुणे जिल्हा, महाराष्ट्र ४१२१०५",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 98,
+        "url": "https://explorepune-guide.vercel.app/places/alandi-dnyaneshwar-mandir",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/alandi-dnyaneshwar-mandir.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dehu-tukaram-mandir",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7719,
+          18.7183
+        ]
+      },
+      "properties": {
+        "name": "Dehu (Sant Tukaram Maharaj Gatha Mandir)",
+        "name_mr": "देहू (संत तुकाराम महाराज गाथा मंदिर)",
+        "slug": "dehu-tukaram-mandir",
+        "category": "temples",
+        "address": "Dehu Gaon, Haveli Taluka, Pune District, Maharashtra 412109",
+        "address_mr": "देहू गाव, हवेली तालुका, पुणे जिल्हा, महाराष्ट्र ४१२१०९",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 97,
+        "url": "https://explorepune-guide.vercel.app/places/dehu-tukaram-mandir",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/dehu-tukaram-mandir.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "jejuri-khandoba-temple",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.1592,
+          18.275
+        ]
+      },
+      "properties": {
+        "name": "Khandoba Temple, Jejuri (Golden Jejuri)",
+        "name_mr": "खंडोबा मंदिर, जेजुरी (सोन्याची जेजुरी)",
+        "slug": "jejuri-khandoba-temple",
+        "category": "temples",
+        "address": "Jejuri Hill, Purandar Taluka, Pune District, Maharashtra 412303",
+        "address_mr": "जेजुरी गड, पुरंदर तालुका, पुणे जिल्हा, महाराष्ट्र ४१२३०३",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 97,
+        "url": "https://explorepune-guide.vercel.app/places/jejuri-khandoba-temple",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/jejuri-khandoba-temple.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "morgaon-mayureshwar-ganpati",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.3164,
+          18.2756
+        ]
+      },
+      "properties": {
+        "name": "Mayureshwar Ganpati Mandir, Morgaon (Ashtavinayak #1)",
+        "name_mr": "मयूरेश्वर गणपती मंदिर, मोरगाव (आद्य अष्टविनायक)",
+        "slug": "morgaon-mayureshwar-ganpati",
+        "category": "temples",
+        "address": "Morgaon, Baramati Taluka, Pune District, Maharashtra 412304",
+        "address_mr": "मोरगाव, बारामती तालुका, पुणे जिल्हा, महाराष्ट्र ४१२३०४",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 96,
+        "url": "https://explorepune-guide.vercel.app/places/morgaon-mayureshwar-ganpati",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/morgaon-mayureshwar-ganpati.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ranjangaon-mahaganpati",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.2417,
+          18.7561
+        ]
+      },
+      "properties": {
+        "name": "Mahaganpati Mandir, Ranjangaon (Ashtavinayak)",
+        "name_mr": "महागणपती मंदिर, रांजणगाव (अष्टविनायक)",
+        "slug": "ranjangaon-mahaganpati",
+        "category": "temples",
+        "address": "Ranjangaon, Shirur Taluka, Pune District, Maharashtra 412209",
+        "address_mr": "रांजणगाव, शिरूर तालुका, पुणे जिल्हा, महाराष्ट्र ४१२२०९",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/ranjangaon-mahaganpati",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/ranjangaon-mahaganpati.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "theur-chintamani-ganpati",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.0531,
+          18.5283
+        ]
+      },
+      "properties": {
+        "name": "Chintamani Ganpati Mandir, Theur (Ashtavinayak)",
+        "name_mr": "चिंतामणी गणपती मंदिर, थेऊर (अष्टविनायक)",
+        "slug": "theur-chintamani-ganpati",
+        "category": "temples",
+        "address": "Theur, Haveli Taluka, Pune District, Maharashtra 412110",
+        "address_mr": "थेऊर, हवेली तालुका, पुणे जिल्हा, महाराष्ट्र ४१२११०",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 94,
+        "url": "https://explorepune-guide.vercel.app/places/theur-chintamani-ganpati",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/theur-chintamani-ganpati.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "iskcon-nvcc-kondhwa",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8828,
+          18.4489
+        ]
+      },
+      "properties": {
+        "name": "ISKCON NVCC Temple (Katraj-Kondhwa)",
+        "name_mr": "इस्कॉन नवीन वैदिक सांस्कृतिक केंद्र, कोंढवा",
+        "slug": "iskcon-nvcc-kondhwa",
+        "category": "temples",
+        "address": "Katraj-Kondhwa Bypass, Tilekar Nagar, Kondhwa, Pune, Maharashtra 411048",
+        "address_mr": "कात्रज-कोंढवा बायपास, टिळेकर नगर, कोंढवा, पुणे, महाराष्ट्र ४११०४८",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/iskcon-nvcc-kondhwa",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/iskcon-nvcc-kondhwa.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bhimashankar-temple",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.5358,
+          19.0722
+        ]
+      },
+      "properties": {
+        "name": "Bhimashankar Jyotirlinga Temple & Wildlife Sanctuary",
+        "name_mr": "भीमाशंकर ज्योतिर्लिंग मंदिर व वन्यजीव अभयारण्य",
+        "slug": "bhimashankar-temple",
+        "category": "temples",
+        "address": "Bhimashankar, Khed Taluka, Pune District, Maharashtra 410509",
+        "address_mr": "भीमाशंकर, खेड तालुका, पुणे जिल्हा, महाराष्ट्र ४१०५०९",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 99,
+        "url": "https://explorepune-guide.vercel.app/places/bhimashankar-temple",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/bhimashankar-temple.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "raja-dinkar-kelkar-museum",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8544,
+          18.5108
+        ]
+      },
+      "properties": {
+        "name": "Raja Dinkar Kelkar Museum",
+        "name_mr": "राजा दिनकर केळकर वस्तुसंग्रहालय",
+        "slug": "raja-dinkar-kelkar-museum",
+        "category": "museums",
+        "address": "1377-78, Kamal Kunj, Natu Baug, Shukrawar Peth, Pune, Maharashtra 411002",
+        "address_mr": "१३७७-७८, नातू बाग, शुक्रवार पेठ, पुणे, महाराष्ट्र ४११००२",
+        "fee_status": "paid",
+        "entry_fee_inr": 100,
+        "opening_hours": "10:00 AM - 05:30 PM (Daily)",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/raja-dinkar-kelkar-museum",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/raja-dinkar-kelkar-museum.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tribal-museum",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8825,
+          18.5317
+        ]
+      },
+      "properties": {
+        "name": "Tribal Cultural Museum",
+        "name_mr": "आदिवासी सांस्कृतिक वस्तुसंग्रहालय",
+        "slug": "tribal-museum",
+        "category": "museums",
+        "address": "28, Queen's Garden Road, Band Garden, Pune, Maharashtra 411001",
+        "address_mr": "२८, क्वीन्स गार्डन रोड, बंड गार्डनजवळ, पुणे, महाराष्ट्र ४११००१",
+        "fee_status": "paid",
+        "entry_fee_inr": 20,
+        "opening_hours": "10:30 AM - 05:30 PM",
+        "popularity_score": 87,
+        "url": "https://explorepune-guide.vercel.app/places/tribal-museum",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/tribal-museum.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "joshi-miniature-railway",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8186,
+          18.5028
+        ]
+      },
+      "properties": {
+        "name": "Joshi's Museum of Miniature Railways",
+        "name_mr": "जोशींचे मिनिएचर रेल्वे संग्रहालय",
+        "slug": "joshi-miniature-railway",
+        "category": "museums",
+        "address": "17/1, B/2, G.A. Kulkarni Path, Kothrud, Pune, Maharashtra 411038",
+        "address_mr": "१७/१, जी. ए. कुलकर्णी पथ, कोथरूड, पुणे, महाराष्ट्र ४११०३८",
+        "fee_status": "paid",
+        "entry_fee_inr": 120,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 92,
+        "url": "https://explorepune-guide.vercel.app/places/joshi-miniature-railway",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/joshi-miniature-railway.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "mahatma-phule-museum",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8478,
+          18.5258
+        ]
+      },
+      "properties": {
+        "name": "Mahatma Phule Museum",
+        "name_mr": "महात्मा फुले वस्तुसंग्रहालय",
+        "slug": "mahatma-phule-museum",
+        "category": "museums",
+        "address": "Ghole Road, Shivajinagar, Pune, Maharashtra 411004",
+        "address_mr": "घोले रस्ता, शिवाजीनगर, पुणे, महाराष्ट्र ४११००४",
+        "fee_status": "paid",
+        "entry_fee_inr": 20,
+        "opening_hours": "09:00 AM - 05:30 PM",
+        "popularity_score": 86,
+        "url": "https://explorepune-guide.vercel.app/places/mahatma-phule-museum",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/mahatma-phule-museum.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "iucaa-science-park",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8261,
+          18.5572
+        ]
+      },
+      "properties": {
+        "name": "IUCAA Science Park & Astronomy Centre",
+        "name_mr": "आयुका विज्ञान उद्यान व खगोलशास्त्र केंद्र",
+        "slug": "iucaa-science-park",
+        "category": "museums",
+        "address": "SPPU Campus, Ganeshkhind, Pune, Maharashtra 411007",
+        "address_mr": "पुणे विद्यापीठ कॅम्पस, गणेशखिंड, पुणे, महाराष्ट्र ४११००७",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 91,
+        "url": "https://explorepune-guide.vercel.app/places/iucaa-science-park",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/iucaa-science-park.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "okayama-friendship-garden",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8358,
+          18.4914
+        ]
+      },
+      "properties": {
+        "name": "Pu La Deshpande Garden (Okayama Friendship Garden)",
+        "name_mr": "पु. ल. देशपांडे उद्यान (जपानी मैत्री बाग)",
+        "slug": "okayama-friendship-garden",
+        "category": "parks",
+        "address": "Sinhagad Road, Dattawadi, Pune, Maharashtra 411030",
+        "address_mr": "सिंहगड रस्ता, दात्तावाडी, पुणे, महाराष्ट्र ४११०३०",
+        "fee_status": "paid",
+        "entry_fee_inr": 10,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 96,
+        "url": "https://explorepune-guide.vercel.app/places/okayama-friendship-garden",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/okayama-friendship-garden.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sarasbaug",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8533,
+          18.5008
+        ]
+      },
+      "properties": {
+        "name": "Saras Baug & Talyatla Ganpati",
+        "name_mr": "सारसबाग व तळ्यातला गणपती",
+        "slug": "sarasbaug",
+        "category": "parks",
+        "address": "Saras Baug Road, Sadashiv Peth, Pune, Maharashtra 411030",
+        "address_mr": "सारसबाग रस्ता, सदाशिव पेठ, पुणे, महाराष्ट्र ४११०३०",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 97,
+        "url": "https://explorepune-guide.vercel.app/places/sarasbaug",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/sarasbaug.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "empress-botanical-garden",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8992,
+          18.5117
+        ]
+      },
+      "properties": {
+        "name": "Empress Botanical Garden",
+        "name_mr": "एम्प्रेस बॉटनिकल गार्डन",
+        "slug": "empress-botanical-garden",
+        "category": "parks",
+        "address": "Near Race Course, Camp, Pune, Maharashtra 411001",
+        "address_mr": "रेसकोर्सजवळ, पुणे कॅम्प, महाराष्ट्र ४११००१",
+        "fee_status": "paid",
+        "entry_fee_inr": 20,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 90,
+        "url": "https://explorepune-guide.vercel.app/places/empress-botanical-garden",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/empress-botanical-garden.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "rajiv-gandhi-zoological-park",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8564,
+          18.4558
+        ]
+      },
+      "properties": {
+        "name": "Rajiv Gandhi Zoological Park (Katraj Zoo)",
+        "name_mr": "राजीव गांधी प्राणीसंग्रहालय व कात्रज सर्पोद्यान",
+        "slug": "rajiv-gandhi-zoological-park",
+        "category": "parks",
+        "address": "Pune-Satara Road, Katraj, Pune, Maharashtra 411046",
+        "address_mr": "पुणे-सातारा रस्ता, कात्रज, पुणे, महाराष्ट्र ४११०४६",
+        "fee_status": "paid",
+        "entry_fee_inr": 40,
+        "opening_hours": "09:30 AM - 05:00 PM",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/rajiv-gandhi-zoological-park",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/rajiv-gandhi-zoological-park.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sambhaji-park",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8458,
+          18.5233
+        ]
+      },
+      "properties": {
+        "name": "Chhatrapati Sambhaji Garden",
+        "name_mr": "छत्रपती संभाजी महाराज उद्यान",
+        "slug": "sambhaji-park",
+        "category": "parks",
+        "address": "JM Road, Shivajinagar, Pune, Maharashtra 411004",
+        "address_mr": "जंगली महाराज रस्ता, शिवाजीनगर, पुणे, महाराष्ट्र ४११००४",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 89,
+        "url": "https://explorepune-guide.vercel.app/places/sambhaji-park",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/sambhaji-park.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gram-sanskruti-udyan",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7914,
+          18.5414
+        ]
+      },
+      "properties": {
+        "name": "Gram Sanskruti Udyan (Village Culture Park, Pashan)",
+        "name_mr": "ग्राम संस्कृती उद्यान (पाषाण)",
+        "slug": "gram-sanskruti-udyan",
+        "category": "parks",
+        "address": "Someshwarwadi Road, Near Pashan Lake, Pashan, Pune, Maharashtra 411045",
+        "address_mr": "सोमेश्वरवाडी रस्ता, पाषाण तलावाजवळ, पुणे, महाराष्ट्र ४११०४५",
+        "fee_status": "paid",
+        "entry_fee_inr": 50,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 90,
+        "url": "https://explorepune-guide.vercel.app/places/gram-sanskruti-udyan",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/gram-sanskruti-udyan.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "khadakwasla-dam",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7667,
+          18.4417
+        ]
+      },
+      "properties": {
+        "name": "Khadakwasla Dam & Lake",
+        "name_mr": "खडकवासला धरण आणि तलाव",
+        "slug": "khadakwasla-dam",
+        "category": "nature",
+        "address": "Khadakwasla, Sinhagad Road, Pune, Maharashtra 411024",
+        "address_mr": "खडकवासला, सिंहगड रस्ता, पुणे, महाराष्ट्र ४११०२४",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM (Daylight hours)",
+        "popularity_score": 98,
+        "url": "https://explorepune-guide.vercel.app/places/khadakwasla-dam",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/khadakwasla-dam.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pashan-lake",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7844,
+          18.5367
+        ]
+      },
+      "properties": {
+        "name": "Pashan Lake & Bird Sanctuary",
+        "name_mr": "पाषाण तलाव व पक्षी अभयारण्य",
+        "slug": "pashan-lake",
+        "category": "nature",
+        "address": "Pashan, Pune, Maharashtra 411021",
+        "address_mr": "पाषाण, पुणे, महाराष्ट्र ४११०२१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM (Daylight hours)",
+        "popularity_score": 89,
+        "url": "https://explorepune-guide.vercel.app/places/pashan-lake",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/pashan-lake.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "vetal-tekdi",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8189,
+          18.5286
+        ]
+      },
+      "properties": {
+        "name": "Vetal Tekdi (Highest Peak of Pune City)",
+        "name_mr": "वेताळ टेकडी (पुण्यातील सर्वोच्च टेकडी)",
+        "slug": "vetal-tekdi",
+        "category": "nature",
+        "address": "Paud Road / Senapati Bapat Road, Pune, Maharashtra 411004",
+        "address_mr": "पौड रस्ता / सेनापती बापट रस्ता, पुणे, महाराष्ट्र ४११००४",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "05:30 AM - 08:30 PM (Daylight walking)",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/vetal-tekdi",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/vetal-tekdi.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "mulshi-dam",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.5133,
+          18.5297
+        ]
+      },
+      "properties": {
+        "name": "Mulshi Dam & Lake",
+        "name_mr": "मुळशी धरण आणि निसर्ग परिसर",
+        "slug": "mulshi-dam",
+        "category": "nature",
+        "address": "Mulshi Taluka, Pune District, Maharashtra 412108",
+        "address_mr": "मुळशी तालुका, पुणे जिल्हा, महाराष्ट्र ४१२१०८",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM (Daylight hours)",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/mulshi-dam",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/mulshi-dam.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "panshet-dam",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.6192,
+          18.3789
+        ]
+      },
+      "properties": {
+        "name": "Panshet Dam (Tanajisagar)",
+        "name_mr": "पानशेत धरण (तानाजीसागर)",
+        "slug": "panshet-dam",
+        "category": "nature",
+        "address": "Velhe-Panshet Road, Pune District, Maharashtra 412107",
+        "address_mr": "वेल्हे-पानशेत रस्ता, पुणे जिल्हा, महाराष्ट्र ४१२१०७",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM (Daylight hours)",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/panshet-dam",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/panshet-dam.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pawna-lake",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.4867,
+          18.6744
+        ]
+      },
+      "properties": {
+        "name": "Pawna Lake & Dam (Lonavala-Kamshet)",
+        "name_mr": "पवना धरण व जलाशय (कॅम्पिंग व निसर्ग पर्यटन)",
+        "slug": "pawna-lake",
+        "category": "nature",
+        "address": "Pawna Dam, Maval Taluka, Pune District, Maharashtra 410406",
+        "address_mr": "पवना धरण परिसर, मावळ तालुका, पुणे जिल्हा, महाराष्ट्र ४१०४०६",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM (Daylight hours)",
+        "popularity_score": 98,
+        "url": "https://explorepune-guide.vercel.app/places/pawna-lake",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/pawna-lake.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tiger-point-lonavala",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.3986,
+          18.7083
+        ]
+      },
+      "properties": {
+        "name": "Tiger Point & Lion's Point (Lonavala)",
+        "name_mr": "टायगर पॉईंट व लायन्स पॉईंट (लोणावळा)",
+        "slug": "tiger-point-lonavala",
+        "category": "nature",
+        "address": "Aamby Valley Road, Lonavala, Pune District, Maharashtra 410401",
+        "address_mr": "अॅम्बी व्हॅली रोड, लोणावळा, पुणे जिल्हा, महाराष्ट्र ४१०४०१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM (Daylight hours)",
+        "popularity_score": 97,
+        "url": "https://explorepune-guide.vercel.app/places/tiger-point-lonavala",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/tiger-point-lonavala.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bushi-dam",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.3983,
+          18.7303
+        ]
+      },
+      "properties": {
+        "name": "Bushi Dam (Lonavala Water Cascades)",
+        "name_mr": "भुशी धरण (लोणावळा जलप्रपात)",
+        "slug": "bushi-dam",
+        "category": "nature",
+        "address": "Bushi Dam Road, Lonavala, Pune District, Maharashtra 410401",
+        "address_mr": "भुशी धरण रस्ता, लोणावळा, पुणे जिल्हा, महाराष्ट्र ४१०४०१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM (Daylight hours)",
+        "popularity_score": 96,
+        "url": "https://explorepune-guide.vercel.app/places/bushi-dam",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/bushi-dam.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tamhini-ghat",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.4333,
+          18.4833
+        ]
+      },
+      "properties": {
+        "name": "Tamhini Ghat & Waterfalls",
+        "name_mr": "ताम्हिणी घाट व धबधबे",
+        "slug": "tamhini-ghat",
+        "category": "nature",
+        "address": "Tamhini Ghat Road, Mulshi Taluka, Pune District, Maharashtra 412108",
+        "address_mr": "ताम्हिणी घाट रस्ता, मुळशी तालुका, पुणे जिल्हा, महाराष्ट्र ४१२१०८",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:00 PM (Daylight transit recommended; night driving restricted in heavy monsoon)",
+        "popularity_score": 97,
+        "url": "https://explorepune-guide.vercel.app/places/tamhini-ghat",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/tamhini-ghat.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "taljai-hills",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8431,
+          18.4764
+        ]
+      },
+      "properties": {
+        "name": "Taljai Hills & Forest Reserve",
+        "name_mr": "तळजाई टेकडी व वन उद्यान",
+        "slug": "taljai-hills",
+        "category": "nature",
+        "address": "Taljai Forest Reserve, Sahakar Nagar, Pune, Maharashtra 411009",
+        "address_mr": "तळजाई वनक्षेत्र, सहकार नगर, पुणे, महाराष्ट्र ४११००९",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM (Daylight hours)",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/taljai-hills",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/taljai-hills.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "arai-tekdi",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8186,
+          18.5186
+        ]
+      },
+      "properties": {
+        "name": "ARAI Hill (Kothrud Nature Ridge)",
+        "name_mr": "एआरएआय टेकडी (कोथरूड निसर्ग पठार)",
+        "slug": "arai-tekdi",
+        "category": "nature",
+        "address": "Paud Road / Law College Road, Kothrud, Pune, Maharashtra 411038",
+        "address_mr": "पौड रोड / लॉ कॉलेज रोड, कोथरूड, पुणे, महाराष्ट्र ४११०३८",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM (Daylight hours)",
+        "popularity_score": 92,
+        "url": "https://explorepune-guide.vercel.app/places/arai-tekdi",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/arai-tekdi.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lavasa-lakeside",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.5072,
+          18.4114
+        ]
+      },
+      "properties": {
+        "name": "Lavasa Lakeside Promenade (Warasgaon Lake)",
+        "name_mr": "लवासा लेकसाइड प्रोमेनाड (वरसगाव जलाशय)",
+        "slug": "lavasa-lakeside",
+        "category": "nature",
+        "address": "Dasve Village, Mose Valley, Mulshi Taluka, Pune District, Maharashtra 412112",
+        "address_mr": "दासवे, मोसे खोरे, मुळशी तालुका, पुणे जिल्हा, महाराष्ट्र ४१२११२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM (Daylight hours)",
+        "popularity_score": 92,
+        "url": "https://explorepune-guide.vercel.app/places/lavasa-lakeside",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/lavasa-lakeside.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "mahatma-phule-wada",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8647,
+          18.5088
+        ]
+      },
+      "properties": {
+        "name": "Mahatma Jyotirao Phule Wada",
+        "name_mr": "महात्मा जोतीराव फुले वाडा (राष्ट्रीय सामाजिक क्रांती स्मारक)",
+        "slug": "mahatma-phule-wada",
+        "category": "heritage",
+        "address": "Phule Wada, Ganj Peth, Near Mandai, Pune, Maharashtra 411042",
+        "address_mr": "फुले वाडा, गंज पेठ, मंडईजवळ, पुणे, महाराष्ट्र ४११०४२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 97,
+        "url": "https://explorepune-guide.vercel.app/places/mahatma-phule-wada",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/mahatma-phule-wada.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bhide-wada",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8566,
+          18.5173
+        ]
+      },
+      "properties": {
+        "name": "Bhide Wada (India's First Girls' School)",
+        "name_mr": "भिडे वाडा (भारतातील मुलींची पहिली ऐतिहासिक शाळा)",
+        "slug": "bhide-wada",
+        "category": "heritage",
+        "address": "Budhwar Peth, Opposite Dagdusheth Ganpati, Pune, Maharashtra 411002",
+        "address_mr": "बुधवार पेठ, दगडूशेठ गणपती मंदिरासमोर, पुणे, महाराष्ट्र ४११००२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/bhide-wada",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/bhide-wada.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "omkareshwar-temple",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8475,
+          18.5198
+        ]
+      },
+      "properties": {
+        "name": "Omkareshwar Temple (Peshwa-Era Shiva Shrine)",
+        "name_mr": "ओंकारेश्वर मंदिर (पेशवेकालीन ऐतिहासिक शिवमंदिर, शनिवार पेठ)",
+        "slug": "omkareshwar-temple",
+        "category": "temples",
+        "address": "Shaniwar Peth, Near Balgandharva Bridge, Pune, Maharashtra 411030",
+        "address_mr": "शनिवार पेठ, बालगंधर्व पुलाजवळ, पुणे, महाराष्ट्र ४११०३०",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 94,
+        "url": "https://explorepune-guide.vercel.app/places/omkareshwar-temple",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/omkareshwar-temple.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "trishund-ganpati-temple",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8672,
+          18.5209
+        ]
+      },
+      "properties": {
+        "name": "Trishund Mayureshwar Ganpati Temple",
+        "name_mr": "त्रिशुंड मयूरेश्वर गणपती मंदिर (सोमवार पेठ)",
+        "slug": "trishund-ganpati-temple",
+        "category": "temples",
+        "address": "Near Apollo Theatre, Somwar Peth, Pune, Maharashtra 411011",
+        "address_mr": "अपोलो टॉकीजजवळ, सोमवार पेठ, पुणे, महाराष्ट्र ४११०११",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/trishund-ganpati-temple",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/trishund-ganpati-temple.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "balgandharva-ranga-mandir",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8477,
+          18.5255
+        ]
+      },
+      "properties": {
+        "name": "Balgandharva Ranga Mandir & Cultural Center",
+        "name_mr": "बालगंधर्व रंगमंदिर व सांस्कृतिक संकुल (जेएम रस्ता)",
+        "slug": "balgandharva-ranga-mandir",
+        "category": "heritage",
+        "address": "Jangali Maharaj Road, Shivajinagar, Pune, Maharashtra 411005",
+        "address_mr": "जंगली महाराज रस्ता, शिवाजीनगर, पुणे, महाराष्ट्र ४११००५",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 94,
+        "url": "https://explorepune-guide.vercel.app/places/balgandharva-ranga-mandir",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/balgandharva-ranga-mandir.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bhor-rajwada-palace",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8436,
+          18.1485
+        ]
+      },
+      "properties": {
+        "name": "Bhor Rajwada & Royal Palace",
+        "name_mr": "भोर राजवाडा (पंत सचिवांचा ऐतिहासिक लाकडी राजमहाल)",
+        "slug": "bhor-rajwada-palace",
+        "category": "heritage",
+        "address": "Rajwada Chowk, Bhor, Pune District, Maharashtra 412206",
+        "address_mr": "राजवाडा चौक, भोर, पुणे जिल्हा, महाराष्ट्र ४१२२०६",
+        "fee_status": "paid",
+        "entry_fee_inr": 50,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/bhor-rajwada-palace",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/bhor-rajwada-palace.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "lenyadri-caves-ganpati",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8864,
+          19.2397
+        ]
+      },
+      "properties": {
+        "name": "Lenyadri Buddhist Caves & Girijatmaj Ganpati",
+        "name_mr": "लेण्याद्री लेणी व श्री गिरिजात्मज गणपती (अष्टविनायक, जुन्नर)",
+        "slug": "lenyadri-caves-ganpati",
+        "category": "temples",
+        "address": "Lenyadri Hill, Junnar Taluka, Pune District, Maharashtra 410502",
+        "address_mr": "लेण्याद्री टेकडी, जुन्नर तालुका, पुणे जिल्हा, महाराष्ट्र ४१०५०२",
+        "fee_status": "paid",
+        "entry_fee_inr": 25,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 96,
+        "url": "https://explorepune-guide.vercel.app/places/lenyadri-caves-ganpati",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/lenyadri-caves-ganpati.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "mahad-varadvinayak-temple",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.2844,
+          18.8058
+        ]
+      },
+      "properties": {
+        "name": "Varadvinayak Temple & Sacred Pond (Mahad)",
+        "name_mr": "श्री वरदविनायक गणपती मंदिर (अष्टविनायक, महड)",
+        "slug": "mahad-varadvinayak-temple",
+        "category": "temples",
+        "address": "Mahad Village, Khalapur Taluka, Near Khopoli, Maharashtra 410203",
+        "address_mr": "महड गाव, खालापूर तालुका, खोपोलीजवळ, महाराष्ट्र ४१०२०३",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/mahad-varadvinayak-temple",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/mahad-varadvinayak-temple.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ohel-david-synagogue",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8779,
+          18.5173
+        ]
+      },
+      "properties": {
+        "name": "Ohel David Synagogue (Lal Deval)",
+        "name_mr": "ओहेल डेव्हिड सिनेगॉग (लाल देऊळ, पुणे कॅम्प)",
+        "slug": "ohel-david-synagogue",
+        "category": "heritage",
+        "address": "Moledina Road, Camp, Pune, Maharashtra 411001",
+        "address_mr": "मोलेदिना रस्ता, कॅम्प, पुणे, महाराष्ट्र ४११००१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/ohel-david-synagogue",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/ohel-david-synagogue.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "st-marys-church",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8824,
+          18.5082
+        ]
+      },
+      "properties": {
+        "name": "St. Mary's Church (Pune's Oldest Church)",
+        "name_mr": "सेंट मेरीज चर्च (पुण्यातील सर्वात जुने चर्च, कॅम्प)",
+        "slug": "st-marys-church",
+        "category": "heritage",
+        "address": "Solapur Road, Camp, Pune, Maharashtra 411001",
+        "address_mr": "सोलापूर रस्ता, कॅम्प, पुणे, महाराष्ट्र ४११००१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 91,
+        "url": "https://explorepune-guide.vercel.app/places/st-marys-church",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/st-marys-church.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "darshan-museum",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8761,
+          18.5244
+        ]
+      },
+      "properties": {
+        "name": "Darshan Museum (High-Tech Spiritual Museum)",
+        "name_mr": "दर्शन संग्रहालय (साधू वासवानी मिशन, पुणे)",
+        "slug": "darshan-museum",
+        "category": "museums",
+        "address": "10, Sadhu Vaswani Path, Camp, Pune, Maharashtra 411001",
+        "address_mr": "१०, साधू वासवानी पथ, कॅम्प, पुणे, महाराष्ट्र ४११००१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 94,
+        "url": "https://explorepune-guide.vercel.app/places/darshan-museum",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/darshan-museum.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gokhale-institute-heritage",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8344,
+          18.5244
+        ]
+      },
+      "properties": {
+        "name": "Gokhale Institute of Politics and Economics",
+        "name_mr": "गोखले अर्थशास्त्र व राज्यशास्त्र संस्था (ऐतिहासिक वारसा)",
+        "slug": "gokhale-institute-heritage",
+        "category": "heritage",
+        "address": "BMCC Road, Deccan Gymkhana, Pune, Maharashtra 411004",
+        "address_mr": "बीएमसीसी रस्ता, डेक्कन जिमखाना, पुणे, महाराष्ट्र ४११००४",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 91,
+        "url": "https://explorepune-guide.vercel.app/places/gokhale-institute-heritage",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/gokhale-institute-heritage.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "someshwar-temple-pashan",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7932,
+          18.5583
+        ]
+      },
+      "properties": {
+        "name": "Someshwar Temple & Ramnadi Ghats (Pashan)",
+        "name_mr": "सोमेश्वर मंदिर व रामनदी घाट (सोमेश्वरवाडी, पाषाण)",
+        "slug": "someshwar-temple-pashan",
+        "category": "temples",
+        "address": "Someshwarwadi, Pashan, Pune, Maharashtra 411008",
+        "address_mr": "सोमेश्वरवाडी, पाषाण, पुणे, महाराष्ट्र ४११००८",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 92,
+        "url": "https://explorepune-guide.vercel.app/places/someshwar-temple-pashan",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/someshwar-temple-pashan.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tambat-ali-craft-quarter",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8585,
+          18.5192
+        ]
+      },
+      "properties": {
+        "name": "Tambat Ali (Heritage Coppersmiths Quarter)",
+        "name_mr": "तांबट आळी (कसबा पेठेतील ४०० वर्षे जुनी तांब्या-पितळेची कारागिरी)",
+        "slug": "tambat-ali-craft-quarter",
+        "category": "heritage",
+        "address": "Tambat Ali, Kasba Peth, Pune, Maharashtra 411011",
+        "address_mr": "तांबट आळी, कसबा पेठ, पुणे, महाराष्ट्र ४११०११",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/tambat-ali-craft-quarter",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/tambat-ali-craft-quarter.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "jangli-maharaj-temple",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8459,
+          18.5273
+        ]
+      },
+      "properties": {
+        "name": "Sadguru Jangli Maharaj Temple & Ashram",
+        "name_mr": "सद्गुरू जंगली महाराज मंदिर व समाधी आश्रम (शिवाजीनगर)",
+        "slug": "jangli-maharaj-temple",
+        "category": "temples",
+        "address": "Jangali Maharaj Road, Shivajinagar, Pune, Maharashtra 411005",
+        "address_mr": "जंगली महाराज रस्ता, शिवाजीनगर, पुणे, महाराष्ट्र ४११००५",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 92,
+        "url": "https://explorepune-guide.vercel.app/places/jangli-maharaj-temple",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/jangli-maharaj-temple.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "khunya-murlidhar-temple",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8492,
+          18.5134
+        ]
+      },
+      "properties": {
+        "name": "Khunya Murlidhar Temple (Historic Krishna Shrine)",
+        "name_mr": "खुन्या मुरलीधर मंदिर (पेशवेकालीन ऐतिहासिक मंदिर, सदाशिव पेठ)",
+        "slug": "khunya-murlidhar-temple",
+        "category": "temples",
+        "address": "Sadashiv Peth, Near Gadre Wada, Pune, Maharashtra 411030",
+        "address_mr": "सदाशिव पेठ, गद्रे वाड्याजवळ, पुणे, महाराष्ट्र ४११०३०",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/khunya-murlidhar-temple",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/khunya-murlidhar-temple.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "chavand-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.7197,
+          19.2394
+        ]
+      },
+      "properties": {
+        "name": "Chavand Fort (Prasannagad)",
+        "name_mr": "चावंड किल्ला (प्रसन्नगड, जुन्नर)",
+        "slug": "chavand-fort",
+        "category": "forts",
+        "address": "Chavand Village, Junnar Taluka, Pune District, Maharashtra 410502",
+        "address_mr": "चावंड गाव, जुन्नर तालुका, पुणे जिल्हा, महाराष्ट्र ४१०५०२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:00 PM",
+        "popularity_score": 86,
+        "url": "https://explorepune-guide.vercel.app/places/chavand-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/chavand-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "hadsar-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8114,
+          19.2789
+        ]
+      },
+      "properties": {
+        "name": "Hadsar Fort (Parvatgad)",
+        "name_mr": "हडसर किल्ला (पर्वतगड, जुन्नर)",
+        "slug": "hadsar-fort",
+        "category": "forts",
+        "address": "Hadsar Village, Junnar Taluka, Pune District, Maharashtra 410502",
+        "address_mr": "हडसर गाव, जुन्नर तालुका, पुणे जिल्हा, महाराष्ट्र ४१०५०२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:00 PM",
+        "popularity_score": 85,
+        "url": "https://explorepune-guide.vercel.app/places/hadsar-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/hadsar-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "jivdhan-fort",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.6828,
+          19.2947
+        ]
+      },
+      "properties": {
+        "name": "Jivdhan Fort (Guardian of Naneghat)",
+        "name_mr": "जीवधन किल्ला (नाणेघाटाचा पहारेकरी)",
+        "slug": "jivdhan-fort",
+        "category": "forts",
+        "address": "Ghatghar, Junnar Taluka, Pune District, Maharashtra 410502",
+        "address_mr": "घाटघर, जुन्नर तालुका, पुणे जिल्हा, महाराष्ट्र ४१०५०२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:00 PM",
+        "popularity_score": 88,
+        "url": "https://explorepune-guide.vercel.app/places/jivdhan-fort",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/jivdhan-fort.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "naneghat-pass-caves",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.6789,
+          19.2986
+        ]
+      },
+      "properties": {
+        "name": "Naneghat Ancient Mountain Pass & Inscriptions",
+        "name_mr": "नाणेघाट ऐतिहासिक व्यापारी मार्ग व शिलालेख",
+        "slug": "naneghat-pass-caves",
+        "category": "heritage",
+        "address": "Ghatghar, Junnar Taluka, Pune District, Maharashtra 410502",
+        "address_mr": "घाटघर, जुन्नर तालुका, पुणे जिल्हा, महाराष्ट्र ४१०५०२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 92,
+        "url": "https://explorepune-guide.vercel.app/places/naneghat-pass-caves",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/naneghat-pass-caves.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "tulja-caves-junnar",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8406,
+          19.2064
+        ]
+      },
+      "properties": {
+        "name": "Tulja Buddhist Caves (Junnar)",
+        "name_mr": "तुळजा लेणी (बौद्ध चैत्य व विहार, जुन्नर)",
+        "slug": "tulja-caves-junnar",
+        "category": "heritage",
+        "address": "Tuljapur Road, Junnar Taluka, Pune District, Maharashtra 410502",
+        "address_mr": "तुळजापूर रस्ता, जुन्नर तालुका, पुणे जिल्हा, महाराष्ट्र ४१०५०२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 87,
+        "url": "https://explorepune-guide.vercel.app/places/tulja-caves-junnar",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/tulja-caves-junnar.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "manmodi-caves-junnar",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8828,
+          19.1967
+        ]
+      },
+      "properties": {
+        "name": "Manmodi Buddhist Caves & Amba-Ambika Complex",
+        "name_mr": "मानमोडी लेणी (अंबा-अंबिका बौद्ध समूह, जुन्नर)",
+        "slug": "manmodi-caves-junnar",
+        "category": "heritage",
+        "address": "Manmodi Hill, Junnar Taluka, Pune District, Maharashtra 410502",
+        "address_mr": "मानमोडी टेकडी, जुन्नर तालुका, पुणे जिल्हा, महाराष्ट्र ४१०५०२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 86,
+        "url": "https://explorepune-guide.vercel.app/places/manmodi-caves-junnar",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/manmodi-caves-junnar.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "nana-wada",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8569,
+          18.5186
+        ]
+      },
+      "properties": {
+        "name": "Nana Wada (Historic Residence of Nana Phadnavis)",
+        "name_mr": "नाना वाडा (नाना फडणवीस ऐतिहासिक वाडा, बुधवार पेठ)",
+        "slug": "nana-wada",
+        "category": "heritage",
+        "address": "Budhwar Peth, Near Vasant Talkies, Pune, Maharashtra 411002",
+        "address_mr": "बुधवार पेठ, वसंत टॉकीज जवळ, पुणे, महाराष्ट्र ४११००२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 91,
+        "url": "https://explorepune-guide.vercel.app/places/nana-wada",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/nana-wada.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bhandarkar-oriental-research-institute",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8317,
+          18.5208
+        ]
+      },
+      "properties": {
+        "name": "Bhandarkar Oriental Research Institute (BORI)",
+        "name_mr": "भांडारकर प्राच्यविद्या संशोधन मंदिर (बोरी, पुणे)",
+        "slug": "bhandarkar-oriental-research-institute",
+        "category": "heritage",
+        "address": "Law College Road, Deccan Gymkhana, Pune, Maharashtra 411004",
+        "address_mr": "लॉ कॉलेज रस्ता, डेक्कन जिमखाना, पुणे, महाराष्ट्र ४११००४",
+        "fee_status": "paid",
+        "entry_fee_inr": 20,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 90,
+        "url": "https://explorepune-guide.vercel.app/places/bhandarkar-oriental-research-institute",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/bhandarkar-oriental-research-institute.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sangam-ghat-sangameshwar-temple",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8606,
+          18.5303
+        ]
+      },
+      "properties": {
+        "name": "Sangam Ghat & Sangameshwar Temple",
+        "name_mr": "संगम घाट व संगमेश्वर ऐतिहासिक शिवमंदिर (पुणे)",
+        "slug": "sangam-ghat-sangameshwar-temple",
+        "category": "heritage",
+        "address": "Near Sangam Bridge, Narveer Tanaji Wadi, Shivajinagar, Pune, Maharashtra 411005",
+        "address_mr": "संगम पुलाजवळ, नरवीर तानाजी वाडी, शिवाजीनगर, पुणे, महाराष्ट्र ४११००५",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 87,
+        "url": "https://explorepune-guide.vercel.app/places/sangam-ghat-sangameshwar-temple",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/sangam-ghat-sangameshwar-temple.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bharat-itihas-sanshodhak-mandal",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8519,
+          18.5147
+        ]
+      },
+      "properties": {
+        "name": "Bharat Itihas Sanshodhak Mandal (BISM)",
+        "name_mr": "भारत इतिहास संशोधक मंडळ (सदाशिव पेठ, पुणे)",
+        "slug": "bharat-itihas-sanshodhak-mandal",
+        "category": "heritage",
+        "address": "1321 Sadashiv Peth, Near Bharat Natya Mandir, Pune, Maharashtra 411030",
+        "address_mr": "१३२१ सदाशिव पेठ, भारत नाट्य मंदिराजवळ, पुणे, महाराष्ट्र ४११०३०",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 89,
+        "url": "https://explorepune-guide.vercel.app/places/bharat-itihas-sanshodhak-mandal",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/bharat-itihas-sanshodhak-mandal.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "ojas-ganpati-ozar",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9589,
+          19.1925
+        ]
+      },
+      "properties": {
+        "name": "Vighnahar Ganpati Mandir, Ozar (Ashtavinayak #7)",
+        "name_mr": "विघ्नहर गणपती मंदिर, ओझर (अष्टविनायक)",
+        "slug": "ojas-ganpati-ozar",
+        "category": "temples",
+        "address": "Ozar, Junnar Taluka, Pune District, Maharashtra 410504",
+        "address_mr": "ओझर, जुन्नर तालुका, पुणे जिल्हा, महाराष्ट्र ४१०५०४",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 96,
+        "url": "https://explorepune-guide.vercel.app/places/ojas-ganpati-ozar",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/ojas-ganpati-ozar.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "siddhatek-siddhivinayak-ganpati",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.6736,
+          18.3972
+        ]
+      },
+      "properties": {
+        "name": "Siddhivinayak Ganpati Mandir, Siddhatek (Ashtavinayak #2)",
+        "name_mr": "सिद्धिविनायक गणपती मंदिर, सिद्धटेक (अष्टविनायक)",
+        "slug": "siddhatek-siddhivinayak-ganpati",
+        "category": "temples",
+        "address": "Siddhatek, Karjat/Daund Border, Pune District, Maharashtra 414403",
+        "address_mr": "सिद्धटेक, दौंड-कर्जत सीमा, पुणे जिल्हा, महाराष्ट्र ४१४४०३",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/siddhatek-siddhivinayak-ganpati",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/siddhatek-siddhivinayak-ganpati.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "banneshwar-temple-nasrapur",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.9219,
+          18.2867
+        ]
+      },
+      "properties": {
+        "name": "Baneshwar Shiva Temple & Forest Sanctuary",
+        "name_mr": "बाणेश्वर ऐतिहासिक शिवमंदिर व निसर्ग अभयारण्य (नसरापूर)",
+        "slug": "banneshwar-temple-nasrapur",
+        "category": "temples",
+        "address": "Nasrapur, Bhor Taluka, Off NH-48, Pune District, Maharashtra 412213",
+        "address_mr": "नसरापूर, भोर तालुका, पुणे-बंगलोर महामार्ग, पुणे जिल्हा, महाराष्ट्र ४१२२१३",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 90,
+        "url": "https://explorepune-guide.vercel.app/places/banneshwar-temple-nasrapur",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/banneshwar-temple-nasrapur.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "katraj-jain-temple-agam-mandir",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8603,
+          18.4489
+        ]
+      },
+      "properties": {
+        "name": "Shree Katraj Tirth (Agam Mandir)",
+        "name_mr": "श्री कात्रज जैन तीर्थ व आगम मंदिर (कात्रज, पुणे)",
+        "slug": "katraj-jain-temple-agam-mandir",
+        "category": "temples",
+        "address": "Katraj Ghat, Near Old Katraj Tunnel, Pune, Maharashtra 411046",
+        "address_mr": "कात्रज घाट, जुन्या कात्रज बोगद्याजवळ, पुणे, महाराष्ट्र ४११०४६",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 89,
+        "url": "https://explorepune-guide.vercel.app/places/katraj-jain-temple-agam-mandir",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/katraj-jain-temple-agam-mandir.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sangvi-sangameshwar-temple",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8164,
+          18.5739
+        ]
+      },
+      "properties": {
+        "name": "Sangameshwar Mahadev Temple (Old Sangvi)",
+        "name_mr": "संगमेश्वर महादेव मंदिर (जुनी सांगवी, पवना-मुळा संगम)",
+        "slug": "sangvi-sangameshwar-temple",
+        "category": "temples",
+        "address": "Old Sangvi, Near Sangam Confluence, Pimpri-Chinchwad, Pune, Maharashtra 411027",
+        "address_mr": "जुनी सांगवी, पवना-मुळा संगम, पिंपरी-चिंचवड, पुणे, महाराष्ट्र ४११०२७",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 09:00 PM",
+        "popularity_score": 86,
+        "url": "https://explorepune-guide.vercel.app/places/sangvi-sangameshwar-temple",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/sangvi-sangameshwar-temple.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "blades-of-glory-cricket-museum",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8542,
+          18.4878
+        ]
+      },
+      "properties": {
+        "name": "Blades of Glory Cricket Museum",
+        "name_mr": "ब्लेड्स ऑफ ग्लोरी क्रिकेट म्युझियम (सहकार नगर, पुणे)",
+        "slug": "blades-of-glory-cricket-museum",
+        "category": "museums",
+        "address": "Govind Gaurav Apartment, Swanand Society, Sahakar Nagar 2, Pune, Maharashtra 411009",
+        "address_mr": "गोविंद गौरव अपार्टमेंट, सहकार नगर २, पद्मावती जवळ, पुणे, महाराष्ट्र ४११००९",
+        "fee_status": "paid",
+        "entry_fee_inr": 150,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 93,
+        "url": "https://explorepune-guide.vercel.app/places/blades-of-glory-cricket-museum",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/blades-of-glory-cricket-museum.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "vikram-pendse-cycles-museum",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8189,
+          18.4908
+        ]
+      },
+      "properties": {
+        "name": "Vikram Pendse Cycles & Vintage Museum",
+        "name_mr": "विक्रम पेंडसे सायकल व विंटेज म्युझियम (कर्वे नगर, पुणे)",
+        "slug": "vikram-pendse-cycles-museum",
+        "category": "museums",
+        "address": "22 Harshawardhan Society, Lane 6, Karve Nagar, Pune, Maharashtra 411052",
+        "address_mr": "२२ हर्षवर्धन सोसायटी, गल्ली क्र. ६, कर्वे नगर, पुणे, महाराष्ट्र ४११०५२",
+        "fee_status": "paid",
+        "entry_fee_inr": 100,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 88,
+        "url": "https://explorepune-guide.vercel.app/places/vikram-pendse-cycles-museum",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/vikram-pendse-cycles-museum.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pune-rail-museum",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8761,
+          18.5294
+        ]
+      },
+      "properties": {
+        "name": "Pune Railway Heritage Museum & Art Gallery",
+        "name_mr": "पुणे रेल्वे वारसा संग्रहालय व आर्ट गॅलरी (पुणे स्टेशन)",
+        "slug": "pune-rail-museum",
+        "category": "museums",
+        "address": "Near Pune Railway Station, Tadiwala Road, Sangamvadi, Pune, Maharashtra 411001",
+        "address_mr": "पुणे रेल्वे स्थानकाजवळ, ताडीवाला रस्ता, संगमवाडी, पुणे, महाराष्ट्र ४११००१",
+        "fee_status": "paid",
+        "entry_fee_inr": 50,
+        "opening_hours": "09:00 AM - 06:00 PM",
+        "popularity_score": 87,
+        "url": "https://explorepune-guide.vercel.app/places/pune-rail-museum",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/pune-rail-museum.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kune-falls-viewpoint",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.3769,
+          18.7619
+        ]
+      },
+      "properties": {
+        "name": "Kune Waterfalls Viewpoint (Lonavala-Khandala)",
+        "name_mr": "कुणे धबधबा व्ह्यूपॉइंट (लोणावळा-खंडाळा दरी)",
+        "slug": "kune-falls-viewpoint",
+        "category": "nature",
+        "address": "Old Mumbai-Pune Highway, Khandala-Kune Village, Pune District, Maharashtra 410401",
+        "address_mr": "जुना मुंबई-पुणे महामार्ग, कुणे गाव, लोणावळा-खंडाळा, पुणे जिल्हा, महाराष्ट्र ४१०४०१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM (Daylight hours)",
+        "popularity_score": 91,
+        "url": "https://explorepune-guide.vercel.app/places/kune-falls-viewpoint",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/kune-falls-viewpoint.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "varasgaon-dam",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.6186,
+          18.3969
+        ]
+      },
+      "properties": {
+        "name": "Varasgaon Dam & Reservoir (Veer Baji Pasalkar)",
+        "name_mr": "वरसगाव धरण (वीर बाजी पासलकर जलाशय)",
+        "slug": "varasgaon-dam",
+        "category": "nature",
+        "address": "Varasgaon, Velhe/Haveli Taluka, Pune District, Maharashtra 412107",
+        "address_mr": "वरसगाव, वेल्हे/हवेली तालुका, पुणे जिल्हा, महाराष्ट्र ४१२१०७",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "06:00 AM - 06:30 PM (Daylight hours)",
+        "popularity_score": 89,
+        "url": "https://explorepune-guide.vercel.app/places/varasgaon-dam",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/varasgaon-dam.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "fc-road-culinary-trail",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8415,
+          18.5195
+        ]
+      },
+      "properties": {
+        "name": "FC Road & Deccan Food Heritage (Cafe Goodluck, Vaishali & Roopali)",
+        "name_mr": "एफसी रोड व डेक्कन खाद्यसंस्कृती (कॅफे गडलक, वैशाली व रुपाली)",
+        "slug": "fc-road-culinary-trail",
+        "category": "food",
+        "address": "Fergusson College Road, Deccan Gymkhana, Pune, Maharashtra 411004",
+        "address_mr": "फर्ग्युसन कॉलेज रस्ता, डेक्कन जिमखाना, पुणे, महाराष्ट्र ४११००४",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "10:00 AM - 10:30 PM",
+        "popularity_score": 98,
+        "url": "https://explorepune-guide.vercel.app/places/fc-road-culinary-trail",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/fc-road.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "chitale-bandhu-bakarwadi",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8524,
+          18.5147
+        ]
+      },
+      "properties": {
+        "name": "Chitale Bandhu Mithaiwale (Bajirao Road Heritage Branch)",
+        "name_mr": "चितळे बंधू मिठाईवाले (बाजीराव रस्ता मुख्य शाखा)",
+        "slug": "chitale-bandhu-bakarwadi",
+        "category": "food",
+        "address": "776, Bajirao Road, Sadashiv Peth, Pune, Maharashtra 411030",
+        "address_mr": "७७६, बाजीराव रस्ता, सदाशिव पेठ, पुणे, महाराष्ट्र ४११०३०",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "10:00 AM - 10:30 PM",
+        "popularity_score": 97,
+        "url": "https://explorepune-guide.vercel.app/places/chitale-bandhu-bakarwadi",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/chitale-bandhu-mithaiwale.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "bedekar-tea-stall-misal",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8509,
+          18.5178
+        ]
+      },
+      "properties": {
+        "name": "Bedekar Tea Stall & Misal (Narayan Peth)",
+        "name_mr": "बेडेकर टी स्टॉल व मिसळ (नारायण पेठ)",
+        "slug": "bedekar-tea-stall-misal",
+        "category": "food",
+        "address": "418, Narayan Peth, Munjabacha Bol, Pune, Maharashtra 411030",
+        "address_mr": "४१८, नारायण पेठ, मुंजाबाचा बोल, पुणे, महाराष्ट्र ४११०३०",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "10:00 AM - 10:30 PM",
+        "popularity_score": 96,
+        "url": "https://explorepune-guide.vercel.app/places/bedekar-tea-stall-misal",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/bedekar-misal.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "kayani-bakery-camp",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8791,
+          18.5168
+        ]
+      },
+      "properties": {
+        "name": "Kayani Bakery (East Street, Pune Camp)",
+        "name_mr": "कयानी बेकरी (ईस्ट स्ट्रीट, पुणे कॅम्प)",
+        "slug": "kayani-bakery-camp",
+        "category": "food",
+        "address": "6, East Street, Hulshur, Camp, Pune, Maharashtra 411001",
+        "address_mr": "६, ईस्ट स्ट्रीट, लष्कर (कॅम्प), पुणे, महाराष्ट्र ४११००१",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "10:00 AM - 10:30 PM",
+        "popularity_score": 97,
+        "url": "https://explorepune-guide.vercel.app/places/kayani-bakery-camp",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/kayani-bakery-camp.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "katakirr-misal-karve-nagar",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8182,
+          18.4905
+        ]
+      },
+      "properties": {
+        "name": "Katakirr Misal (Karve Nagar / Deccan)",
+        "name_mr": "काटाकिर्र मिसळ (कर्वे नगर / डेक्कन)",
+        "slug": "katakirr-misal-karve-nagar",
+        "category": "food",
+        "address": "Near Cummins College, Karve Nagar, Pune, Maharashtra 411052",
+        "address_mr": "कमिन्स कॉलेज जवळ, कर्वे नगर, पुणे, महाराष्ट्र ४११०५२",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "10:00 AM - 10:30 PM",
+        "popularity_score": 95,
+        "url": "https://explorepune-guide.vercel.app/places/katakirr-misal-karve-nagar",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/katakirr-misal.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "sujata-mastani-sadashiv-peth",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8512,
+          18.5134
+        ]
+      },
+      "properties": {
+        "name": "Sujata Mastani (Sadashiv Peth - Original 1968 Branch)",
+        "name_mr": "सुजाता मस्तानी (सदाशिव पेठ - मूळ शाखा १९६८)",
+        "slug": "sujata-mastani-sadashiv-peth",
+        "category": "food",
+        "address": "1260, Sadashiv Peth, Chimanya Ganpati Chowk, Pune, Maharashtra 411030",
+        "address_mr": "१२६०, सदाशिव पेठ, चिमण्या गणपती चौक, पुणे, महाराष्ट्र ४११०३०",
+        "fee_status": "free",
+        "entry_fee_inr": 0,
+        "opening_hours": "10:00 AM - 10:30 PM",
+        "popularity_score": 97,
+        "url": "https://explorepune-guide.vercel.app/places/sujata-mastani-sadashiv-peth",
+        "image_url": "https://explorepune-guide.vercel.app/images/places/sujata-mastani-heritage.jpg",
+        "verified": true,
+        "locality": "Pune",
+        "region": "Maharashtra",
+        "country": "India"
+      }
+    }
+  ]
+}

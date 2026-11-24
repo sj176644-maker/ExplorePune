@@ -7,16 +7,16 @@ export const revalidate = 1800; // 30-minute ISR for fast response times
 const PAGE = 16;
 
 export const metadata: Metadata = {
-  title: 'Explore Pune | Historic Forts, Wadas & Trip Planner',
+  title: 'Explore Pune — Top Places to Visit, Tourist Attractions, Forts & Trip Planner',
   description:
-    'Explore 106+ historic Pune destinations with verified visiting hours, ticket entry fees, Sahyadri trekking trails, local cuisine guides, and custom AI trip planning.',
+    'The complete Pune tourism field guide to 106+ destinations: Sinhagad Fort, Shaniwar Wada, Aga Khan Palace, Dagdusheth Ganpati, with verified timings, entry fees, metro/bus transit, and AI trip planning.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Explore Pune | Historic Forts, Wadas & Trip Planner',
+    title: 'Explore Pune — Top Places to Visit, Tourist Attractions & Heritage Guide',
     description:
-      'Explore 106+ historic Pune destinations with verified visiting hours, ticket entry fees, Sahyadri trekking trails, local cuisine guides, and custom AI trip planning.',
+      'The complete Pune tourism field guide to 106+ destinations: Sinhagad Fort, Shaniwar Wada, Aga Khan Palace, Dagdusheth Ganpati, with verified timings, entry fees, metro/bus transit, and AI trip planning.',
     url: '/',
     siteName: 'Explore Pune',
     locale: 'en_IN',
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
         url: '/images/pune-map-hero.jpg',
         width: 1200,
         height: 630,
-        alt: 'Explore Pune - Historic Forts, Peshwa Wadas & Trip Planner',
+        alt: 'Explore Pune - Top Places to Visit, Historic Forts & Peshwa Heritage',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Explore Pune | Historic Forts, Wadas & Trip Planner',
+    title: 'Explore Pune — Top Places to Visit, Tourist Attractions & Heritage Guide',
     description:
-      'Explore 106+ historic Pune destinations with verified visiting hours, ticket entry fees, Sahyadri trekking trails, local cuisine guides, and custom AI trip planning.',
+      'The complete Pune tourism field guide to 106+ destinations: Sinhagad Fort, Shaniwar Wada, Aga Khan Palace, Dagdusheth Ganpati, with verified timings, entry fees, metro/bus transit, and AI trip planning.',
     images: ['/images/pune-map-hero.jpg'],
   },
 };
@@ -101,23 +101,12 @@ export default async function HomePage({
   const pages = Math.max(1, Math.ceil(count / PAGE));
   const places = allPlaces.slice((pg - 1) * PAGE, pg * PAGE).map(projectPlaceCardSummary);
 
-  const websiteSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Explore Pune',
-    url: 'https://explorepune-guide.vercel.app',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://explorepune-guide.vercel.app/?q={search_term_string}',
-      'query-input': 'required name=search_term_string',
-    },
-  };
-
   const topPlacesSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Featured Historic & Cultural Places in Pune',
-    itemListElement: places.slice(0, 10).map((p: any, idx: number) => ({
+    name: 'Top Places to Visit in Pune | Explore Pune',
+    description: 'Featured historic forts, Peshwa wadas, and heritage landmarks across Pune.',
+    itemListElement: places.slice(0, 12).map((p: any, idx: number) => ({
       '@type': 'ListItem',
       position: idx + 1,
       name: p.name,
@@ -125,30 +114,8 @@ export default async function HomePage({
     })),
   };
 
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Explore Pune',
-    url: 'https://explorepune-guide.vercel.app',
-    logo: 'https://explorepune-guide.vercel.app/assets/explore-pune-logo.png',
-    description:
-      'An authoritative, locally researched field guide to Maratha forts, Peshwa-era wadas, temples, and custom travel itineraries.',
-    areaServed: {
-      '@type': 'AdministrativeArea',
-      name: 'Pune, Maharashtra, India',
-    },
-  };
-
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(topPlacesSchema) }}

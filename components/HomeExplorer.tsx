@@ -518,19 +518,19 @@ export default function HomeExplorer({
           <h1 className="hero-anim-title">
             {isMr ? (
               <>
-                पुण्यातील <span className="gradient">ऐतिहासिक किल्ले, वाडे</span> व सांस्कृतिक वारसा
+                एक्सप्लोर पुणे: <span className="gradient">पर्यटन स्थळे, किल्ले व वाडे</span>
               </>
             ) : (
               <>
-                The Curated Field Guide to <span className="gradient">Historic Pune</span>
+                Explore Pune: <span className="gradient">Top Places to Visit</span>, Historic Forts & Heritage Trails
               </>
             )}
           </h1>
 
           <p className="lede hero-anim-desc">
             {isMr
-              ? 'छत्रपती शिवाजी महाराजांचे अजिंक्य किल्ले, पेशवेकालीन वाडे, पवित्र मंदिरे, अधिकृत वेळापत्रक आणि थेट सार्वजनिक वाहतूक मार्गदर्शक.'
-              : 'An authoritative, locally researched field guide to Maratha forts, Peshwa-era wadas, sacred sanctuaries, verified opening hours, and public transit schedules.'}
+              ? 'पुण्यातील १०६+ प्रेक्षणीय स्थळे, छत्रपती शिवाजी महाराजांचे अजिंक्य किल्ले, पेशवेकालीन वाडे, पवित्र मंदिरे, अधिकृत वेळापत्रक, तिकीट दर आणि थेट मेट्रो व पीएमपीएमएल बस मार्गदर्शक.'
+              : 'Complete curated guide to 106+ Pune tourist places, Maratha hill forts, Peshwa-era wadas, sacred sanctuaries, verified opening hours, ticket fees, and Pune Metro & PMPML bus schedules.'}
           </p>
 
           <form className="search hero-anim-search" action="/" role="search">
@@ -2321,6 +2321,136 @@ export default function HomeExplorer({
           </div>
         </section>
 
+        {/* SEO & Traveler FAQ Section (Matches Schema.org FAQPage) */}
+        <section
+          className="section-deferred wrap"
+          style={{
+            marginTop: '32px',
+            marginBottom: '32px',
+            padding: '24px',
+            background: 'var(--card)',
+            border: '1px solid var(--line)',
+            borderRadius: 'var(--radius-md)',
+            boxShadow: 'var(--shadow-xs)',
+          }}
+          aria-labelledby="faq-section-heading"
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+            <Info size={16} color="var(--primary)" />
+            <span style={{ fontSize: '11.5px', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+              {isMr ? 'वारंवार विचारले जाणारे प्रश्न' : 'Frequently Asked Questions'}
+            </span>
+          </div>
+          <h2
+            id="faq-section-heading"
+            style={{
+              fontSize: 'clamp(20px, 2.5vw, 26px)',
+              fontWeight: 800,
+              color: 'var(--ink)',
+              margin: '0 0 16px 0',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            {isMr ? 'पुणे पर्यटन व माहिती संदर्भात महत्त्वाचे प्रश्न' : 'Exploring Pune: Traveler Questions & Local Insights'}
+          </h2>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <details
+              style={{
+                background: 'var(--bg)',
+                border: '1px solid var(--line)',
+                borderRadius: 'var(--radius-sm)',
+                padding: '14px 18px',
+                cursor: 'pointer',
+              }}
+            >
+              <summary style={{ fontWeight: 700, fontSize: '15px', color: 'var(--ink)' }}>
+                {isMr ? 'पुण्यातील सर्वोत्तम प्रेक्षणीय स्थळे कोणती आहेत?' : 'What are the top must-visit places in Pune?'}
+              </summary>
+              <p style={{ margin: '10px 0 0 0', fontSize: '13.5px', color: 'var(--muted)', lineHeight: 1.6 }}>
+                {isMr
+                  ? 'पुण्यातील प्रमुख पर्यटन स्थळांमध्ये शनिवार वाडा, सिंहगड किल्ला, आगाखान पॅलेस, श्रीमंत दगडूशेठ हलवाई गणपती मंदिर, ८व्या शतकातील पाताळेश्वर लेणी, राजा दिनकर केळकर संग्रहालय आणि पु. ल. देशपांडे उद्यान (ओकायामा गार्डन) यांचा समावेश होतो.'
+                  : 'The top places to visit in Pune include Shaniwar Wada (Peshwa palace fortress), Sinhagad Fort (historic mountain battleground), Aga Khan Palace (Gandhi memorial), Dagdusheth Halwai Ganpati Temple, the 8th-century rock-cut Pataleshwar Caves, Raja Dinkar Kelkar Museum, and Okayama Friendship Garden (Pu La Deshpande Garden).'}
+              </p>
+            </details>
+
+            <details
+              style={{
+                background: 'var(--bg)',
+                border: '1px solid var(--line)',
+                borderRadius: 'var(--radius-sm)',
+                padding: '14px 18px',
+                cursor: 'pointer',
+              }}
+            >
+              <summary style={{ fontWeight: 700, fontSize: '15px', color: 'var(--ink)' }}>
+                {isMr ? 'पुणे फिरण्यासाठी किती दिवस पुरेसे आहेत?' : 'How many days are needed to explore Pune?'}
+              </summary>
+              <p style={{ margin: '10px 0 0 0', fontSize: '13.5px', color: 'var(--muted)', lineHeight: 1.6 }}>
+                {isMr
+                  ? 'पुणे व्यवस्थित फिरण्यासाठी २ ते ३ दिवसांचा कालावधी आदर्श आहे. पहिल्या दिवशी मध्यवर्ती ऐतिहासिक वाडे व मंदिरे, दुसऱ्या दिवशी सिंहगड किल्ला व खडकवासला धरण, आणि तिसऱ्या दिवशी आगाखान पॅलेस व प्रसिद्ध संग्रहालयांना भेट देता येते.'
+                  : 'A 2 to 3 day itinerary is ideal to explore Pune. Day 1 can cover central heritage monuments (Shaniwar Wada, Lal Mahal, Dagdusheth Ganpati, Raja Dinkar Kelkar Museum). Day 2 is perfect for a morning trek to Sinhagad Fort, followed by Khadakwasla Dam and Pu La Deshpande Garden. Day 3 can explore Aga Khan Palace, Pataleshwar Caves, and Koregaon Park cafes.'}
+              </p>
+            </details>
+
+            <details
+              style={{
+                background: 'var(--bg)',
+                border: '1px solid var(--line)',
+                borderRadius: 'var(--radius-sm)',
+                padding: '14px 18px',
+                cursor: 'pointer',
+              }}
+            >
+              <summary style={{ fontWeight: 700, fontSize: '15px', color: 'var(--ink)' }}>
+                {isMr ? 'पुण्याजवळील सर्वात प्रसिद्ध किल्ले कोणते?' : 'What are the most famous forts to visit near Pune?'}
+              </summary>
+              <p style={{ margin: '10px 0 0 0', fontSize: '13.5px', color: 'var(--muted)', lineHeight: 1.6 }}>
+                {isMr
+                  ? 'पुण्याजवळील सर्वात लोकप्रिय किल्ले म्हणजे सिंहगड किल्ला (३० किमी), राजगड किल्ला (स्वराज्याची पहिली राजधानी), तोरणा किल्ला (प्रचंडगड), लोहगड किल्ला (लोणावळ्याजवळ) आणि जुन्नरमधील शिवनेरी किल्ला (छत्रपती शिवाजी महाराजांचे जन्मस्थान).'
+                  : 'The most famous forts near Pune are Sinhagad Fort (30 km, accessible by road and trek), Rajgad Fort (capital of Shivaji Maharaj’s realm), Torna Fort (Prachandagad), Lohagad Fort near Lonavala, and Shivneri Fort (birthplace of Chhatrapati Shivaji Maharaj in Junnar).'}
+              </p>
+            </details>
+
+            <details
+              style={{
+                background: 'var(--bg)',
+                border: '1px solid var(--line)',
+                borderRadius: 'var(--radius-sm)',
+                padding: '14px 18px',
+                cursor: 'pointer',
+              }}
+            >
+              <summary style={{ fontWeight: 700, fontSize: '15px', color: 'var(--ink)' }}>
+                {isMr ? 'पुणे मेट्रो व पीएमपीएमएल बसेसने पर्यटन कसे करावे?' : 'How do I travel around Pune using Pune Metro and PMPML buses?'}
+              </summary>
+              <p style={{ margin: '10px 0 0 0', fontSize: '13.5px', color: 'var(--muted)', lineHeight: 1.6 }}>
+                {isMr
+                  ? 'पुणे मेट्रोच्या पर्पल लाईन (पीसीएमसी ते स्वारगेट) आणि ॲक्वा लाईन (वनाज ते रामवाडी) द्वारे मध्यवर्ती ठिकाणी जलद पोहोचता येते. शनिवार वाडा व दगडूशेठसाठी मंडई किंवा कसबा पेठ स्थानकावर उतरावे. सिंहगड किल्ल्यासाठी स्वारगेटवरून पीएमपीएमएल बस क्रमांक ५० उपलब्ध आहे.'
+                  : 'Pune Metro operates Line 1 (Purple Line: PCMC to Swargate) and Line 2 (Aqua Line: Vanaz to Ramwadi). For historic core sites like Shaniwar Wada and Dagdusheth, alight at Mandai or Kasba Peth Metro Stations. For Sinhagad Fort, board PMPML Bus Route 50 from Swargate to Sinhagad Foothills (Donje / Golewadi). Explore Pune provides verified bus and metro routes for all 106+ destinations.'}
+              </p>
+            </details>
+
+            <details
+              style={{
+                background: 'var(--bg)',
+                border: '1px solid var(--line)',
+                borderRadius: 'var(--radius-sm)',
+                padding: '14px 18px',
+                cursor: 'pointer',
+              }}
+            >
+              <summary style={{ fontWeight: 700, fontSize: '15px', color: 'var(--ink)' }}>
+                {isMr ? 'पुण्यातील किल्ल्यांची ३डी व्हर्च्युअल टूर उपलब्ध आहे का?' : 'Is there an interactive 3D virtual tour available for Pune forts?'}
+              </summary>
+              <p style={{ margin: '10px 0 0 0', fontSize: '13.5px', color: 'var(--muted)', lineHeight: 1.6 }}>
+                {isMr
+                  ? 'होय! एक्सप्लोर पुणे पोर्टलवर सिंहगड किल्ल्याची भौगोलिकदृष्ट्या अचूक ३डी पुनर्बांधणी उपलब्ध आहे (/sinhagad). पर्यटक थेट वेब ब्राउझरमध्ये पुणे दरवाजाचे तीन दरवाजे आणि मराठा बुरुजांचे तपशील पाहू शकतात.'
+                  : 'Yes! Explore Pune offers an independent, geographically accurate 3D heritage reconstruction of Sinhagad Fort (accessible at /sinhagad). Visitors can walk through the historical three-gate sequence of Pune Darwaza and inspect Maratha stone fortification bastions in full 3D directly in their web browser.'}
+              </p>
+            </details>
+          </div>
+        </section>
 
         {/* Smart Trip Planner Callout */}
         <div
