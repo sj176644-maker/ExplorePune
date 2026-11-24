@@ -1,0 +1,122 @@
+{
+  "landmark_id": "BS",
+  "description": "Collision hulls for Sinhagad defensive bastions (Buruj), observation platforms, and gun battery",
+  "bastion_cylinders": [
+    {
+      "cx": -185.0,
+      "cy": -50.25,
+      "cz": 510.0,
+      "radius": 3.4,
+      "height": 7.5,
+      "name": "Tehalni Buruj"
+    },
+    {
+      "cx": -120.0,
+      "cy": -63.5,
+      "cz": 620.0,
+      "radius": 3.8,
+      "height": 9.0,
+      "name": "Zunjar Buruj"
+    },
+    {
+      "cx": 225.0,
+      "cy": -50.75,
+      "cz": -110.0,
+      "radius": 3.6,
+      "height": 8.5,
+      "name": "Khadakada Spur Buruj"
+    },
+    {
+      "cx": 190.0,
+      "cy": -32.25,
+      "cz": -190.0,
+      "radius": 3.5,
+      "height": 5.5,
+      "name": "TV-side Ruined Buruj"
+    },
+    {
+      "cx": 62.0,
+      "cy": -25.0,
+      "cz": -90.0,
+      "radius": 3.5,
+      "height": 6.0,
+      "name": "Cannon Bastion"
+    },
+    {
+      "cx": 154.0,
+      "cy": -54.5,
+      "cz": -174.0,
+      "radius": 3.2,
+      "height": 7.0,
+      "name": "Gate Bastion PD1"
+    },
+    {
+      "cx": 146.0,
+      "cy": -53.0,
+      "cz": -166.0,
+      "radius": 3.2,
+      "height": 7.0,
+      "name": "Gate Bastion PD2"
+    },
+    {
+      "cx": -247.5,
+      "cy": -61.9,
+      "cz": 518.5,
+      "radius": 3.2,
+      "height": 7.2,
+      "name": "Gate Bastion KD1"
+    },
+    {
+      "cx": -239.5,
+      "cy": -59.9,
+      "cz": 510.5,
+      "radius": 3.2,
+      "height": 7.2,
+      "name": "Gate Bastion KD2"
+    }
+  ],
+  "walkable_platforms": [
+    {
+      "cx": -185.0,
+      "cy": -46.5,
+      "cz": 510.0,
+      "radius": 2.9,
+      "name": "Tehalni Observation Deck"
+    },
+    {
+      "cx": 225.0,
+      "cy": -46.5,
+      "cz": -110.0,
+      "radius": 3.1,
+      "name": "Khadakada Overlook Deck"
+    },
+    {
+      "cx": 62.0,
+      "cy": -22.0,
+      "cz": -90.0,
+      "radius": 3.0,
+      "name": "Gun Platform"
+    }
+  ],
+  "special_features": [
+    {
+      "type": "cistern",
+      "cx": -180.0,
+      "cy": -47.0,
+      "cz": 502.0,
+      "size": [
+        4.2,
+        2.0,
+        3.2
+      ]
+    },
+    {
+      "type": "cannon",
+      "cx": 62.0,
+      "cy": -21.05,
+      "cz": -91.8,
+      "length": 1.85,
+      "caliber": "6-foot iron"
+    }
+  ]
+}

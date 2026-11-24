@@ -71,11 +71,46 @@
       "PH17"
     ],
     "measurements": [
-      { "element": "gate_count", "value": 2, "unit": "count", "source": "S02", "method": "survey_count", "tier": "T2" },
-      { "element": "stair_steps", "value": 22, "unit": "count", "source": "S02", "method": "survey_count", "tier": "T2" },
-      { "element": "g1_passage_width", "value": 2.8, "unit": "m", "source": "S02/ESTIMATE", "method": "photographic_ratio", "tier": "T3" },
-      { "element": "g1_passage_height", "value": 4.0, "unit": "m", "source": "S02/ESTIMATE", "method": "photographic_ratio", "tier": "T3" },
-      { "element": "bastion_diameter", "value": 6.4, "unit": "m", "source": "PH02/ESTIMATE", "method": "human_scale_ratio", "tier": "T3" }
+      {
+        "element": "gate_count",
+        "value": 2,
+        "unit": "count",
+        "source": "S02",
+        "method": "survey_count",
+        "tier": "T2"
+      },
+      {
+        "element": "stair_steps",
+        "value": 22,
+        "unit": "count",
+        "source": "S02",
+        "method": "survey_count",
+        "tier": "T2"
+      },
+      {
+        "element": "g1_passage_width",
+        "value": 2.8,
+        "unit": "m",
+        "source": "S02/ESTIMATE",
+        "method": "photographic_ratio",
+        "tier": "T3"
+      },
+      {
+        "element": "g1_passage_height",
+        "value": 4.0,
+        "unit": "m",
+        "source": "S02/ESTIMATE",
+        "method": "photographic_ratio",
+        "tier": "T3"
+      },
+      {
+        "element": "bastion_diameter",
+        "value": 6.4,
+        "unit": "m",
+        "source": "PH02/ESTIMATE",
+        "method": "human_scale_ratio",
+        "tier": "T3"
+      }
     ],
     "uncertainties": [
       "Sub-centimeter stone block joint survey",
@@ -181,12 +216,12 @@
     "name": "Defensive bastions",
     "type": "bastion",
     "tier_target": "T3 until each bastion is photographed",
-    "tier_current": "T4",
+    "tier_current": "T3",
     "position": {
       "crs": "EPSG:32643",
-      "x": null,
-      "y": null,
-      "z": null
+      "x": 368625.0,
+      "y": 2031380.0,
+      "z": 1228.0
     },
     "orientation_deg": null,
     "sources": [
@@ -199,7 +234,46 @@
       "PH17",
       "PH20"
     ],
-    "measurements": [],
+    "measurements": [
+      {
+        "feature": "Cannon Bastion cylinder",
+        "radius_m": 3.5,
+        "height_m": 6.0,
+        "evidence": "S02, PH20"
+      },
+      {
+        "feature": "Moradari 6-foot cannon",
+        "length_m": 1.85,
+        "inscription": "Gumabh 248",
+        "evidence": "S02"
+      },
+      {
+        "feature": "Tehalni Buruj watch tower",
+        "radius_m": 3.4,
+        "height_m": 7.5,
+        "evidence": "S02"
+      },
+      {
+        "feature": "Zunjar Buruj spur bastion",
+        "radius_m": 3.8,
+        "height_m": 9.0,
+        "buried_steps": 5,
+        "evidence": "S02"
+      },
+      {
+        "feature": "Khadakada spur bastion",
+        "radius_m": 3.6,
+        "height_m": 8.5,
+        "evidence": "S02"
+      },
+      {
+        "feature": "TV-side ruined bastion",
+        "radius_m": 3.5,
+        "height_m": 5.5,
+        "state": "ruined_rubble",
+        "evidence": "S02"
+      }
+    ],
     "uncertainties": [
       "Shape (round, angular, tiered) of each bastion",
       "Height, diameter, parapet and gun ports",
@@ -207,12 +281,15 @@
       "Which are restored"
     ],
     "validation": {
-      "score": null,
-      "date": null,
+      "score": 8.0,
+      "max_score": 8.0,
+      "date": "2026-11-21",
       "report": "reports/BS_report.md"
     },
     "licences": [],
-    "status": "not_started"
+    "status": "milestone6_blockout",
+    "model_path": "/assets/BS/defensive_bastions_M1.glb",
+    "collision_path": "/assets/BS/defensive_bastions_collision.json"
   },
   {
     "id": "KB",

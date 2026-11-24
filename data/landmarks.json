@@ -443,7 +443,10 @@
         "PH17",
         "PH20"
       ],
-      "status": "not_started"
+      "status": "milestone6_blockout",
+      "model_path": "/assets/BS/defensive_bastions_M1.glb",
+      "collision_path": "/assets/BS/defensive_bastions_collision.json",
+      "tier_current": "T3"
     },
     {
       "id": "KB",

@@ -54,7 +54,7 @@ export default function SinhagadHeritageViewer() {
     heading: 45,
   });
   const [showInfoCard, setShowInfoCard] = useState(false);
-  const [activeStructure, setActiveStructure] = useState<'PD' | 'KD' | 'FW' | 'TERRAIN'>('PD');
+  const [activeStructure, setActiveStructure] = useState<'PD' | 'KD' | 'FW' | 'BS' | 'TERRAIN'>('PD');
   const [soundEnabled, setSoundEnabled] = useState(false);
 
   // Audio Context Ref
@@ -103,7 +103,7 @@ export default function SinhagadHeritageViewer() {
   }, []);
 
   // Viewpoint Jump between Gates and Key Structures
-  const jumpToStructure = useCallback((target: 'PD' | 'KD' | 'FW') => {
+  const jumpToStructure = useCallback((target: 'PD' | 'KD' | 'FW' | 'BS') => {
     const X0 = 368495.5;
     const Y0 = 2031092.1;
     const Z0 = 1307.3;
@@ -146,6 +146,20 @@ export default function SinhagadHeritageViewer() {
         elevation: Math.round((Z0 - 56.0) * 10) / 10,
         speed: 0.0,
         heading: (Math.round((-(Math.PI * 0.45 * 180) / Math.PI) % 360) + 360) % 360,
+      });
+    } else if (target === 'BS') {
+      // Jump to Cannon Bastion Gun Platform opposite Daru Kothar
+      stateRef.current.pos.set(62.0, -21.5, -88.0);
+      stateRef.current.safePos.set(62.0, -21.5, -88.0);
+      stateRef.current.yaw = 0.0;
+      stateRef.current.pitch = -0.05;
+      setActiveStructure('BS');
+      setTelemetry({
+        easting: Math.round((X0 + 62.0) * 10) / 10,
+        northing: Math.round((Y0 - (-88.0)) * 10) / 10,
+        elevation: Math.round((Z0 - 21.5) * 10) / 10,
+        speed: 0.0,
+        heading: 0,
       });
     }
   }, []);
