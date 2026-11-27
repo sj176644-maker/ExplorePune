@@ -6,6 +6,10 @@ import { MapPin, Navigation, Route, Plus, Trash2, Sparkles, Compass } from 'luci
 import { ExperiencePlace } from '@/lib/experience/types';
 import { getAllPlaces, getCategories } from '@/lib/experience/selectors';
 import {
+  resolvePlaceCategory,
+  CATEGORY_CONFIGS,
+} from './CategoryPinIcons';
+import {
   formatCoordinatesDD,
   getTalukaOrRegion,
   calculateDistanceKm,
@@ -61,8 +65,15 @@ function DistrictControlPanel({
     const q = searchQuery.trim().toLowerCase();
     return allPlaces.filter((p) => {
       // Category filter
-      if (selectedCategory !== 'all' && p.category_slug !== selectedCategory) {
-        return false;
+      if (selectedCategory !== 'all') {
+        const resolved = resolvePlaceCategory(p);
+        if (p.category_slug !== selectedCategory && resolved !== selectedCategory) {
+          if (selectedCategory === 'nature' && (resolved === 'lakes' || resolved === 'viewpoints')) {
+            // match nature umbrella
+          } else {
+            return false;
+          }
+        }
       }
 
       // Taluka filter
@@ -337,6 +348,8 @@ function DistrictControlPanel({
                 const elevation = getElevationEstimate(place.latitude, place.longitude, place.category_slug);
                 const name = isMr ? place.name_mr || place.name : place.name;
                 const isInTrail = customTrailPlaces.some((p) => p.slug === place.slug);
+                const catKey = resolvePlaceCategory(place);
+                const catCfg = CATEGORY_CONFIGS[catKey] || CATEGORY_CONFIGS.other;
 
                 return (
                   <div
@@ -371,9 +384,17 @@ function DistrictControlPanel({
                     {/* Place Details */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between gap-1 mb-0.5">
-                        <span className="text-[10px] font-mono text-emerald-400 truncate font-semibold">
-                          {taluka.nameEn.split(' ')[0]} • {place.category_slug}
-                        </span>
+                        <div className="flex items-center gap-1.5 min-w-0">
+                          <span
+                            className="text-[9px] font-mono px-1.5 py-0.2 rounded font-bold uppercase text-white truncate"
+                            style={{ backgroundColor: catCfg.color }}
+                          >
+                            {isMr ? catCfg.labelMr : catCfg.labelEn}
+                          </span>
+                          <span className="text-[10px] font-mono text-white/60 truncate">
+                            {taluka.nameEn.split(' ')[0]}
+                          </span>
+                        </div>
                         <span className="text-[10px] font-mono text-amber-300 font-bold flex-shrink-0">
                           {dist} km
                         </span>

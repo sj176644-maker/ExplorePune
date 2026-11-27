@@ -8,6 +8,10 @@ import { ExperiencePlace } from '@/lib/experience/types';
 import { getAllPlaces } from '@/lib/experience/selectors';
 import { DISCOVERY_MISSIONS, DiscoveryMission } from './DiscoveryMissionsModal';
 import {
+  resolvePlaceCategory,
+  CATEGORY_CONFIGS,
+} from './CategoryPinIcons';
+import {
   formatCoordinatesDD,
   formatCoordinatesDMS,
   getTalukaOrRegion,
@@ -96,6 +100,9 @@ export default function DistrictLocationDrawer({
   const address = isMr ? place.address_mr || place.address : place.address;
   const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 
+  const catKey = resolvePlaceCategory(place);
+  const catCfg = CATEGORY_CONFIGS[catKey] || CATEGORY_CONFIGS.other;
+
   const handleCopyCoords = async () => {
     try {
       await navigator.clipboard.writeText(`${lat.toFixed(6)}, ${lng.toFixed(6)}`);
@@ -111,7 +118,7 @@ export default function DistrictLocationDrawer({
   return (
     <aside
       style={{ maxHeight: 'calc(100% - 2rem)' }}
-      className="fixed md:absolute top-auto bottom-0 md:top-4 md:bottom-4 right-0 md:right-4 z-30 w-full md:w-[420px] max-h-[85vh] md:max-h-none flex flex-col bg-black/95 backdrop-blur-2xl border-t md:border border-emerald-500/40 rounded-t-3xl md:rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom md:slide-in-from-right text-white select-none"
+      className="fixed md:absolute top-auto bottom-0 md:top-4 md:bottom-4 right-0 md:right-4 z-30 w-full md:w-[420px] max-h-[85vh] md:max-h-none flex flex-col bg-[var(--card)] text-[var(--foreground)] border-t md:border border-[var(--border)] rounded-t-3xl md:rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom md:slide-in-from-right select-none"
       aria-label={`${placeName} Coordinates & Geographical Details`}
     >
       {/* Top Image Banner */}
@@ -132,8 +139,14 @@ export default function DistrictLocationDrawer({
 
         {/* Top Header Floating Controls */}
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-          <span className="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-emerald-950/90 text-emerald-300 border border-emerald-500/40 backdrop-blur-md">
-            {place.category_slug}
+          <span
+            className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider text-white shadow-md inline-flex items-center gap-1.5 backdrop-blur-md"
+            style={{ backgroundColor: catCfg.color }}
+          >
+            <svg viewBox="0 0 24 24" width="12" height="12" className="fill-current text-white flex-shrink-0">
+              <g dangerouslySetInnerHTML={{ __html: catCfg.svgPath }} />
+            </svg>
+            <span>{isMr ? catCfg.labelMr : catCfg.labelEn}</span>
           </span>
           <button
             type="button"
@@ -149,11 +162,11 @@ export default function DistrictLocationDrawer({
 
         {/* Taluka / Region Badge */}
         <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-          <span className="text-[11px] font-mono text-emerald-400 bg-black/80 px-2.5 py-1 rounded-lg border border-emerald-500/30 inline-flex items-center gap-1">
+          <span className="text-[11px] font-mono text-emerald-400 bg-black/80 px-2.5 py-1 rounded-lg border border-emerald-500/30 inline-flex items-center gap-1 backdrop-blur-md">
             <MapPin size={11} />
             <span>{isMr ? taluka.nameMr : taluka.nameEn}</span>
           </span>
-          <span className="text-[10px] font-mono text-white/80 bg-black/80 px-2 py-1 rounded-lg border border-white/10">
+          <span className="text-[10px] font-mono text-white/90 bg-black/80 px-2 py-1 rounded-lg border border-white/10 backdrop-blur-md">
             ⛰️ ALT: ~{elevation}m MSL
           </span>
         </div>
@@ -163,27 +176,27 @@ export default function DistrictLocationDrawer({
       <div className="flex-1 min-h-0 overflow-y-auto p-4 md:p-5 space-y-3.5 custom-scrollbar">
         {/* Name & Alternative Name */}
         <div>
-          <h2 className="text-xl font-black text-white tracking-tight leading-tight">
+          <h2 className="text-xl font-black text-[var(--foreground)] tracking-tight leading-tight">
             {placeName}
           </h2>
           {placeAltName && (
-            <p className="text-xs font-medium text-white/50 mt-0.5 font-sans">
+            <p className="text-xs font-medium text-[var(--muted-foreground)] mt-0.5 font-sans">
               {placeAltName}
             </p>
           )}
         </div>
 
         {/* PROMINENT GPS COORDINATES CARD */}
-        <div className="p-3.5 rounded-2xl bg-zinc-900/90 border border-emerald-500/40 relative overflow-hidden group">
+        <div className="p-3.5 rounded-2xl bg-[var(--surface-secondary)] border border-[var(--border)] relative overflow-hidden group">
           <div className="flex items-center justify-between mb-1.5">
-            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[var(--primary)] flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[var(--primary)] animate-ping" />
               VERIFIED GPS COORDINATES
             </span>
             <button
               type="button"
               onClick={handleCopyCoords}
-              className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 transition-colors flex items-center gap-1"
+              className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[var(--primary-light)] text-[var(--primary)] hover:opacity-80 transition-colors flex items-center gap-1 border border-[var(--primary-border)]"
             >
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -193,23 +206,23 @@ export default function DistrictLocationDrawer({
           </div>
 
           {/* Decimal Degrees */}
-          <div className="text-sm font-mono font-black text-white tracking-tight">
+          <div className="text-sm font-mono font-black text-[var(--foreground)] tracking-tight">
             {coordsDD}
           </div>
 
           {/* DMS */}
-          <div className="text-[11px] font-mono text-white/60 mt-0.5">
+          <div className="text-[11px] font-mono text-[var(--muted-foreground)] mt-0.5">
             {coordsDMS}
           </div>
 
           {/* Spatial Distances */}
-          <div className="mt-2.5 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-white/70">
+          <div className="mt-2.5 pt-2 border-t border-[var(--border)] flex items-center justify-between text-[10px] font-mono text-[var(--muted-foreground)]">
             <span>
-              Pune Zero Stone: <strong className="text-amber-400">{distFromCenter} km</strong>
+              Pune Zero Stone: <strong className="text-amber-500">{distFromCenter} km</strong>
             </span>
             {distFromUser !== null && (
               <span>
-                From You: <strong className="text-cyan-400">{distFromUser} km</strong>
+                From You: <strong className="text-cyan-500">{distFromUser} km</strong>
               </span>
             )}
           </div>
@@ -217,34 +230,34 @@ export default function DistrictLocationDrawer({
 
         {/* Visiting Hours & Entry Fee */}
         <div className="grid grid-cols-2 gap-2 text-xs">
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10">
-            <span className="text-[10px] uppercase font-mono tracking-widest text-white/40 block mb-0.5">
+          <div className="p-2.5 rounded-xl bg-[var(--surface-secondary)] border border-[var(--border)]">
+            <span className="text-[10px] uppercase font-mono tracking-widest text-[var(--muted-foreground)] block mb-0.5">
               Official Hours
             </span>
-            <p className="font-semibold text-white truncate">
+            <p className="font-semibold text-[var(--foreground)] truncate">
               {hours || 'Daylight / Open'}
             </p>
           </div>
-          <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10">
-            <span className="text-[10px] uppercase font-mono tracking-widest text-white/40 block mb-0.5">
+          <div className="p-2.5 rounded-xl bg-[var(--surface-secondary)] border border-[var(--border)]">
+            <span className="text-[10px] uppercase font-mono tracking-widest text-[var(--muted-foreground)] block mb-0.5">
               Admission Fee
             </span>
-            <p className="font-semibold text-emerald-400">
+            <p className="font-semibold text-[var(--primary)]">
               {place.entry_fee === 0 ? 'Free Entry (₹0)' : `₹${place.entry_fee}`}
             </p>
           </div>
         </div>
 
         {/* Short Description */}
-        <p className="text-xs text-white/80 leading-relaxed font-light">
+        <p className="text-xs text-[var(--secondary-foreground)] leading-relaxed font-normal">
           {isMr ? place.description_mr || place.description : place.description}
         </p>
 
         {/* Verified Address */}
         {address && (
-          <div className="text-[11px] text-white/60 pt-1 border-t border-white/10">
-            <span className="text-white/40 font-mono text-[10px] block mb-0.5">VERIFIED ADDRESS</span>
-            <p className="leading-snug">{address}</p>
+          <div className="text-[11px] text-[var(--muted-foreground)] pt-1 border-t border-[var(--border)]">
+            <span className="font-mono text-[10px] block mb-0.5 opacity-70">VERIFIED ADDRESS</span>
+            <p className="leading-snug text-[var(--foreground)]">{address}</p>
           </div>
         )}
 
@@ -406,10 +419,10 @@ export default function DistrictLocationDrawer({
               if (isRouteActive && onClearRoute) onClearRoute();
               else onShowRoute(place);
             }}
-            className={`w-full flex items-center justify-center gap-1.5 py-2 rounded-xl text-xs font-mono font-bold border transition-colors ${
+            className={`w-full flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-mono font-bold border transition-colors ${
               isRouteActive
-                ? 'bg-cyan-900/40 border-cyan-400 text-cyan-300'
-                : 'bg-white/5 hover:bg-white/10 border-white/10 text-white/80'
+                ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300'
+                : 'bg-[var(--surface-secondary)] hover:bg-[var(--hover-background)] border-[var(--border)] text-[var(--foreground)]'
             }`}
           >
             <Route size={13} />
@@ -433,11 +446,11 @@ export default function DistrictLocationDrawer({
         {/* Explore Destination Detail Page */}
         <Link
           href={`/places/${place.slug}`}
-          className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-bold border border-white/10 transition-colors"
+          className="flex items-center justify-center gap-2 py-3 rounded-2xl bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-[var(--primary-foreground)] text-xs font-bold shadow-md transition-all active:scale-[0.99]"
         >
-          <span>{isMr ? 'संपूर्ण माहिती वाचा (EXPLORE DESTINATION)' : 'EXPLORE DESTINATION'}</span>
-          <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          <span>{isMr ? 'संपूर्ण पर्यटन मार्गदर्शक वाचा (VIEW FULL GUIDE)' : 'VIEW COMPLETE DESTINATION GUIDE'}</span>
+          <svg className="w-4 h-4 fill-none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </Link>
 
@@ -446,7 +459,7 @@ export default function DistrictLocationDrawer({
           href={googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-center text-[10px] font-mono text-white/50 hover:text-white transition-colors"
+          className="text-center text-[10px] font-mono text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors pt-1"
         >
           {isMr ? 'गुगल मॅप्सवर नेव्हिगेट करा ↗' : 'Navigate via Google Maps ↗'}
         </a>

@@ -16,6 +16,12 @@ if (typeof window !== 'undefined') {
 import { getAllPlaces } from '@/lib/experience/selectors';
 import { ExperiencePlace } from '@/lib/experience/types';
 import {
+  resolvePlaceCategory,
+  CATEGORY_CONFIGS,
+  generateCategoryPinSvg,
+  DestinationCategoryKey,
+} from './CategoryPinIcons';
+import {
   getPuneDistrictBoundaryGeoJson,
   getPuneTalukasGeoJson,
   getPuneRiversGeoJson,
@@ -89,6 +95,7 @@ interface LivePuneDistrictMapProps {
   selectedCategory: string;
   selectedTaluka: string;
   searchQuery: string;
+  visitedPlaceSlugs?: string[];
   onPlaceSelect: (place: ExperiencePlace) => void;
   onCursorMove: (lat: number, lng: number) => void;
   onCameraChange: (pitch: number, bearing: number) => void;
@@ -227,6 +234,7 @@ const LivePuneDistrictMap = forwardRef<DistrictMapHandle, LivePuneDistrictMapPro
       selectedCategory,
       selectedTaluka,
       searchQuery,
+      visitedPlaceSlugs = [],
       onPlaceSelect,
       onCursorMove,
       onCameraChange,
@@ -1304,7 +1312,16 @@ const LivePuneDistrictMap = forwardRef<DistrictMapHandle, LivePuneDistrictMapPro
       const isFiltered = selectedCategory !== 'all' || selectedTaluka !== 'all' || Boolean(q);
 
       const filtered = allPlaces.filter((p) => {
-        if (selectedCategory !== 'all' && p.category_slug !== selectedCategory) return false;
+        if (selectedCategory !== 'all') {
+          const resolvedCat = resolvePlaceCategory(p);
+          if (p.category_slug !== selectedCategory && resolvedCat !== selectedCategory) {
+            if (selectedCategory === 'nature' && (resolvedCat === 'lakes' || resolvedCat === 'viewpoints')) {
+              // match nature umbrella
+            } else {
+              return false;
+            }
+          }
+        }
         if (selectedTaluka !== 'all') {
           const taluka = getTalukaOrRegion(p.latitude, p.longitude, p.address);
           if (taluka.id !== selectedTaluka && !taluka.nameEn.toLowerCase().includes(selectedTaluka.toLowerCase())) {
@@ -1312,9 +1329,20 @@ const LivePuneDistrictMap = forwardRef<DistrictMapHandle, LivePuneDistrictMapPro
           }
         }
         if (q) {
-          const matchName = (p.name || '').toLowerCase().includes(q) || (p.name_mr || '').toLowerCase().includes(q);
-          const matchCoords = p.latitude.toString().includes(q) || p.longitude.toString().includes(q);
-          return matchName || matchCoords;
+          const nameEn = (p.name || '').toLowerCase();
+          const nameMr = (p.name_mr || '').toLowerCase();
+          const latStr = p.latitude.toString();
+          const lngStr = p.longitude.toString();
+          const resolvedCat = resolvePlaceCategory(p);
+          const catCfg = CATEGORY_CONFIGS[resolvedCat] || CATEGORY_CONFIGS.other;
+          const matchName = nameEn.includes(q) || nameMr.includes(q);
+          const matchCoords = latStr.includes(q) || lngStr.includes(q);
+          const matchCat =
+            p.category_slug.toLowerCase().includes(q) ||
+            resolvedCat.toLowerCase().includes(q) ||
+            catCfg.labelEn.toLowerCase().includes(q) ||
+            catCfg.labelMr.toLowerCase().includes(q);
+          return matchName || matchCoords || matchCat;
         }
         return true;
       });
@@ -1329,33 +1357,28 @@ const LivePuneDistrictMap = forwardRef<DistrictMapHandle, LivePuneDistrictMapPro
         }
 
         const el = document.createElement('div');
-        el.className = 'group relative flex flex-col items-center cursor-pointer select-none';
+        el.className = 'explore-place-marker group relative flex flex-col items-center cursor-pointer select-none';
 
-        // Distinct category color & icon
-        let color = '#10b981';
-        let icon = '📍';
-        if (place.category_slug === 'forts') { color = '#ef4444'; icon = '🏰'; }
-        else if (place.category_slug === 'heritage') { color = '#f59e0b'; icon = '🏛️'; }
-        else if (place.category_slug === 'temples') { color = '#f97316'; icon = '🛕'; }
-        else if (place.category_slug === 'museums') { color = '#8b5cf6'; icon = '🏺'; }
-        else if (place.category_slug === 'nature') { color = '#10b981'; icon = '🌲'; }
-        else if (place.category_slug === 'parks') { color = '#06b6d4'; icon = '💧'; }
-        else if (place.category_slug === 'food') { color = '#ec4899'; icon = '☕'; }
+        const catKey = resolvePlaceCategory(place);
+        const catCfg = CATEGORY_CONFIGS[catKey] || CATEGORY_CONFIGS.other;
+        const isSelected = selectedPlace?.slug === place.slug;
+        const isVisited = visitedPlaceSlugs?.includes(place.slug) || false;
 
         const coordsStr = `${place.latitude.toFixed(4)}, ${place.longitude.toFixed(4)}`;
         const placeName = lang === 'mr' ? place.name_mr || place.name : place.name;
         const taluka = getTalukaOrRegion(place.latitude, place.longitude, place.address);
         const dist = calculateDistanceKm(18.5204, 73.8567, place.latitude, place.longitude);
         const elevation = getElevationEstimate(place.latitude, place.longitude, place.category_slug);
+        const pinSvg = generateCategoryPinSvg(catKey, { isSelected, isVisited });
 
         el.innerHTML = `
           <!-- Interactive Floating Hover Card -->
-          <div class="pointer-events-none absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-60 p-2.5 rounded-2xl bg-black/95 backdrop-blur-2xl border border-emerald-500/40 shadow-2xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-200 z-50 text-white">
+          <div class="pointer-events-none absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 p-3 rounded-2xl bg-slate-950/95 backdrop-blur-2xl border shadow-2xl opacity-0 group-hover:opacity-100 group-hover:-translate-y-1 transition-all duration-200 z-50 text-white" style="border-color: ${catCfg.color}88; box-shadow: 0 16px 36px -6px rgba(0,0,0,0.85), 0 0 20px ${catCfg.glowColor};">
             <div class="relative h-24 w-full rounded-xl overflow-hidden bg-zinc-900 mb-2">
               <img src="${place.image_url || '/images/hero-shaniwar-wada.webp'}" alt="${placeName}" class="w-full h-full object-cover" loading="lazy" decoding="async" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
-              <span class="absolute top-2 left-2 px-2 py-0.5 rounded-md text-[9px] font-mono font-black uppercase tracking-wider bg-black/85 text-emerald-300 border border-emerald-500/40">
-                ${place.category_slug}
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+              <span class="absolute top-2 left-2 px-2 py-0.5 rounded-md text-[9px] font-mono font-black uppercase tracking-wider text-white shadow-md" style="background-color: ${catCfg.color};">
+                ${lang === 'mr' ? catCfg.labelMr : catCfg.labelEn}
               </span>
               <span class="absolute bottom-1.5 right-2 px-1.5 py-0.5 rounded text-[8px] font-mono text-white/90 bg-black/80 border border-white/10">
                 ${taluka.nameEn.split(' ')[0]}
@@ -1367,24 +1390,22 @@ const LivePuneDistrictMap = forwardRef<DistrictMapHandle, LivePuneDistrictMapPro
               <span class="text-emerald-400 font-bold">${dist} km</span>
               <span class="text-cyan-300">⛰️ ~${elevation}m</span>
             </div>
-            <div class="mt-2 pt-1.5 border-t border-white/10 text-[9px] font-mono text-emerald-300/90 text-center font-bold uppercase tracking-wider">
-              Click to Fly & Orbit 3D ↗
+            <div class="mt-2 pt-1.5 border-t border-white/10 text-[9px] font-mono text-center font-bold uppercase tracking-wider" style="color: ${catCfg.borderColor};">
+              ${lang === 'mr' ? 'क्लिक करून 3D मध्ये पहा ↗' : 'Click to Fly & Orbit 3D ↗'}
             </div>
           </div>
 
-          <!-- Pin Head Badge (Flagships always, others on hover or zoom in) -->
-          <div class="marker-title-badge ${isFlagship ? 'flex' : 'hidden group-hover:flex'} items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/90 text-white border border-white/20 text-[10px] font-mono whitespace-nowrap shadow-2xl mb-1 transition-transform group-hover:scale-105">
-            <span>${icon}</span>
+          <!-- Pin Head Badge (Flagships & Selected always visible, others on hover or zoom in) -->
+          <div class="marker-title-badge ${isFlagship || isSelected ? 'flex' : 'hidden group-hover:flex'} items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-950/90 text-white border text-[10px] font-mono whitespace-nowrap shadow-2xl mb-1 transition-transform group-hover:scale-105" style="border-color: ${catCfg.color}99;">
+            <span class="w-2 h-2 rounded-full" style="background-color: ${catCfg.color};"></span>
             <span class="font-bold text-white text-[10px]">${placeName}</span>
             <span class="text-[9px] text-amber-300 font-bold ml-1">⛰️~${elevation}m</span>
           </div>
 
-          <!-- Pulsing Beacon Pin Point -->
-          <div class="relative flex items-center justify-center transition-transform group-hover:scale-125">
-            <span class="absolute inline-flex h-7 w-7 rounded-full opacity-60 pin-ripple-anim" style="background-color: ${color};"></span>
-            <span class="relative inline-flex items-center justify-center rounded-full h-5 w-5 border-2 border-white/95 shadow-2xl text-[9px]" style="background-color: ${color};">
-              <span class="scale-75">${icon}</span>
-            </span>
+          <!-- Vector Teardrop Pin with Sharp Bottom Pointer -->
+          <div class="relative flex items-center justify-center transition-all duration-200 group-hover:-translate-y-1.5 group-hover:scale-110 ${isSelected ? 'scale-125 z-40' : ''}">
+            ${isSelected ? `<span class="absolute -inset-2 rounded-full opacity-75 pin-ripple-anim" style="background-color: ${catCfg.glowColor};"></span>` : ''}
+            ${pinSvg}
           </div>
         `;
 
@@ -1430,7 +1451,7 @@ const LivePuneDistrictMap = forwardRef<DistrictMapHandle, LivePuneDistrictMapPro
       return () => {
         map.off('zoomend', handleZoomEnd);
       };
-    }, [selectedCategory, selectedTaluka, searchQuery, isMapLoaded, lang]);
+    }, [selectedCategory, selectedTaluka, searchQuery, isMapLoaded, lang, selectedPlace, visitedPlaceSlugs]);
 
     // 8. Active Selected Place Indicator
     useEffect(() => {
@@ -1451,15 +1472,17 @@ const LivePuneDistrictMap = forwardRef<DistrictMapHandle, LivePuneDistrictMapPro
       activeEl.className = 'flex flex-col items-center pointer-events-none z-40 select-none';
       const coordsText = formatCoordinatesDD(selectedPlace.latitude, selectedPlace.longitude, 5);
       const name = lang === 'mr' ? selectedPlace.name_mr || selectedPlace.name : selectedPlace.name;
+      const catKey = resolvePlaceCategory(selectedPlace);
+      const catCfg = CATEGORY_CONFIGS[catKey] || CATEGORY_CONFIGS.other;
 
       activeEl.innerHTML = `
-        <div class="px-3.5 py-1.5 rounded-2xl bg-black/95 text-white border-2 border-emerald-400 shadow-2xl backdrop-blur-xl mb-2 text-center animate-bounce">
-          <div class="text-xs font-black uppercase tracking-wider text-emerald-400 truncate max-w-[220px]">${name}</div>
+        <div class="px-3.5 py-1.5 rounded-2xl bg-black/95 text-white border-2 shadow-2xl backdrop-blur-xl mb-2 text-center animate-bounce" style="border-color: ${catCfg.color}; box-shadow: 0 0 25px ${catCfg.glowColor};">
+          <div class="text-xs font-black uppercase tracking-wider truncate max-w-[220px]" style="color: ${catCfg.borderColor};">${name}</div>
           <div class="text-[9px] font-mono text-amber-300 font-bold tracking-tight">${coordsText}</div>
         </div>
         <div class="relative flex items-center justify-center">
-          <span class="animate-ping absolute inline-flex h-12 w-12 rounded-full bg-emerald-400 opacity-80"></span>
-          <span class="relative inline-flex rounded-full h-6 w-6 bg-emerald-500 border-2 border-white shadow-2xl"></span>
+          <span class="animate-ping absolute inline-flex h-12 w-12 rounded-full opacity-75" style="background-color: ${catCfg.color};"></span>
+          <span class="relative inline-flex rounded-full h-6 w-6 border-2 border-white shadow-2xl" style="background-color: ${catCfg.color};"></span>
         </div>
       `;
 
