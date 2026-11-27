@@ -81,9 +81,9 @@ export default function DayJourneyView({
       {/* Top Banner and Date Picker */}
       <div
         style={{
-          background: '#ffffff',
+          background: 'var(--card)',
           borderRadius: 20,
-          border: '1px solid #e2e8f0',
+          border: '1px solid var(--border)',
           padding: '22px 24px',
           display: 'flex',
           flexDirection: 'column',
@@ -125,11 +125,11 @@ export default function DayJourneyView({
               style={{
                 padding: '8px 14px',
                 borderRadius: 10,
-                border: '1px solid #cbd5e1',
+                border: '1px solid var(--border)',
                 fontSize: 13,
                 fontWeight: 600,
-                color: '#1e293b',
-                background: '#ffffff',
+                color: 'var(--foreground)',
+                background: 'var(--card)',
                 outline: 'none',
               }}
             >
@@ -178,17 +178,17 @@ export default function DayJourneyView({
               borderTop: '1px solid #f1f5f9',
             }}
           >
-            <div style={{ padding: '10px 14px', borderRadius: 12, background: '#f8fafc' }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>
+            <div style={{ padding: '10px 14px', borderRadius: 12, background: 'var(--surface-secondary)' }}>
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase' }}>
                 {isMr ? 'थांबे (Stops)' : 'Total Stops'}
               </span>
-              <strong style={{ display: 'block', fontSize: 18, color: '#0f172a', marginTop: 2 }}>
+              <strong style={{ display: 'block', fontSize: 18, color: 'var(--ink)', marginTop: 2 }}>
                 {currentJourney.places.length}
               </strong>
             </div>
 
-            <div style={{ padding: '10px 14px', borderRadius: 12, background: '#f8fafc' }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>
+            <div style={{ padding: '10px 14px', borderRadius: 12, background: 'var(--surface-secondary)' }}>
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase' }}>
                 {isMr ? 'अंदाजे अंतर' : 'Est. Distance'}
               </span>
               <strong style={{ display: 'block', fontSize: 18, color: '#2563eb', marginTop: 2 }}>
@@ -196,8 +196,8 @@ export default function DayJourneyView({
               </strong>
             </div>
 
-            <div style={{ padding: '10px 14px', borderRadius: 12, background: '#f8fafc' }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>
+            <div style={{ padding: '10px 14px', borderRadius: 12, background: 'var(--surface-secondary)' }}>
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase' }}>
                 {isMr ? 'वाहतूक प्रकार' : 'Transit Modes'}
               </span>
               <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginTop: 4 }}>
@@ -207,8 +207,8 @@ export default function DayJourneyView({
               </div>
             </div>
 
-            <div style={{ padding: '10px 14px', borderRadius: 12, background: '#f8fafc' }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>
+            <div style={{ padding: '10px 14px', borderRadius: 12, background: 'var(--surface-secondary)' }}>
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase' }}>
                 {isMr ? 'आजचे फोटो' : 'Day Photos'}
               </span>
               <strong style={{ display: 'block', fontSize: 18, color: '#ea580c', marginTop: 2 }}>
@@ -222,7 +222,7 @@ export default function DayJourneyView({
       {/* AI Evocative Day Story Recap */}
       <div
         style={{
-          background: 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)',
+          background: 'linear-gradient(135deg, var(--surface-secondary) 0%, var(--card) 100%)',
           borderRadius: 18,
           border: '1px solid #e9d5ff',
           padding: '20px 24px',
@@ -271,16 +271,16 @@ export default function DayJourneyView({
       {/* Chronological Stops Timeline */}
       <div
         style={{
-          background: '#ffffff',
+          background: 'var(--card)',
           borderRadius: 20,
-          border: '1px solid #e2e8f0',
+          border: '1px solid var(--border)',
           padding: '24px',
           display: 'flex',
           flexDirection: 'column',
           gap: 20,
         }}
       >
-        <h3 style={{ margin: 0, fontSize: 17, fontWeight: 800, color: '#0f172a' }}>
+        <h3 style={{ margin: 0, fontSize: 17, fontWeight: 800, color: 'var(--ink)' }}>
           {isMr ? 'दिवसभराचा प्रवास क्रम' : 'Chronological Journey Stops'}
         </h3>
 

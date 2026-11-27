@@ -42,9 +42,9 @@ export default function TravelTimelineMapView({
       {/* View Switcher Header */}
       <div
         style={{
-          background: '#ffffff',
+          background: 'var(--card)',
           borderRadius: 20,
-          border: '1px solid #e2e8f0',
+          border: '1px solid var(--border)',
           padding: '20px 24px',
           display: 'flex',
           justifyContent: 'space-between',
@@ -60,7 +60,7 @@ export default function TravelTimelineMapView({
               width: 44,
               height: 44,
               borderRadius: 12,
-              backgroundColor: '#fdf2f8',
+              backgroundColor: 'var(--surface-secondary)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -69,10 +69,10 @@ export default function TravelTimelineMapView({
             <Route size={22} color="#db2777" />
           </div>
           <div>
-            <h2 style={{ fontSize: 20, fontWeight: 900, margin: 0, color: '#0f172a' }}>
+            <h2 style={{ fontSize: 20, fontWeight: 900, margin: 0, color: 'var(--ink)' }}>
               {isMr ? 'प्रवास टाईमलाईन व नकाशा' : 'Travel Timeline & Exploration Map'}
             </h2>
-            <span style={{ fontSize: 13, color: '#64748b' }}>
+            <span style={{ fontSize: 13, color: 'var(--muted)' }}>
               {isMr
                 ? 'तुमच्या सर्व पुणे भेटींचा कालक्रमानुसार मार्ग आणि संवादी नकाशा'
                 : 'Chronological exploration trail and precision interactive map.'}
@@ -81,7 +81,7 @@ export default function TravelTimelineMapView({
         </div>
 
         {/* Toggle between Timeline & Map */}
-        <div style={{ display: 'flex', gap: 6, background: '#f1f5f9', padding: 4, borderRadius: 12 }}>
+        <div style={{ display: 'flex', gap: 6, background: 'var(--surface-secondary)', padding: 4, borderRadius: 12 }}>
           <button
             type="button"
             onClick={() => setViewMode('timeline')}
@@ -91,8 +91,8 @@ export default function TravelTimelineMapView({
               fontSize: 12.5,
               fontWeight: viewMode === 'timeline' ? 700 : 500,
               border: 'none',
-              background: viewMode === 'timeline' ? '#ffffff' : 'transparent',
-              color: viewMode === 'timeline' ? '#db2777' : '#64748b',
+              background: viewMode === 'timeline' ? 'var(--card)' : 'transparent',
+              color: viewMode === 'timeline' ? '#db2777' : 'var(--muted)',
               cursor: 'pointer',
               display: 'inline-flex',
               alignItems: 'center',
@@ -112,8 +112,8 @@ export default function TravelTimelineMapView({
               fontSize: 12.5,
               fontWeight: viewMode === 'map' ? 700 : 500,
               border: 'none',
-              background: viewMode === 'map' ? '#ffffff' : 'transparent',
-              color: viewMode === 'map' ? '#db2777' : '#64748b',
+              background: viewMode === 'map' ? 'var(--card)' : 'transparent',
+              color: viewMode === 'map' ? '#db2777' : 'var(--muted)',
               cursor: 'pointer',
               display: 'inline-flex',
               alignItems: 'center',
@@ -130,9 +130,9 @@ export default function TravelTimelineMapView({
       {viewMode === 'timeline' && (
         <div
           style={{
-            background: '#ffffff',
+            background: 'var(--card)',
             borderRadius: 20,
-            border: '1px solid #e2e8f0',
+            border: '1px solid var(--border)',
             padding: '28px 24px',
             display: 'flex',
             flexDirection: 'column',
@@ -234,9 +234,9 @@ export default function TravelTimelineMapView({
                           style={{
                             padding: '7px 14px',
                             borderRadius: 10,
-                            background: '#ffffff',
-                            border: '1px solid #cbd5e1',
-                            color: '#0f172a',
+                            background: 'var(--surface-secondary)',
+                            border: '1px solid var(--border)',
+                            color: 'var(--ink)',
                             fontSize: 12.5,
                             fontWeight: 700,
                             cursor: 'pointer',
@@ -262,9 +262,9 @@ export default function TravelTimelineMapView({
       {viewMode === 'map' && (
         <div
           style={{
-            background: '#ffffff',
+            background: 'var(--card)',
             borderRadius: 20,
-            border: '1px solid #e2e8f0',
+            border: '1px solid var(--border)',
             padding: '24px',
             display: 'flex',
             flexDirection: 'column',

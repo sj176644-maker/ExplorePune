@@ -104,7 +104,7 @@ export default function FeedbackSection() {
         style={{
           position: 'relative',
           overflow: 'hidden',
-          background: 'linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%)',
+          background: 'linear-gradient(135deg, var(--card) 0%, var(--primary-light) 100%)',
           border: '1.5px solid var(--primary-border)',
           borderRadius: 20,
           padding: '36px 32px',
@@ -130,11 +130,11 @@ export default function FeedbackSection() {
           <div
             style={{
               padding: '12px 16px',
-              background: '#f8fafc',
-              border: '1px solid #e2e8f0',
+              background: 'var(--surface-secondary)',
+              border: '1px solid var(--line)',
               borderRadius: 10,
               fontSize: 13,
-              color: '#475569',
+              color: 'var(--muted)',
               marginBottom: 18,
               display: 'flex',
               alignItems: 'center',

@@ -213,5 +213,24 @@ describe('Dark and Light Theme Toggle & Shortcut Key Engine', () => {
       expect(drawerFile).toContain("background: 'var(--card)'");
       expect(drawerFile).toContain("color: 'var(--ink)'");
     });
+
+    it('defines full suite of centralized dark mode tokens with requested charcoal & slate palette', () => {
+      expect(globalsCss).toContain('--background: #0B0F14;');
+      expect(globalsCss).toContain('--surface: #111820;');
+      expect(globalsCss).toContain('--surface-secondary: #18212B;');
+      expect(globalsCss).toContain('--surface-elevated: #202B36;');
+      expect(globalsCss).toContain('--foreground: #F1F5F9;');
+      expect(globalsCss).toContain('--secondary-foreground: #CBD5E1;');
+      expect(globalsCss).toContain('--muted-foreground: #94A3B8;');
+      expect(globalsCss).toContain('--border: #334155;');
+      expect(globalsCss).toContain('--header-background: rgba(11, 15, 20, 0.96);');
+    });
+
+    it('provides both hex and browser-serialized RGB fallback overrides for resilient hydration', () => {
+      expect(globalsCss).toContain('html.dark [style*="color: rgb(15, 23, 42)"]');
+      expect(globalsCss).toContain('html.dark [style*="background: rgb(255, 255, 255)"]');
+      expect(globalsCss).toContain('html.dark [style*="background: #f8fafc"]');
+      expect(globalsCss).toContain('html.dark [style*="background: #ecfdf5"]');
+    });
   });
 });

@@ -231,8 +231,8 @@ export default function EmergencyHelplineModal() {
                 onClick={() => setIsOpen(false)}
                 className="chip"
                 style={{
-                  background: '#f1f5f9',
-                  border: '1px solid #cbd5e1',
+                  background: 'var(--surface-secondary)',
+                  border: '1px solid var(--line)',
                   color: 'var(--ink)',
                   fontSize: '16px',
                   fontWeight: 700,
@@ -263,7 +263,7 @@ export default function EmergencyHelplineModal() {
                     padding: '14px 18px',
                     borderRadius: 'var(--radius-md)',
                     border: '1px solid var(--line)',
-                    background: '#f8fafc',
+                    background: 'var(--surface-secondary)',
                     flexWrap: 'wrap',
                   }}
                 >
@@ -280,7 +280,7 @@ export default function EmergencyHelplineModal() {
                             fontWeight: 700,
                             padding: '2px 7px',
                             borderRadius: '999px',
-                            background: '#e2e8f0',
+                            background: 'var(--line)',
                             color: 'var(--ink-secondary)',
                           }}
                         >

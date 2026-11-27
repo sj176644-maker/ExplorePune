@@ -1652,8 +1652,8 @@ export default function PlaceDetailClient({
           className="panel scroll-reveal place-section-reveal"
           style={{
             marginBottom: 24,
-            border: '1.5px solid #fed7aa',
-            background: 'linear-gradient(to bottom, #fffbeb 0%, #ffffff 120px)',
+            border: '1.5px solid var(--border)',
+            background: 'linear-gradient(to bottom, var(--accent-light) 0%, var(--card) 120px)',
           }}
         >
           <div
@@ -1730,8 +1730,8 @@ export default function PlaceDetailClient({
                 onClick={() => setActiveGuidelineTab(tab.id as any)}
                 style={{
                   border: 'none',
-                  background: activeGuidelineTab === tab.id ? '#ea580c' : 'rgba(0,0,0,0.05)',
-                  color: activeGuidelineTab === tab.id ? '#ffffff' : '#475569',
+                  background: activeGuidelineTab === tab.id ? '#ea580c' : 'var(--surface-secondary)',
+                  color: activeGuidelineTab === tab.id ? '#ffffff' : 'var(--ink-secondary)',
                   padding: '6px 14px',
                   borderRadius: 999,
                   fontSize: 12.5,
@@ -1837,11 +1837,11 @@ export default function PlaceDetailClient({
             <div
               style={{
                 marginTop: 18,
-                background: 'linear-gradient(to bottom, #fffbf5, #ffffff)',
-                border: '1.5px solid #fdba74',
+                background: 'var(--card)',
+                border: '1.5px solid var(--border)',
                 borderRadius: 14,
                 padding: '16px 20px',
-                boxShadow: '0 2px 8px rgba(234, 88, 12, 0.05)',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
               }}
             >
               <div
@@ -1969,8 +1969,8 @@ export default function PlaceDetailClient({
           className="panel scroll-reveal place-section-reveal"
           style={{
             marginBottom: 24,
-            border: '1.5px solid #bbf7d0',
-            background: 'linear-gradient(to bottom, #f0fdf4 0%, #ffffff 120px)',
+            border: '1.5px solid var(--border)',
+            background: 'linear-gradient(to bottom, var(--primary-light) 0%, var(--card) 120px)',
           }}
         >
           <div
@@ -1988,7 +1988,7 @@ export default function PlaceDetailClient({
               style={{
                 fontSize: '19px',
                 margin: 0,
-                color: '#065f46',
+                color: 'var(--primary)',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 8,
@@ -2006,8 +2006,8 @@ export default function PlaceDetailClient({
             style={{
               marginTop: 14,
               padding: '14px 16px',
-              background: '#f8fafc',
-              border: '1px solid #e2e8f0',
+              background: 'var(--surface-secondary)',
+              border: '1px solid var(--border)',
               borderRadius: 12,
             }}
           >
@@ -2483,7 +2483,7 @@ export default function PlaceDetailClient({
                           cursor: 'pointer',
                           whiteSpace: 'nowrap',
                           border: isSel ? '1.5px solid #ea580c' : '1px solid var(--line)',
-                          background: isSel ? '#ea580c' : '#f8fafc',
+                          background: isSel ? '#ea580c' : 'var(--surface-secondary)',
                           color: isSel ? '#ffffff' : 'var(--ink)',
                           transition: 'all 0.15s ease',
                         }}

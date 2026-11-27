@@ -43,7 +43,7 @@ export default function AboutPage() {
         <div
           style={{
             display: 'inline-flex',
-            background: '#f1f5f9',
+            background: 'var(--surface-secondary)',
             padding: 3,
             borderRadius: 999,
             border: '1px solid var(--line)',
@@ -56,8 +56,8 @@ export default function AboutPage() {
               padding: '6px 14px',
               borderRadius: 999,
               border: 'none',
-              background: !isMr ? '#ffffff' : 'transparent',
-              color: !isMr ? '#047857' : 'var(--muted)',
+              background: !isMr ? 'var(--card)' : 'transparent',
+              color: !isMr ? 'var(--primary)' : 'var(--muted)',
               fontWeight: !isMr ? 800 : 600,
               fontSize: 12.5,
               cursor: 'pointer',
@@ -73,8 +73,8 @@ export default function AboutPage() {
               padding: '6px 14px',
               borderRadius: 999,
               border: 'none',
-              background: isMr ? '#ffffff' : 'transparent',
-              color: isMr ? '#047857' : 'var(--muted)',
+              background: isMr ? 'var(--card)' : 'transparent',
+              color: isMr ? 'var(--primary)' : 'var(--muted)',
               fontWeight: isMr ? 800 : 600,
               fontSize: 12.5,
               cursor: 'pointer',
@@ -166,8 +166,8 @@ export default function AboutPage() {
             {/* Suraj Dhok Card */}
             <div
               style={{
-                background: 'linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%)',
-                border: '1.5px solid #a7f3d0',
+                background: 'linear-gradient(180deg, var(--primary-light) 0%, var(--card) 100%)',
+                border: '1.5px solid var(--border)',
                 borderRadius: 18,
                 padding: '22px 20px',
                 boxShadow: '0 6px 20px rgba(6, 95, 70, 0.08)',
@@ -186,7 +186,7 @@ export default function AboutPage() {
                     border: '3px solid #047857',
                     boxShadow: '0 4px 12px rgba(4, 120, 87, 0.22)',
                     position: 'relative',
-                    background: '#d1fae5',
+                    background: 'var(--surface-secondary)',
                     flexShrink: 0,
                   }}
                 >
@@ -207,15 +207,15 @@ export default function AboutPage() {
               </div>
 
               <div style={{ marginBottom: 10, textAlign: 'center' }}>
-                <h3 style={{ margin: '0 0 6px', fontSize: 20, color: '#065f46', fontWeight: 800 }}>Suraj Dhok</h3>
+                <h3 style={{ margin: '0 0 6px', fontSize: 20, color: 'var(--primary)', fontWeight: 800 }}>Suraj Dhok</h3>
                 <span
                   style={{
                     display: 'inline-block',
                     fontSize: 12,
-                    color: '#047857',
+                    color: 'var(--primary)',
                     fontWeight: 700,
-                    background: '#dcfce7',
-                    border: '1px solid #a7f3d0',
+                    background: 'var(--primary-light)',
+                    border: '1px solid var(--border)',
                     padding: '3px 10px',
                     borderRadius: 12,
                   }}
@@ -224,15 +224,15 @@ export default function AboutPage() {
                 </span>
               </div>
 
-              <p style={{ fontSize: 13.5, color: '#334155', margin: '0 0 16px', lineHeight: 1.55, flex: 1, textAlign: 'center' }}>
+              <p style={{ fontSize: 13.5, color: 'var(--ink-secondary)', margin: '0 0 16px', lineHeight: 1.55, flex: 1, textAlign: 'center' }}>
                 {isMr
                   ? 'सॉफ्टवेअर आर्किटेक्चर, फायरबेस क्लाऊड इन्फ्रास्ट्रक्चर, डीपीडीपी डेटा सुरक्षा आणि अल्गोरिदम नियोजनाचे नेतृत्व.'
                   : 'Leading platform architecture, Firebase cloud integrations, DPDP Act 2023 compliance, and transit routing engines.'}
               </p>
 
-              <div style={{ fontSize: 13, borderTop: '1px solid #bbf7d0', paddingTop: 12, textAlign: 'center' }}>
+              <div style={{ fontSize: 13, borderTop: '1px solid var(--border)', paddingTop: 12, textAlign: 'center' }}>
                 <strong>Contact Email:</strong>{' '}
-                <a href="mailto:surajdhok1010@gmail.com" style={{ color: '#047857', fontWeight: 700, textDecoration: 'underline' }}>
+                <a href="mailto:surajdhok1010@gmail.com" style={{ color: 'var(--primary)', fontWeight: 700, textDecoration: 'underline' }}>
                   surajdhok1010@gmail.com
                 </a>
               </div>
@@ -241,8 +241,8 @@ export default function AboutPage() {
             {/* Sahil Jadhav Card */}
             <div
               style={{
-                background: 'linear-gradient(180deg, #eff6ff 0%, #ffffff 100%)',
-                border: '1.5px solid #bfdbfe',
+                background: 'linear-gradient(180deg, var(--surface-secondary) 0%, var(--card) 100%)',
+                border: '1.5px solid var(--border)',
                 borderRadius: 18,
                 padding: '22px 20px',
                 boxShadow: '0 6px 20px rgba(37, 99, 235, 0.08)',
@@ -261,7 +261,7 @@ export default function AboutPage() {
                     border: '3px solid #1d4ed8',
                     boxShadow: '0 4px 12px rgba(29, 78, 216, 0.22)',
                     position: 'relative',
-                    background: '#dbeafe',
+                    background: 'var(--surface-secondary)',
                     flexShrink: 0,
                   }}
                 >
@@ -282,15 +282,15 @@ export default function AboutPage() {
               </div>
 
               <div style={{ marginBottom: 10, textAlign: 'center' }}>
-                <h3 style={{ margin: '0 0 6px', fontSize: 20, color: '#1e40af', fontWeight: 800 }}>Sahil Jadhav</h3>
+                <h3 style={{ margin: '0 0 6px', fontSize: 20, color: 'var(--primary)', fontWeight: 800 }}>Sahil Jadhav</h3>
                 <span
                   style={{
                     display: 'inline-block',
                     fontSize: 12,
-                    color: '#1d4ed8',
+                    color: 'var(--primary)',
                     fontWeight: 700,
-                    background: '#dbeafe',
-                    border: '1px solid #bfdbfe',
+                    background: 'var(--surface-secondary)',
+                    border: '1px solid var(--border)',
                     padding: '3px 10px',
                     borderRadius: 12,
                   }}
@@ -299,15 +299,15 @@ export default function AboutPage() {
                 </span>
               </div>
 
-              <p style={{ fontSize: 13.5, color: '#334155', margin: '0 0 16px', lineHeight: 1.55, flex: 1, textAlign: 'center' }}>
+              <p style={{ fontSize: 13.5, color: 'var(--ink-secondary)', margin: '0 0 16px', lineHeight: 1.55, flex: 1, textAlign: 'center' }}>
                 {isMr
                   ? 'पुणेरी ऐतिहासिक संशोधन, वापरकर्ता अनुभव, पी.एम.पी.एम.एल मार्ग संकलन आणि कम्युनिटी मार्गदर्शन.'
                   : 'Overseeing Pune heritage research, transit corridor mapping, UI/UX aesthetics, and community engagement.'}
               </p>
 
-              <div style={{ fontSize: 13, borderTop: '1px solid #bfdbfe', paddingTop: 12, textAlign: 'center' }}>
+              <div style={{ fontSize: 13, borderTop: '1px solid var(--border)', paddingTop: 12, textAlign: 'center' }}>
                 <strong>Contact Email:</strong>{' '}
-                <a href="mailto:sj176644@gmail.com" style={{ color: '#1d4ed8', fontWeight: 700, textDecoration: 'underline' }}>
+                <a href="mailto:sj176644@gmail.com" style={{ color: 'var(--primary)', fontWeight: 700, textDecoration: 'underline' }}>
                   sj176644@gmail.com
                 </a>
               </div>
@@ -316,8 +316,8 @@ export default function AboutPage() {
             {/* Ishan Kakade Card (QA & Documentation) */}
             <div
               style={{
-                background: 'linear-gradient(180deg, #fffbeb 0%, #ffffff 100%)',
-                border: '1.5px solid #fde68a',
+                background: 'linear-gradient(180deg, var(--accent-light) 0%, var(--card) 100%)',
+                border: '1.5px solid var(--border)',
                 borderRadius: 18,
                 padding: '22px 20px',
                 boxShadow: '0 6px 20px rgba(180, 83, 9, 0.08)',
@@ -336,7 +336,7 @@ export default function AboutPage() {
                     border: '3px solid #b45309',
                     boxShadow: '0 4px 12px rgba(180, 83, 9, 0.22)',
                     position: 'relative',
-                    background: '#fef3c7',
+                    background: 'var(--surface-secondary)',
                     flexShrink: 0,
                   }}
                 >
@@ -357,32 +357,32 @@ export default function AboutPage() {
               </div>
 
               <div style={{ marginBottom: 10, textAlign: 'center' }}>
-                <h3 style={{ margin: '0 0 6px', fontSize: 20, color: '#92400e', fontWeight: 800 }}>Ishan Kakade</h3>
+                <h3 style={{ margin: '0 0 6px', fontSize: 20, color: 'var(--clay)', fontWeight: 800 }}>Ishan Kakade</h3>
                 <span
                   style={{
                     display: 'inline-block',
                     fontSize: 12,
-                    color: '#b45309',
+                    color: 'var(--clay)',
                     fontWeight: 700,
-                    background: '#fef3c7',
-                    border: '1px solid #fde68a',
+                    background: 'var(--accent-light)',
+                    border: '1px solid var(--border)',
                     padding: '3px 10px',
                     borderRadius: 12,
                   }}
                 >
-                  {isMr ? 'गुणवत्ता हमी (QA) चाचणी आणि दस्तऐवजीकरण' : 'Quality Assurance (QA) Testing & Documentation'}
+                  {isMr ? 'सह-संस्थापक आणि गुणवत्ता हमी (QA) व्यवस्थापक' : 'Co-Founder & QA Architect'}
                 </span>
               </div>
 
-              <p style={{ fontSize: 13.5, color: '#334155', margin: '0 0 16px', lineHeight: 1.55, flex: 1, textAlign: 'center' }}>
+              <p style={{ fontSize: 13.5, color: 'var(--ink-secondary)', margin: '0 0 16px', lineHeight: 1.55, flex: 1, textAlign: 'center' }}>
                 {isMr
-                  ? 'व्यासपीठाची गुणवत्ता हमी, विविध उपकरणांवरील कार्यप्रणाली चाचणी (QA) आणि पर्यटन माहितीचे अचूक दस्तऐवजीकरण.'
-                  : 'Leading quality assurance, functional QA testing, and comprehensive documentation for tourist guidance and platform reliability.'}
+                  ? 'प्लॅटफॉर्म गुणवत्ता चाचणी, ऐतिहासिक माहिती पडताळणी, बग ट्रॅकिंग व दस्तऐवजीकरण.'
+                  : 'Leading QA verification pipelines, historical landmark accuracy checks, bug isolation, and technical documentation.'}
               </p>
 
-              <div style={{ fontSize: 13, borderTop: '1px solid #fde68a', paddingTop: 12, textAlign: 'center' }}>
+              <div style={{ fontSize: 13, borderTop: '1px solid var(--border)', paddingTop: 12, textAlign: 'center' }}>
                 <strong>Contact Email:</strong>{' '}
-                <a href="mailto:1ishankakade@gmail.com" style={{ color: '#b45309', fontWeight: 700, textDecoration: 'underline' }}>
+                <a href="mailto:1ishankakade@gmail.com" style={{ color: 'var(--clay)', fontWeight: 700, textDecoration: 'underline' }}>
                   1ishankakade@gmail.com
                 </a>
               </div>
@@ -456,7 +456,7 @@ export default function AboutPage() {
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
-            <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: 12, padding: 16, display: 'flex', gap: 14, alignItems: 'center' }}>
+            <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: 16, display: 'flex', gap: 14, alignItems: 'center' }}>
               <img
                 src="/images/team/suraj-dhok.jpg"
                 alt="Suraj Dhok"
@@ -464,7 +464,7 @@ export default function AboutPage() {
               />
               <div>
                 <strong style={{ display: 'block', fontSize: 15.5, color: '#047857' }}>Suraj Dhok</strong>
-                <span style={{ fontSize: 12.5, color: '#64748b' }}>Technical Architecture & Systems</span>
+                <span style={{ fontSize: 12.5, color: 'var(--muted)' }}>Technical Architecture & Systems</span>
                 <a
                   href="mailto:surajdhok1010@gmail.com"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 4, fontSize: 13.5, color: '#047857', fontWeight: 800, textDecoration: 'underline' }}
@@ -474,7 +474,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: 12, padding: 16, display: 'flex', gap: 14, alignItems: 'center' }}>
+            <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: 16, display: 'flex', gap: 14, alignItems: 'center' }}>
               <img
                 src="/images/team/sahil-jadhav.jpg"
                 alt="Sahil Jadhav"
@@ -482,7 +482,7 @@ export default function AboutPage() {
               />
               <div>
                 <strong style={{ display: 'block', fontSize: 15.5, color: '#1d4ed8' }}>Sahil Jadhav</strong>
-                <span style={{ fontSize: 12.5, color: '#64748b' }}>Product & Community Outreach</span>
+                <span style={{ fontSize: 12.5, color: 'var(--muted)' }}>Product & Community Outreach</span>
                 <a
                   href="mailto:sj176644@gmail.com"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 4, fontSize: 13.5, color: '#1d4ed8', fontWeight: 800, textDecoration: 'underline' }}
@@ -492,7 +492,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: 12, padding: 16, display: 'flex', gap: 14, alignItems: 'center' }}>
+            <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: 16, display: 'flex', gap: 14, alignItems: 'center' }}>
               <img
                 src="/images/team/ishan-kakade.jpg"
                 alt="Ishan Kakade"
@@ -500,7 +500,7 @@ export default function AboutPage() {
               />
               <div>
                 <strong style={{ display: 'block', fontSize: 15.5, color: '#b45309' }}>Ishan Kakade</strong>
-                <span style={{ fontSize: 12.5, color: '#64748b' }}>Quality Assurance (QA) Testing & Documentation</span>
+                <span style={{ fontSize: 12.5, color: 'var(--muted)' }}>Quality Assurance (QA) Testing & Documentation</span>
                 <a
                   href="mailto:1ishankakade@gmail.com"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 4, fontSize: 13.5, color: '#b45309', fontWeight: 800, textDecoration: 'underline' }}
@@ -515,13 +515,13 @@ export default function AboutPage() {
 
       {/* Footer Navigation Links */}
       <div style={{ textAlign: 'center', marginTop: 32, display: 'flex', justifyContent: 'center', gap: 20, flexWrap: 'wrap' }}>
-        <Link href="/data" style={{ color: '#047857', fontWeight: 700, fontSize: 14, textDecoration: 'underline' }}>
+        <Link href="/data" style={{ color: 'var(--primary)', fontWeight: 700, fontSize: 14, textDecoration: 'underline' }}>
           {isMr ? 'डेटा कार्यपद्धती (Data Methodology) पहा →' : 'View Data Methodology →'}
         </Link>
-        <Link href="/privacy" style={{ color: '#047857', fontWeight: 700, fontSize: 14, textDecoration: 'underline' }}>
+        <Link href="/privacy" style={{ color: 'var(--primary)', fontWeight: 700, fontSize: 14, textDecoration: 'underline' }}>
           {isMr ? 'गोपनीयता धोरण (DPDP Act)' : 'Privacy Policy (DPDP)'}
         </Link>
-        <Link href="/terms" style={{ color: '#047857', fontWeight: 700, fontSize: 14, textDecoration: 'underline' }}>
+        <Link href="/terms" style={{ color: 'var(--primary)', fontWeight: 700, fontSize: 14, textDecoration: 'underline' }}>
           {isMr ? 'सेवा अटी' : 'Terms of Service'}
         </Link>
       </div>

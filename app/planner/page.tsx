@@ -1115,7 +1115,7 @@ export default function PlannerPage() {
         <div
           style={{
             marginBottom: 24,
-            background: 'linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%)',
+            background: 'linear-gradient(135deg, var(--primary-light) 0%, var(--card) 100%)',
             border: '1.5px solid #10b981',
             borderRadius: 'var(--radius)',
             padding: '16px 20px',
@@ -1187,7 +1187,7 @@ export default function PlannerPage() {
           className={getAtmosphereClass(activeGuidedTrip.startTime)}
           style={{
             marginBottom: 36,
-            background: '#ffffff',
+            background: 'var(--card)',
             border: '2px solid var(--primary)',
             borderRadius: 'var(--radius-xl)',
             padding: '24px',
@@ -1338,8 +1338,8 @@ export default function PlannerPage() {
                     background: isCurrent
                       ? 'var(--primary-light)'
                       : st.isVisited
-                      ? '#ecfdf5'
-                      : '#ffffff',
+                      ? 'var(--primary-light)'
+                      : 'var(--card)',
                     color: isCurrent
                       ? 'var(--primary)'
                       : st.isVisited
@@ -1380,12 +1380,12 @@ export default function PlannerPage() {
           {checkinNotice && (
             <div
               style={{
-                background: '#ecfdf5',
-                border: '1.5px solid #10b981',
+                background: 'var(--primary-light)',
+                border: '1.5px solid var(--primary)',
                 borderRadius: 'var(--radius-sm)',
                 padding: '10px 16px',
                 marginBottom: 16,
-                color: '#065f46',
+                color: 'var(--primary)',
                 fontWeight: 700,
                 fontSize: 14,
                 display: 'flex',
@@ -1402,7 +1402,7 @@ export default function PlannerPage() {
           {/* Active Stop Spotlight Card */}
           <div
             style={{
-              background: '#f8fafc',
+              background: 'var(--surface-secondary)',
               border: '1px solid var(--line)',
               borderRadius: 'var(--radius-lg)',
               padding: '24px',
@@ -1513,21 +1513,21 @@ export default function PlannerPage() {
                     </div>
                   )}
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, fontSize: 13, flex: 1 }}>
-                    <div style={{ background: '#ffffff', border: '1px solid var(--line)', borderRadius: 'var(--radius-sm)', padding: '8px 12px' }}>
+                    <div style={{ background: 'var(--card)', border: '1px solid var(--line)', borderRadius: 'var(--radius-sm)', padding: '8px 12px' }}>
                       <span style={{ display: 'block', fontSize: 10.5, color: 'var(--muted)', fontWeight: 700, textTransform: 'uppercase' }}>
                         {isMr ? 'वेळ' : 'Schedule'}
                       </span>
                       <strong style={{ color: 'var(--clay)' }}>⏰ {currStop.arrivalTime || '--'} - {currStop.departureTime || '--'}</strong>
                     </div>
 
-                    <div style={{ background: '#ffffff', border: '1px solid var(--line)', borderRadius: 'var(--radius-sm)', padding: '8px 12px' }}>
+                    <div style={{ background: 'var(--card)', border: '1px solid var(--line)', borderRadius: 'var(--radius-sm)', padding: '8px 12px' }}>
                       <span style={{ display: 'block', fontSize: 10.5, color: 'var(--muted)', fontWeight: 700, textTransform: 'uppercase' }}>
                         {isMr ? 'भेट कालावधी' : 'Duration'}
                       </span>
                       <strong>⏱️ {currStop.visitMinutes} {isMr ? 'मि.' : 'min'}</strong>
                     </div>
 
-                    <div style={{ background: '#ffffff', border: '1px solid var(--line)', borderRadius: 'var(--radius-sm)', padding: '8px 12px' }}>
+                    <div style={{ background: 'var(--card)', border: '1px solid var(--line)', borderRadius: 'var(--radius-sm)', padding: '8px 12px' }}>
                       <span style={{ display: 'block', fontSize: 10.5, color: 'var(--muted)', fontWeight: 700, textTransform: 'uppercase' }}>
                         {isMr ? 'प्रवेश शुल्क' : 'Entry Ticket'}
                       </span>
@@ -1541,8 +1541,8 @@ export default function PlannerPage() {
                 {/* Next Destination Navigation Card (Requirement 21) */}
                 <div
                   style={{
-                    background: '#ecfdf5',
-                    border: '1.5px solid #a7f3d0',
+                    background: 'var(--primary-light)',
+                    border: '1.5px solid var(--border)',
                     borderRadius: 12,
                     padding: '12px 16px',
                     marginBottom: 16,
@@ -1756,7 +1756,7 @@ export default function PlannerPage() {
               {t('planner.params')}
             </h2>
             {isRecalculating && (
-              <span className="inline-route-updating-pill" style={{ fontSize: 11, fontWeight: 700, color: '#047857', background: '#ecfdf5', padding: '3px 8px', borderRadius: 999 }}>
+              <span className="inline-route-updating-pill" style={{ fontSize: 11, fontWeight: 700, color: 'var(--primary)', background: 'var(--primary-light)', padding: '3px 8px', borderRadius: 999 }}>
                 ⚡ {isMr ? 'मार्ग अद्ययावत करत आहे…' : 'Updating route…'}
               </span>
             )}
@@ -1773,7 +1773,7 @@ export default function PlannerPage() {
                 onClick={handleGetGps}
                 disabled={isLocatingGps}
                 style={{
-                  background: start === 'my-live-gps' ? '#ecfdf5' : '#ffffff',
+                  background: start === 'my-live-gps' ? 'var(--primary-light)' : 'var(--card)',
                   border: '1px solid #10b981',
                   color: '#065f46',
                   fontSize: 11.5,
@@ -1816,11 +1816,11 @@ export default function PlannerPage() {
                 style={{
                   marginTop: 6,
                   padding: '6px 10px',
-                  background: '#ecfdf5',
+                  background: 'var(--primary-light)',
                   border: '1px solid #10b981',
                   borderRadius: 'var(--radius-sm)',
                   fontSize: 12,
-                  color: '#065f46',
+                  color: 'var(--primary)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 6,
@@ -1953,9 +1953,9 @@ export default function PlannerPage() {
                     style={{
                       padding: '8px 10px',
                       borderRadius: 8,
-                      border: isActive ? '2px solid #047857' : '1px solid var(--line)',
-                      background: isActive ? '#ecfdf5' : '#ffffff',
-                      color: isActive ? '#065f46' : 'var(--ink)',
+                      border: isActive ? '2px solid var(--primary)' : '1px solid var(--line)',
+                      background: isActive ? 'var(--primary-light)' : 'var(--card)',
+                      color: isActive ? 'var(--primary)' : 'var(--ink)',
                       fontWeight: isActive ? 800 : 600,
                       fontSize: 12.5,
                       cursor: 'pointer',
@@ -1996,12 +1996,12 @@ export default function PlannerPage() {
                     style={{
                       padding: '8px 10px',
                       borderRadius: 8,
-                      border: isSelected ? '1.5px solid #047857' : '1px solid var(--line)',
-                      background: isSelected ? '#ecfdf5' : '#ffffff',
+                      border: isSelected ? '1.5px solid var(--primary)' : '1px solid var(--line)',
+                      background: isSelected ? 'var(--primary-light)' : 'var(--card)',
                       cursor: 'pointer',
                       fontSize: 12,
                       fontWeight: isSelected ? 700 : 500,
-                      color: isSelected ? '#065f46' : 'var(--ink)',
+                      color: isSelected ? 'var(--primary)' : 'var(--ink)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
@@ -2039,9 +2039,9 @@ export default function PlannerPage() {
                     style={{
                       padding: '5px 10px',
                       borderRadius: 999,
-                      border: isSelected ? '1.5px solid #047857' : '1px solid var(--line)',
-                      background: isSelected ? '#ecfdf5' : '#ffffff',
-                      color: isSelected ? '#047857' : 'var(--ink-secondary)',
+                      border: isSelected ? '1.5px solid var(--primary)' : '1px solid var(--line)',
+                      background: isSelected ? 'var(--primary-light)' : 'var(--card)',
+                      color: isSelected ? 'var(--primary)' : 'var(--ink-secondary)',
                       fontSize: 11.5,
                       fontWeight: isSelected ? 700 : 500,
                       display: 'inline-flex',
@@ -2140,7 +2140,7 @@ export default function PlannerPage() {
               style={{
                 padding: '36px 24px',
                 textAlign: 'center',
-                background: '#ffffff',
+                background: 'var(--card)',
                 border: '1.5px solid var(--primary-border)',
                 borderRadius: 'var(--radius)',
                 boxShadow: '0 8px 24px rgba(6, 95, 70, 0.08)',
@@ -2159,8 +2159,8 @@ export default function PlannerPage() {
                 style={{
                   maxWidth: 320,
                   margin: '0 auto 24px',
-                  background: '#f8fafc',
-                  border: '1px solid #e2e8f0',
+                  background: 'var(--surface-secondary)',
+                  border: '1px solid var(--border)',
                   borderRadius: 12,
                   padding: '16px 20px',
                   display: 'flex',
@@ -2240,9 +2240,9 @@ export default function PlannerPage() {
                         justifyContent: 'space-between',
                         padding: '6px 12px',
                         borderRadius: 8,
-                        background: isCurrent ? '#ecfdf5' : isDone ? '#f8fafc' : 'transparent',
-                        border: isCurrent ? '1px solid #86efac' : '1px solid transparent',
-                        color: isCurrent ? '#065f46' : isDone ? '#047857' : 'var(--muted)',
+                        background: isCurrent ? 'var(--primary-light)' : isDone ? 'var(--surface-secondary)' : 'transparent',
+                        border: isCurrent ? '1px solid var(--primary-border)' : '1px solid transparent',
+                        color: isCurrent ? 'var(--primary)' : isDone ? 'var(--primary)' : 'var(--muted)',
                         fontSize: 12.5,
                         fontWeight: isCurrent ? 800 : isDone ? 600 : 400,
                       }}
@@ -2321,7 +2321,7 @@ export default function PlannerPage() {
               {/* 20. "Trip Ready" Completion Moment with Micro-Sparkles (Requirement 20) */}
               <div
                 style={{
-                  background: 'linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%)',
+                  background: 'linear-gradient(135deg, var(--primary-light) 0%, var(--card) 100%)',
                   border: '1.5px solid #10b981',
                   borderRadius: 14,
                   padding: '16px 20px',
@@ -2395,7 +2395,7 @@ export default function PlannerPage() {
               {plans.length > 1 && (
                 <div
                   style={{
-                    background: '#ffffff',
+                    background: 'var(--card)',
                     border: '1.5px solid var(--primary-border)',
                     borderRadius: 'var(--radius)',
                     padding: 16,
@@ -2426,7 +2426,7 @@ export default function PlannerPage() {
                             padding: '12px 14px',
                             borderRadius: 'var(--radius-sm)',
                             border: isSelected ? '2px solid var(--clay)' : '1px solid var(--line)',
-                            background: isSelected ? 'var(--primary-light)' : '#ffffff',
+                            background: isSelected ? 'var(--primary-light)' : 'var(--card)',
                             cursor: 'pointer',
                             transition: 'all 0.18s cubic-bezier(0.22, 1, 0.36, 1)',
                             display: 'flex',
@@ -2462,7 +2462,7 @@ export default function PlannerPage() {
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
                   gap: 16,
-                  background: 'linear-gradient(135deg, #ffffff 0%, var(--primary-light) 100%)',
+                  background: 'linear-gradient(135deg, var(--card) 0%, var(--primary-light) 100%)',
                   border: '1.5px solid var(--primary-border)',
                   borderRadius: 12,
                   position: 'relative',
@@ -2519,7 +2519,7 @@ export default function PlannerPage() {
               {showRouteMap && activePlanJourney && (
                 <div
                   style={{
-                    background: '#ffffff',
+                    background: 'var(--card)',
                     border: '1.5px solid var(--line)',
                     borderRadius: 'var(--radius)',
                     padding: 16,
@@ -2620,15 +2620,15 @@ export default function PlannerPage() {
               {emailModalOpen && (
                 <div
                   style={{
-                    background: 'linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%)',
-                    border: '1.5px solid #86efac',
+                    background: 'linear-gradient(135deg, var(--primary-light) 0%, var(--card) 100%)',
+                    border: '1.5px solid var(--border)',
                     borderRadius: 12,
                     padding: '16px 20px',
                     boxShadow: '0 4px 14px rgba(4, 120, 87, 0.08)',
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                    <strong style={{ fontSize: 14, color: '#065f46', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <strong style={{ fontSize: 14, color: 'var(--primary)', display: 'flex', alignItems: 'center', gap: 6 }}>
                       <span>📧</span> {isMr ? 'हा सहल आराखडा व PDF ईमेलवर मिळवा' : 'Receive Your Itinerary & PDF via Email'}
                     </strong>
                     <button
@@ -2724,9 +2724,9 @@ export default function PlannerPage() {
                       padding: '6px 14px',
                       fontSize: 12.5,
                       fontWeight: 700,
-                      borderColor: '#10b981',
-                      color: '#065f46',
-                      background: '#ecfdf5',
+                      borderColor: 'var(--primary)',
+                      color: 'var(--primary)',
+                      background: 'var(--primary-light)',
                       borderRadius: 999,
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -2801,7 +2801,8 @@ export default function PlannerPage() {
                                 title={isMr ? 'वर हलवा' : 'Move Up'}
                                 style={{
                                   border: '1px solid var(--line)',
-                                  background: '#ffffff',
+                                  background: 'var(--card)',
+                                  color: 'var(--ink)',
                                   borderRadius: 4,
                                   padding: '3px 7px',
                                   fontSize: 11,
@@ -2818,7 +2819,8 @@ export default function PlannerPage() {
                                 title={isMr ? 'खाली हलवा' : 'Move Down'}
                                 style={{
                                   border: '1px solid var(--line)',
-                                  background: '#ffffff',
+                                  background: 'var(--card)',
+                                  color: 'var(--ink)',
                                   borderRadius: 4,
                                   padding: '3px 7px',
                                   fontSize: 11,
@@ -2915,9 +2917,9 @@ export default function PlannerPage() {
                               style={{
                                 padding: '5px 12px',
                                 fontSize: 12,
-                                borderColor: '#10b981',
-                                color: '#065f46',
-                                background: '#ecfdf5',
+                                borderColor: 'var(--primary)',
+                                color: 'var(--primary)',
+                                background: 'var(--primary-light)',
                                 fontWeight: 700,
                                 cursor: 'pointer',
                               }}
@@ -2942,8 +2944,8 @@ export default function PlannerPage() {
                           style={{
                             marginTop: 14,
                             padding: 12,
-                            background: '#f8fafc',
-                            border: '1px solid #e2e8f0',
+                            background: 'var(--surface-secondary)',
+                            border: '1px solid var(--border)',
                             borderRadius: 'var(--radius-sm)',
                             fontSize: 12.5,
                           }}
@@ -2957,7 +2959,7 @@ export default function PlannerPage() {
                             </span>
                           </div>
 
-                          <ol style={{ margin: '6px 0 8px 18px', padding: 0, color: '#334155' }}>
+                          <ol style={{ margin: '6px 0 8px 18px', padding: 0, color: 'var(--foreground)' }}>
                             {(isMr ? s.transitDetails.stepByStepMr : s.transitDetails.stepByStepEn).map((st: string, idx: number) => (
                               <li key={idx} style={{ marginBottom: 3 }}>
                                 {st}
@@ -2992,8 +2994,8 @@ export default function PlannerPage() {
                 style={{
                   marginTop: 20,
                   padding: '18px 20px',
-                  background: 'linear-gradient(to right, #f8fafc 0%, #ffffff 100%)',
-                  border: '1.5px solid #e2e8f0',
+                  background: 'linear-gradient(to right, var(--surface-secondary) 0%, var(--card) 100%)',
+                  border: '1.5px solid var(--border)',
                   borderRadius: 'var(--radius)',
                   display: 'flex',
                   justifyContent: 'space-between',
@@ -3065,7 +3067,7 @@ export default function PlannerPage() {
         >
           <div
             style={{
-              background: '#ffffff',
+              background: 'var(--card)',
               borderRadius: 20,
               maxWidth: 560,
               width: '100%',
@@ -3075,7 +3077,7 @@ export default function PlannerPage() {
               display: 'flex',
               flexDirection: 'column',
               boxShadow: '0 20px 50px -10px rgba(0, 0, 0, 0.35)',
-              border: '1px solid #e2e8f0',
+              border: '1px solid var(--border)',
               animation: 'modalSlideUp 0.28s cubic-bezier(0.22, 1, 0.36, 1)',
             }}
             onClick={(e) => e.stopPropagation()}
@@ -3152,7 +3154,9 @@ export default function PlannerPage() {
                 width: '100%',
                 padding: '10px 14px',
                 borderRadius: 8,
-                border: '1.5px solid #cbd5e1',
+                border: '1.5px solid var(--border)',
+                background: 'var(--surface-secondary)',
+                color: 'var(--foreground)',
                 fontSize: 14,
                 marginBottom: 14,
                 boxSizing: 'border-box',
@@ -3183,7 +3187,7 @@ export default function PlannerPage() {
                         alignItems: 'center',
                         justifyContent: 'space-between',
                         gap: 12,
-                        background: alreadyInRoute ? '#f8fafc' : '#ffffff',
+                        background: alreadyInRoute ? 'var(--surface-secondary)' : 'var(--card)',
                       }}
                     >
                       <div>

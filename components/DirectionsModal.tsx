@@ -417,11 +417,11 @@ export default function DirectionsModal() {
                 <MapPin size={28} />
               </div>
 
-              <h3 style={{ fontSize: 18, fontWeight: 800, color: '#0f172a', margin: '0 0 8px' }}>
+              <h3 style={{ fontSize: 18, fontWeight: 800, color: 'var(--ink)', margin: '0 0 8px' }}>
                 {isMr ? 'स्थानाचा परवाना आवश्यक आहे' : 'Allow Location Access'}
               </h3>
 
-              <p style={{ fontSize: 14, color: '#475569', lineHeight: 1.5, margin: '0 auto 20px', maxWidth: 420 }}>
+              <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.5, margin: '0 auto 20px', maxWidth: 420 }}>
                 {isMr
                   ? 'तुमच्या सध्याच्या GPS स्थानावरून गंतव्यस्थानाचा थेट मार्ग आणि अंदाजे वेळ मिळवण्यासाठी स्थानाचा परवाना द्या.'
                   : 'Allow location access to get directions from your current location.'}
@@ -466,7 +466,7 @@ export default function DirectionsModal() {
                 </button>
               </div>
 
-              <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: 16 }}>
+              <div style={{ borderTop: '1px solid var(--line)', paddingTop: 16 }}>
                 <button
                   type="button"
                   onClick={() => setModalState('manual_picker')}
@@ -506,10 +506,10 @@ export default function DirectionsModal() {
               >
                 <Navigation size={24} />
               </div>
-              <h3 style={{ fontSize: 17, fontWeight: 700, color: '#0f172a', margin: '0 0 6px' }}>
+              <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--ink)', margin: '0 0 6px' }}>
                 {isMr ? 'तुमचे स्थान शोधत आहे…' : 'Finding your location…'}
               </h3>
-              <p style={{ fontSize: 13, color: '#64748b', margin: 0 }}>
+              <p style={{ fontSize: 13, color: 'var(--muted)', margin: 0 }}>
                 {isMr ? 'GPS उपग्रहाशी संपर्क साधत आहे…' : 'Connecting to GPS sensors…'}
               </p>
             </div>
@@ -535,10 +535,10 @@ export default function DirectionsModal() {
               >
                 <RotateCw size={24} style={{ animation: 'spin 1s linear infinite' }} />
               </div>
-              <h3 style={{ fontSize: 17, fontWeight: 700, color: '#0f172a', margin: '0 0 6px' }}>
+              <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--ink)', margin: '0 0 6px' }}>
                 {isMr ? 'स्थान मिळाले ✓ मार्ग शोधत आहे…' : 'Location found ✓ Finding route…'}
               </h3>
-              <p style={{ fontSize: 13, color: '#64748b', margin: 0 }}>
+              <p style={{ fontSize: 13, color: 'var(--muted)', margin: 0 }}>
                 {isMr ? 'रस्ता आणि रहदारीची अचूक वेळ तपासत आहे…' : 'Calculating realistic road route & travel duration…'}
               </p>
             </div>
@@ -563,23 +563,23 @@ export default function DirectionsModal() {
                 <AlertTriangle size={26} />
               </div>
 
-              <h3 style={{ fontSize: 17, fontWeight: 700, color: '#991b1b', margin: '0 0 8px' }}>
+              <h3 style={{ fontSize: 17, fontWeight: 700, color: '#dc2626', margin: '0 0 8px' }}>
                 {isMr ? 'मार्ग उपलब्ध करता आला नाही' : 'Location / Route Error'}
               </h3>
 
-              <p style={{ fontSize: 13.5, color: '#475569', lineHeight: 1.5, margin: '0 auto 20px', maxWidth: 440 }}>
+              <p style={{ fontSize: 13.5, color: 'var(--muted)', lineHeight: 1.5, margin: '0 auto 20px', maxWidth: 440 }}>
                 {isMr ? errorMessage.mr : errorMessage.en}
               </p>
 
               {destination.address && (
                 <div
                   style={{
-                    background: '#f8fafc',
-                    border: '1px solid #e2e8f0',
+                    background: 'var(--surface-secondary)',
+                    border: '1px solid var(--line)',
                     borderRadius: 10,
                     padding: '10px 14px',
                     fontSize: 12.5,
-                    color: '#334155',
+                    color: 'var(--ink-secondary)',
                     marginBottom: 20,
                     textAlign: 'left',
                   }}
@@ -628,7 +628,7 @@ export default function DirectionsModal() {
           {modalState === 'manual_picker' && (
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-                <h3 style={{ fontSize: 16, fontWeight: 700, color: '#0f172a', margin: 0 }}>
+                <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--ink)', margin: 0 }}>
                   {isMr ? 'प्रारंभ ठिकाण निवडा' : 'Enter Starting Location'}
                 </h3>
                 <button
@@ -653,7 +653,7 @@ export default function DirectionsModal() {
 
               {/* Search input */}
               <div style={{ position: 'relative', marginBottom: 14 }}>
-                <Search size={16} color="#94a3b8" style={{ position: 'absolute', left: 12, top: 12 }} />
+                <Search size={16} color="var(--muted)" style={{ position: 'absolute', left: 12, top: 12 }} />
                 <input
                   type="text"
                   value={manualQuery}
@@ -663,7 +663,9 @@ export default function DirectionsModal() {
                     width: '100%',
                     padding: '10px 14px 10px 36px',
                     borderRadius: 10,
-                    border: '1.5px solid #cbd5e1',
+                    border: '1.5px solid var(--line)',
+                    background: 'var(--card)',
+                    color: 'var(--ink)',
                     fontSize: 13.5,
                     outline: 'none',
                   }}
@@ -681,8 +683,8 @@ export default function DirectionsModal() {
                     style={{
                       textAlign: 'left',
                       padding: '10px 12px',
-                      background: '#f8fafc',
-                      border: '1px solid #e2e8f0',
+                      background: 'var(--surface-secondary)',
+                      border: '1px solid var(--line)',
                       borderRadius: 8,
                       cursor: 'pointer',
                       display: 'flex',
@@ -692,14 +694,14 @@ export default function DirectionsModal() {
                     }}
                   >
                     <div>
-                      <strong style={{ fontSize: 13.5, color: '#0f172a', display: 'block' }}>
+                      <strong style={{ fontSize: 13.5, color: 'var(--ink)', display: 'block' }}>
                         {isMr ? loc.nameMr : loc.nameEn}
                       </strong>
-                      <span style={{ fontSize: 11.5, color: '#64748b' }}>
+                      <span style={{ fontSize: 11.5, color: 'var(--muted)' }}>
                         {isMr ? loc.popularTransitHubMr : loc.popularTransitHubEn}
                       </span>
                     </div>
-                    <span style={{ fontSize: 12, color: '#059669', fontWeight: 700 }}>
+                    <span style={{ fontSize: 12, color: 'var(--primary)', fontWeight: 700 }}>
                       {isMr ? 'निवडा →' : 'Select →'}
                     </span>
                   </button>
@@ -714,8 +716,8 @@ export default function DirectionsModal() {
               {/* Origin & Destination Corridor */}
               <div
                 style={{
-                  background: '#f8fafc',
-                  border: '1px solid #e2e8f0',
+                  background: 'var(--surface-secondary)',
+                  border: '1px solid var(--line)',
                   borderRadius: 12,
                   padding: '12px 14px',
                   marginBottom: 16,
@@ -724,10 +726,10 @@ export default function DirectionsModal() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8, fontSize: 13 }}>
                   <span style={{ color: '#059669', fontSize: 16 }}>📍</span>
                   <div style={{ minWidth: 0, flex: 1 }}>
-                    <span style={{ fontSize: 11, color: '#64748b', textTransform: 'uppercase', fontWeight: 700 }}>
+                    <span style={{ fontSize: 11, color: 'var(--muted)', textTransform: 'uppercase', fontWeight: 700 }}>
                       {isMr ? 'प्रारंभ स्थान' : 'Start'}
                     </span>
-                    <div style={{ fontWeight: 700, color: '#0f172a', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    <div style={{ fontWeight: 700, color: 'var(--ink)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                       {origin.name}
                     </div>
                   </div>
@@ -750,10 +752,10 @@ export default function DirectionsModal() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13 }}>
                   <span style={{ color: '#dc2626', fontSize: 16 }}>📌</span>
                   <div style={{ minWidth: 0 }}>
-                    <span style={{ fontSize: 11, color: '#64748b', textTransform: 'uppercase', fontWeight: 700 }}>
+                    <span style={{ fontSize: 11, color: 'var(--muted)', textTransform: 'uppercase', fontWeight: 700 }}>
                       {isMr ? 'गंतव्यस्थान' : 'Destination'}
                     </span>
-                    <div style={{ fontWeight: 700, color: '#0f172a', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    <div style={{ fontWeight: 700, color: 'var(--ink)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                       {destTitle}
                     </div>
                   </div>
@@ -787,7 +789,7 @@ export default function DirectionsModal() {
                   display: 'grid',
                   gridTemplateColumns: 'repeat(4, 1fr)',
                   gap: 6,
-                  background: '#f1f5f9',
+                  background: 'var(--surface-secondary)',
                   padding: 4,
                   borderRadius: 12,
                   marginBottom: 16,
@@ -809,11 +811,11 @@ export default function DirectionsModal() {
                         padding: '8px 4px',
                         border: 'none',
                         borderRadius: 8,
-                        background: isSelected ? '#ffffff' : 'transparent',
-                        color: isSelected ? '#047857' : '#64748b',
+                        background: isSelected ? 'var(--card)' : 'transparent',
+                        color: isSelected ? 'var(--primary)' : 'var(--muted)',
                         fontWeight: isSelected ? 800 : 600,
                         fontSize: 12,
-                        boxShadow: isSelected ? '0 2px 6px rgba(0,0,0,0.08)' : 'none',
+                        boxShadow: isSelected ? 'var(--shadow-sm)' : 'none',
                         cursor: 'pointer',
                         display: 'flex',
                         flexDirection: 'column',
@@ -832,8 +834,8 @@ export default function DirectionsModal() {
               {/* Route Metric Summary Card */}
               <div
                 style={{
-                  background: 'linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%)',
-                  border: '1.5px solid #a7f3d0',
+                  background: 'linear-gradient(135deg, var(--primary-light) 0%, var(--card) 100%)',
+                  border: '1.5px solid var(--primary-border)',
                   borderRadius: 14,
                   padding: '14px 16px',
                   marginBottom: 16,
@@ -845,19 +847,19 @@ export default function DirectionsModal() {
                 }}
               >
                 <div>
-                  <span style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', color: '#047857', letterSpacing: '0.04em' }}>
+                  <span style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', color: 'var(--primary)', letterSpacing: '0.04em' }}>
                     {isMr ? 'शिफारस केलेला मार्ग' : 'Recommended Route'}
                   </span>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-                    <span style={{ fontSize: 24, fontWeight: 900, color: '#065f46' }}>
+                    <span style={{ fontSize: 24, fontWeight: 900, color: 'var(--primary)' }}>
                       {routeResult.durationText}
                     </span>
-                    <span style={{ fontSize: 14, fontWeight: 700, color: '#047857' }}>
+                    <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--primary)' }}>
                       • {routeResult.distanceText}
                     </span>
                   </div>
                   {routeResult.trafficNote && (
-                    <div style={{ fontSize: 11, color: '#065f46', marginTop: 2 }}>
+                    <div style={{ fontSize: 11, color: 'var(--primary)', marginTop: 2 }}>
                       ℹ️ {routeResult.trafficNote}
                     </div>
                   )}
@@ -867,15 +869,15 @@ export default function DirectionsModal() {
                 {routeResult.alternative && (
                   <div
                     style={{
-                      background: '#ffffff',
-                      border: '1px solid #cbd5e1',
+                      background: 'var(--card)',
+                      border: '1px solid var(--line)',
                       borderRadius: 8,
                       padding: '6px 10px',
                       fontSize: 11.5,
-                      color: '#475569',
+                      color: 'var(--muted)',
                     }}
                   >
-                    <span style={{ fontWeight: 700, display: 'block', color: '#0f172a' }}>
+                    <span style={{ fontWeight: 700, display: 'block', color: 'var(--ink)' }}>
                       {routeResult.alternative.summary}
                     </span>
                     <span>{routeResult.alternative.durationText} · {routeResult.alternative.distanceText}</span>
@@ -892,9 +894,9 @@ export default function DirectionsModal() {
                     padding: '6px 14px',
                     borderRadius: 999,
                     border: '1px solid',
-                    borderColor: activeTab === 'map' ? '#047857' : '#cbd5e1',
-                    background: activeTab === 'map' ? '#047857' : '#ffffff',
-                    color: activeTab === 'map' ? '#ffffff' : '#475569',
+                    borderColor: activeTab === 'map' ? 'var(--primary)' : 'var(--line)',
+                    background: activeTab === 'map' ? 'var(--primary)' : 'var(--card)',
+                    color: activeTab === 'map' ? '#ffffff' : 'var(--muted)',
                     fontSize: 12,
                     fontWeight: 700,
                     cursor: 'pointer',
@@ -914,9 +916,9 @@ export default function DirectionsModal() {
                     padding: '6px 14px',
                     borderRadius: 999,
                     border: '1px solid',
-                    borderColor: activeTab === 'steps' ? '#047857' : '#cbd5e1',
-                    background: activeTab === 'steps' ? '#047857' : '#ffffff',
-                    color: activeTab === 'steps' ? '#ffffff' : '#475569',
+                    borderColor: activeTab === 'steps' ? 'var(--primary)' : 'var(--line)',
+                    background: activeTab === 'steps' ? 'var(--primary)' : 'var(--card)',
+                    color: activeTab === 'steps' ? '#ffffff' : 'var(--muted)',
                     fontSize: 12,
                     fontWeight: 700,
                     cursor: 'pointer',
@@ -937,8 +939,8 @@ export default function DirectionsModal() {
                     height: 260,
                     borderRadius: 12,
                     overflow: 'hidden',
-                    border: '1px solid #cbd5e1',
-                    background: '#f8fafc',
+                    border: '1px solid var(--line)',
+                    background: 'var(--surface-secondary)',
                     position: 'relative',
                     marginBottom: 16,
                   }}
@@ -962,22 +964,22 @@ export default function DirectionsModal() {
                   style={{
                     maxHeight: 260,
                     overflowY: 'auto',
-                    border: '1px solid #e2e8f0',
+                    border: '1px solid var(--line)',
                     borderRadius: 12,
                     padding: '10px 14px',
-                    background: '#ffffff',
+                    background: 'var(--card)',
                     marginBottom: 16,
                   }}
                 >
                   {routeResult.steps && routeResult.steps.length > 0 ? (
-                    <ol style={{ margin: 0, paddingLeft: 20, fontSize: 13, color: '#334155' }}>
+                    <ol style={{ margin: 0, paddingLeft: 20, fontSize: 13, color: 'var(--ink-secondary)' }}>
                       {routeResult.steps.map((st, i) => (
                         <li key={i} style={{ marginBottom: 8 }}>
                           <span style={{ fontWeight: 600 }}>
                             {isMr && st.instructionMr ? st.instructionMr : st.instruction}
                           </span>
                           {st.distanceText && (
-                            <span style={{ fontSize: 11, color: '#64748b', marginLeft: 6 }}>
+                            <span style={{ fontSize: 11, color: 'var(--muted)', marginLeft: 6 }}>
                               ({st.distanceText})
                             </span>
                           )}
@@ -985,7 +987,7 @@ export default function DirectionsModal() {
                       ))}
                     </ol>
                   ) : (
-                    <p style={{ margin: 0, fontSize: 13, color: '#64748b' }}>
+                    <p style={{ margin: 0, fontSize: 13, color: 'var(--muted)' }}>
                       {isMr ? 'थेट नेव्हिगेशनसाठी खालील बटण दाबा.' : 'Follow the interactive route to destination.'}
                     </p>
                   )}
@@ -1002,8 +1004,8 @@ export default function DirectionsModal() {
           <div
             style={{
               padding: '14px 20px',
-              background: '#f8fafc',
-              borderTop: '1px solid #e2e8f0',
+              background: 'var(--surface-secondary)',
+              borderTop: '1px solid var(--line)',
               display: 'flex',
               gap: 12,
               alignItems: 'center',

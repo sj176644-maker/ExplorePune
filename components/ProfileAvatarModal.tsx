@@ -278,7 +278,7 @@ export default function ProfileAvatarModal({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
+            background: 'var(--surface-secondary)',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -659,7 +659,7 @@ export default function ProfileAvatarModal({
                     setPan({ x: 0, y: 0 });
                   }}
                   style={{
-                    background: '#ffffff',
+                    background: 'var(--card)',
                     border: '1px solid var(--line)',
                     borderRadius: 6,
                     padding: '3px 8px',

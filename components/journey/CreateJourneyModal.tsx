@@ -287,8 +287,8 @@ export default function CreateJourneyModal({
           <div
             style={{
               display: 'flex',
-              borderBottom: '1px solid #e2e8f0',
-              background: '#f8fafc',
+              borderBottom: '1px solid var(--border)',
+              background: 'var(--surface-secondary)',
             }}
           >
             {[
@@ -303,12 +303,12 @@ export default function CreateJourneyModal({
                 style={{
                   flex: 1,
                   padding: '12px 10px',
-                  background: currentStep === s.step ? '#ffffff' : 'transparent',
+                  background: currentStep === s.step ? 'var(--card)' : 'transparent',
                   border: 'none',
-                  borderBottom: currentStep === s.step ? '2.5px solid #ea580c' : '2.5px solid transparent',
+                  borderBottom: currentStep === s.step ? '2.5px solid var(--primary)' : '2.5px solid transparent',
                   fontWeight: currentStep === s.step ? 700 : 500,
                   fontSize: 13,
-                  color: currentStep === s.step ? '#ea580c' : '#64748b',
+                  color: currentStep === s.step ? 'var(--primary)' : 'var(--muted)',
                   cursor: 'pointer',
                   transition: 'all 0.18s ease',
                 }}
@@ -531,11 +531,11 @@ export default function CreateJourneyModal({
                           gap: 6,
                           padding: '4px 10px',
                           borderRadius: 20,
-                          background: '#ffffff',
-                          border: '1px solid #fdba74',
+                          background: 'var(--card)',
+                          border: '1px solid var(--border)',
                           fontSize: 12,
                           fontWeight: 600,
-                          color: '#9a3412',
+                          color: 'var(--foreground)',
                         }}
                       >
                         <span>{idx + 1}. {isMr && sp.name_mr ? sp.name_mr : sp.name}</span>
@@ -629,18 +629,18 @@ export default function CreateJourneyModal({
                   style={{
                     padding: '14px 18px',
                     borderRadius: 14,
-                    background: '#f8fafc',
-                    border: '1px solid #e2e8f0',
+                    background: 'var(--surface-secondary)',
+                    border: '1px solid var(--border)',
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
                     gap: 12,
                   }}
                 >
                   <div>
-                    <span style={{ fontSize: 11, fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>
+                    <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase' }}>
                       {isMr ? 'ठिकाणे' : 'Total Stops'}
                     </span>
-                    <strong style={{ display: 'block', fontSize: 18, color: '#0f172a' }}>
+                    <strong style={{ display: 'block', fontSize: 18, color: 'var(--ink)' }}>
                       {selectedPlaces.length} {isMr ? 'ठिकाणे' : 'Stops'}
                     </strong>
                   </div>
@@ -682,9 +682,9 @@ export default function CreateJourneyModal({
                             alignItems: 'center',
                             justifyContent: 'space-between',
                             padding: '10px 14px',
-                            background: '#ffffff',
+                            background: 'var(--card)',
                             borderRadius: 12,
-                            border: '1.5px solid #e2e8f0',
+                            border: '1.5px solid var(--border)',
                             gap: 10,
                           }}
                         >
@@ -712,10 +712,10 @@ export default function CreateJourneyModal({
                               style={{ width: 38, height: 38, borderRadius: 8, objectFit: 'cover' }}
                             />
                             <div style={{ minWidth: 0 }}>
-                              <strong style={{ fontSize: 13.5, color: '#0f172a', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                              <strong style={{ fontSize: 13.5, color: 'var(--ink)', display: 'block', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                                 {isMr && place.name_mr ? place.name_mr : place.name}
                               </strong>
-                              <span style={{ fontSize: 11.5, color: '#64748b' }}>
+                              <span style={{ fontSize: 11.5, color: 'var(--muted)' }}>
                                 {place.address || 'Pune'}
                               </span>
                             </div>
@@ -727,7 +727,7 @@ export default function CreateJourneyModal({
                               onClick={() => handleMoveUp(idx)}
                               disabled={idx === 0}
                               style={{
-                                background: '#f1f5f9',
+                                background: 'var(--surface-secondary)',
                                 border: 'none',
                                 borderRadius: 6,
                                 padding: 6,
@@ -743,7 +743,7 @@ export default function CreateJourneyModal({
                               onClick={() => handleMoveDown(idx)}
                               disabled={idx === selectedPlaces.length - 1}
                               style={{
-                                background: '#f1f5f9',
+                                background: 'var(--surface-secondary)',
                                 border: 'none',
                                 borderRadius: 6,
                                 padding: 6,
@@ -784,8 +784,8 @@ export default function CreateJourneyModal({
           <div
             style={{
               padding: '14px 24px',
-              borderTop: '1px solid #e2e8f0',
-              background: '#f8fafc',
+              borderTop: '1px solid var(--border)',
+              background: 'var(--surface-secondary)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
@@ -798,9 +798,9 @@ export default function CreateJourneyModal({
                 style={{
                   padding: '9px 16px',
                   borderRadius: 10,
-                  border: '1.5px solid #cbd5e1',
-                  background: '#ffffff',
-                  color: '#475569',
+                  border: '1.5px solid var(--border)',
+                  background: 'var(--card)',
+                  color: 'var(--foreground)',
                   fontSize: 13,
                   fontWeight: 700,
                   cursor: 'pointer',
