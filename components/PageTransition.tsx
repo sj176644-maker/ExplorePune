@@ -16,7 +16,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
       setIsAnimating(true);
       const timer = setTimeout(() => {
         setIsAnimating(false);
-      }, 420);
+      }, 260);
       return () => clearTimeout(timer);
     } else {
       setDisplayedChildren(children);
