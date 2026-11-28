@@ -14,10 +14,63 @@ if (!fs.existsSync(sourceLogoPath)) {
   process.exit(1);
 }
 
-async function buildIco(sizes, outputPath) {
+/**
+ * Builds the high-contrast circular brand medallion.
+ * Eliminates the harsh white-and-black square corners by applying a circular
+ * alpha mask, a royal emerald & golden saffron heritage border, and centering
+ * the iconic Hiker & Mountain emblem.
+ */
+async function buildMasterMedallion(size = 512) {
+  const circleMaskSvg = Buffer.from(
+    '<svg width="' + size + '" height="' + size + '" viewBox="0 0 ' + size + ' ' + size + '" xmlns="http://www.w3.org/2000/svg">' +
+    '  <circle cx="' + (size / 2) + '" cy="' + (size / 2) + '" r="' + (size / 2 - 4) + '" fill="#ffffff"/>' +
+    '</svg>'
+  );
+
+  const ringSvg = Buffer.from(
+    '<svg width="' + size + '" height="' + size + '" viewBox="0 0 ' + size + ' ' + size + '" xmlns="http://www.w3.org/2000/svg">' +
+    '  <!-- Royal Emerald Perimeter Ring -->' +
+    '  <circle cx="' + (size / 2) + '" cy="' + (size / 2) + '" r="' + (size / 2 - 12) + '" fill="none" stroke="#059669" stroke-width="16"/>' +
+    '  <!-- Golden Saffron Accent Ring -->' +
+    '  <circle cx="' + (size / 2) + '" cy="' + (size / 2) + '" r="' + (size / 2 - 24) + '" fill="none" stroke="#f59e0b" stroke-width="6"/>' +
+    '</svg>'
+  );
+
+  // Extract the Hiker & Mountain emblem from the master logo
+  // Bounding box: left: 194, top: 147, width: 635, height: 600
+  const emblemCrop = await sharp(sourceLogoPath)
+    .extract({ left: 194, top: 147, width: 635, height: 600 })
+    .resize(390, 368, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 1 } })
+    .toBuffer();
+
+  const base = await sharp({
+    create: {
+      width: size,
+      height: size,
+      channels: 4,
+      background: { r: 255, g: 255, b: 255, alpha: 1 }
+    }
+  })
+    .composite([
+      { input: emblemCrop, top: Math.round((size - 368) / 2) - 8, left: Math.round((size - 390) / 2) },
+      { input: ringSvg, top: 0, left: 0 }
+    ])
+    .png()
+    .toBuffer();
+
+  // Apply circular mask so outside corners are 100% transparent
+  const medallionBuffer = await sharp(base)
+    .composite([{ input: circleMaskSvg, blend: 'dest-in' }])
+    .png({ compressionLevel: 9 })
+    .toBuffer();
+
+  return medallionBuffer;
+}
+
+async function buildIco(masterBuffer, sizes, outputPath) {
   const pngBuffers = [];
   for (const s of sizes) {
-    const buf = await sharp(sourceLogoPath)
+    const buf = await sharp(masterBuffer)
       .resize(s, s, { kernel: 'lanczos3' })
       .png()
       .toBuffer();
@@ -54,10 +107,14 @@ async function buildIco(sizes, outputPath) {
 }
 
 async function generateAll() {
-  console.log('Generating Google Search compliant logo and favicon assets from official source...');
+  console.log('Generating Google Search compliant circular logo and favicon assets...');
 
-  // 1. Google Search Favicon Guidelines: Multiple of 48px square (48, 96, 144, 192, 512)
+  const masterMedallion = await buildMasterMedallion(512);
+
+  // 1. Google Search & Browser Favicon Guidelines: Multi-resolution crisp PNGs
   const pngTargets = [
+    { size: 16, dest: path.join(rootDir, 'public', 'favicon-16x16.png') },
+    { size: 32, dest: path.join(rootDir, 'public', 'favicon-32x32.png') },
     { size: 48, dest: path.join(rootDir, 'public', 'favicon-48x48.png') },
     { size: 96, dest: path.join(rootDir, 'public', 'favicon-96x96.png') },
     { size: 144, dest: path.join(rootDir, 'public', 'favicon-144x144.png') },
@@ -71,7 +128,7 @@ async function generateAll() {
   ];
 
   for (const target of pngTargets) {
-    await sharp(sourceLogoPath)
+    await sharp(masterMedallion)
       .resize(target.size, target.size, { kernel: 'lanczos3' })
       .png({ compressionLevel: 9 })
       .toFile(target.dest);
@@ -79,11 +136,20 @@ async function generateAll() {
     console.log(`Generated ${path.relative(rootDir, target.dest)} (${target.size}x${target.size}, ${sz} bytes)`);
   }
 
-  // 2. Multi-resolution ICOs (48x48, 32x32, 16x16) for public/favicon.ico and app/favicon.ico
-  await buildIco([48, 32, 16], path.join(rootDir, 'public', 'favicon.ico'));
-  await buildIco([48, 32, 16], path.join(rootDir, 'app', 'favicon.ico'));
+  // 2. Multi-resolution ICOs (48x48, 32x32, 16x16) with transparent circular badge
+  await buildIco(masterMedallion, [48, 32, 16], path.join(rootDir, 'public', 'favicon.ico'));
+  await buildIco(masterMedallion, [48, 32, 16], path.join(rootDir, 'app', 'favicon.ico'));
 
-  console.log('All Google Search favicon and logo assets successfully generated!');
+  // 3. SVG vector favicon for modern Chrome & Firefox (subpixel-sharp at any zoom)
+  const base64Medallion = masterMedallion.toString('base64');
+  const svgFavicon =
+    '<svg width="64" height="64" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">\n' +
+    '  <image href="data:image/png;base64,' + base64Medallion + '" width="512" height="512"/>\n' +
+    '</svg>\n';
+  fs.writeFileSync(path.join(rootDir, 'public', 'favicon.svg'), svgFavicon);
+  console.log('Generated public/favicon.svg');
+
+  console.log('All Google Search & Chrome browser tab favicons successfully generated!');
 }
 
 generateAll().catch((err) => {
