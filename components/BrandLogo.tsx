@@ -41,6 +41,8 @@ export default function BrandLogo({
       width={size}
       height={size}
       priority={priority}
+      className="brand-logo-img-el"
+      data-preserve-theme="true"
       style={{
         width: size,
         height: size,
@@ -56,7 +58,8 @@ export default function BrandLogo({
   if (withBadge) {
     return (
       <span
-        className={`brand-logo-badge ${className}`}
+        className={`brand-logo-badge brand-logo-preserve ${className}`}
+        data-preserve-theme="true"
         style={{
           display: 'inline-flex',
           alignItems: 'center',
@@ -79,7 +82,8 @@ export default function BrandLogo({
 
   return (
     <span
-      className={`brand-logo-wrap ${className}`}
+      className={`brand-logo-wrap brand-logo-preserve ${className}`}
+      data-preserve-theme="true"
       style={{
         display: 'inline-flex',
         alignItems: 'center',

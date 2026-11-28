@@ -1,31 +1,29 @@
 import type { Metadata } from 'next';
-import { Sinhagad2DGame } from '@/components/games/sinhagad/Sinhagad2DGame';
+import { SinhagadExperienceContainer } from '@/components/games/sinhagad/SinhagadExperienceContainer';
 
 export const metadata: Metadata = {
-  title: 'Sinhagad Fort 2D Archaeological Exploration | Explore Pune',
+  title: 'Sinhagad Fort 3D Walkable Simulation & 2D Exploration | Explore Pune',
   description:
-    'Playable, historically accurate 2D architectural recreation of Sinhagad Fort (Kondhana), featuring Pune Darwaza and Daru Kothar based on 2017 State Archaeology survey drawings.',
+    'Real architectural 3D reconstruction and walkable simulation of Sinhagad Fort (Kondhana), Pune, Maharashtra. Built to true metric scale based on official archaeological records and GIS data.',
   keywords: [
-    'Sinhagad Fort 2D Game',
-    'Pune Darwaza',
-    'Daru Kothar Sinhagad',
-    'Explore Pune Game',
-    'Maratha Architecture 2D',
-    'Kimaya Architects Sinhagad',
-    'Historical Fort Game',
+    'Sinhagad Fort 3D Simulation',
+    'Sinhagad Walkable 3D Tour',
+    'Pune Darwaza 3D',
+    'Kalyan Darwaza 3D',
+    'Tanaji Kada 3D',
+    'Devtake Cisterns',
+    'Explore Pune Sinhagad 3D',
+    'Maratha Fort Architecture 3D',
+    'Sinhagad Archaeological Reconstruction',
   ],
   openGraph: {
-    title: 'Sinhagad Fort 2D Archaeological Exploration | Explore Pune',
+    title: 'Sinhagad Fort 3D Walkable Simulation | Explore Pune',
     description:
-      'Step into the authentic 17th-century Maratha hill citadel of Sinhagad. Explore Pune Darwaza and the bomb-proof vaulted Daru Kothar.',
+      'Step into the authentic 17th-century Maratha hill citadel of Sinhagad. Walk through Pune Darwaza, explore the battlements, and examine historical landmarks in full 3D metric scale.',
     images: ['/images/places/sinhagad-fort.jpg'],
   },
 };
 
-export default function SinhagadGamePage() {
-  return (
-    <main className="w-full h-screen overflow-hidden bg-slate-950 flex flex-col">
-      <Sinhagad2DGame />
-    </main>
-  );
+export default function SinhagadExperiencePage() {
+  return <SinhagadExperienceContainer />;
 }

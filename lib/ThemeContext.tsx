@@ -5,10 +5,15 @@ import { setCookie } from '@/lib/cookies';
 
 export type Theme = 'light' | 'dark';
 
+export interface ThemeTransitionOrigin {
+  clientX?: number;
+  clientY?: number;
+}
+
 interface ThemeContextType {
   theme: Theme;
   isDark: boolean;
-  toggleTheme: () => void;
+  toggleTheme: (origin?: ThemeTransitionOrigin | React.MouseEvent | MouseEvent) => void;
   setTheme: (theme: Theme) => void;
 }
 
@@ -124,13 +129,33 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  const toggleTheme = useCallback(() => {
-    setThemeState((prev) => {
-      // Check current DOM class as well to avoid any desynchronization with inline scripts
-      const currentlyDark = typeof document !== 'undefined'
-        ? (document.documentElement.classList.contains('dark') || document.documentElement.getAttribute('data-theme') === 'dark')
-        : prev === 'dark';
-      const nextTheme = currentlyDark ? 'light' : 'dark';
+  const toggleTheme = useCallback((origin?: ThemeTransitionOrigin | React.MouseEvent | MouseEvent) => {
+    // Determine click or trigger coordinates for circular clip-path animation
+    let clientX: number | undefined;
+    let clientY: number | undefined;
+
+    if (origin && 'clientX' in origin && typeof origin.clientX === 'number') {
+      clientX = origin.clientX;
+      clientY = origin.clientY;
+    } else if (typeof window !== 'undefined') {
+      const btn = document.querySelector('.theme-toggle-btn');
+      if (btn) {
+        const rect = btn.getBoundingClientRect();
+        clientX = rect.left + rect.width / 2;
+        clientY = rect.top + rect.height / 2;
+      } else {
+        clientX = window.innerWidth / 2;
+        clientY = window.innerHeight / 2;
+      }
+    }
+
+    const currentlyDark = typeof document !== 'undefined'
+      ? (document.documentElement.classList.contains('dark') || document.documentElement.getAttribute('data-theme') === 'dark')
+      : theme === 'dark';
+    const nextTheme: Theme = currentlyDark ? 'light' : 'dark';
+
+    const applyNext = () => {
+      setThemeState(nextTheme);
       applyThemeToDOM(nextTheme);
       try {
         localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
@@ -141,13 +166,63 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       if (typeof window !== 'undefined') {
         window.dispatchEvent(
           new CustomEvent('punetrail-theme-toggle', {
-            detail: { theme: nextTheme, shortcut: 'T' },
+            detail: { theme: nextTheme, shortcut: 'T', originX: clientX, originY: clientY },
           })
         );
       }
-      return nextTheme;
-    });
-  }, []);
+    };
+
+    const isReducedMotion = typeof window !== 'undefined'
+      && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasViewTransition = typeof document !== 'undefined'
+      && typeof (document as any).startViewTransition === 'function'
+      && !isReducedMotion;
+
+    if (hasViewTransition && typeof clientX === 'number' && typeof clientY === 'number') {
+      const x = clientX;
+      const y = clientY;
+      const endRadius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+      );
+
+      try {
+        const transition = (document as any).startViewTransition(() => {
+          applyNext();
+        });
+
+        transition.ready.then(() => {
+          document.documentElement.animate(
+            {
+              clipPath: [
+                `circle(0px at ${x}px ${y}px)`,
+                `circle(${endRadius}px at ${x}px ${y}px)`,
+              ],
+            },
+            {
+              duration: 520,
+              easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+              pseudoElement: '::view-transition-new(root)',
+            }
+          );
+        }).catch(() => {
+          // If transition promise rejects, state is already updated in callback
+        });
+        return;
+      } catch {
+        // Fallback to CSS smooth transition
+      }
+    }
+
+    // Smooth CSS fallback transition for environments without View Transitions
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.add('theme-transitioning');
+      setTimeout(() => {
+        document.documentElement.classList.remove('theme-transitioning');
+      }, 420);
+    }
+    applyNext();
+  }, [theme]);
 
   // Keyboard shortcut listener for toggle key: 'T' or 'D' (or Alt+T, Ctrl+Shift+D)
   useEffect(() => {

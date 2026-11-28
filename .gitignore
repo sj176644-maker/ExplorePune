@@ -63,4 +63,12 @@ data/pmpml-extracted/
 scratch-*.js
 .agents/
 
+# video production render artifacts & frames
+video-production/output/
+video-production/captures/
+video-production/scenes/*.mp4
+video-production/audio/*.m4a
+video-production/audio/*.mp3
+video-production/scenes/concat-list.txt
+
 !.env.example

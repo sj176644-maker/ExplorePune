@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { useTheme } from '@/lib/ThemeContext';
+import React, { useState } from 'react';
+import { useTheme, ThemeTransitionOrigin } from '@/lib/ThemeContext';
 import { useLanguage } from '@/lib/LanguageContext';
 import { Sun, Moon } from 'lucide-react';
 
@@ -16,6 +16,7 @@ export default function ThemeToggle({
 }: ThemeToggleProps) {
   const { theme, isDark, toggleTheme } = useTheme();
   const { isMr } = useLanguage();
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const titleTooltip = isMr
     ? isDark
@@ -33,6 +34,18 @@ export default function ThemeToggle({
       ? 'डार्क मोडमध्ये बदला'
       : 'Switch to Dark Mode';
 
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setIsAnimating(true);
+    setTimeout(() => setIsAnimating(false), 550);
+
+    const rect = e.currentTarget.getBoundingClientRect();
+    const origin: ThemeTransitionOrigin = {
+      clientX: rect.left + rect.width / 2,
+      clientY: rect.top + rect.height / 2,
+    };
+    toggleTheme(origin);
+  };
+
   return (
     <button
       type="button"
@@ -40,8 +53,8 @@ export default function ThemeToggle({
       aria-checked={isDark}
       aria-label={`${ariaLabel} (Shortcut: T)`}
       title={titleTooltip}
-      onClick={toggleTheme}
-      className={`theme-toggle-btn ${className}`}
+      onClick={handleClick}
+      className={`theme-toggle-btn ${isAnimating ? 'theme-toggle-animating' : ''} ${className}`}
       style={{
         display: 'inline-flex',
         alignItems: 'center',
@@ -55,9 +68,10 @@ export default function ThemeToggle({
         cursor: 'pointer',
         fontSize: 12,
         fontWeight: 700,
-        transition: 'all 0.2s cubic-bezier(0.22, 1, 0.36, 1)',
+        transition: 'all 0.25s cubic-bezier(0.22, 1, 0.36, 1)',
         minHeight: 32,
         userSelect: 'none',
+        position: 'relative',
       }}
     >
       <span
@@ -66,7 +80,7 @@ export default function ThemeToggle({
           display: 'inline-flex',
           alignItems: 'center',
           justifyContent: 'center',
-          transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+          transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
           transform: isDark ? 'rotate(180deg)' : 'rotate(0deg)',
         }}
       >
